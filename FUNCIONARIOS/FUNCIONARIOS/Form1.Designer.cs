@@ -39,7 +39,6 @@
             Buscar = new Button();
             dataGridView1 = new DataGridView();
             button3 = new Button();
-            menuStrip1 = new MenuStrip();
             toolStripTextBox1 = new ToolStripTextBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -144,13 +143,6 @@
             button3.UseVisualStyleBackColor = true;
             button3.Click += button3_Click;
             // 
-            // menuStrip1
-            // 
-            menuStrip1.Location = new Point(0, 0);
-            menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(800, 24);
-            menuStrip1.TabIndex = 11;
-            // 
             // toolStripTextBox1
             // 
             toolStripTextBox1.Name = "toolStripTextBox1";
@@ -172,11 +164,9 @@
             Controls.Add(label1);
             Controls.Add(dataGridView1);
             Controls.Add(Buscar);
-            Controls.Add(menuStrip1);
-            MainMenuStrip = menuStrip1;
             Name = "Form1";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "d";
-            WindowState = FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -195,7 +185,6 @@
         private Button Buscar;
         private DataGridView dataGridView1;
         private Button button3;
-        private MenuStrip menuStrip1;
         private ToolStripTextBox toolStripTextBox1;
     }
 }

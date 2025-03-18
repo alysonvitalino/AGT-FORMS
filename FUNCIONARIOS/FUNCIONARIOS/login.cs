@@ -1,0 +1,86 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using MySql.Data.MySqlClient;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+
+namespace FUNCIONARIOS
+{
+    public partial class login : Form
+    {
+        MySqlConnection conexao;
+        public login()
+        {
+            InitializeComponent();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (BoxLogin.Text != "" && BoxSenha.Text != "")
+                {
+                    string data_source = "datasource=localhost; username=root;password='';database=funcionarios";
+                    conexao = new MySqlConnection(data_source);
+
+                    string loginQuery = "SELECT login, senha FROM logins WHERE login = @login AND senha = @senha";
+
+                    MySqlCommand comando = new MySqlCommand(loginQuery, conexao);
+                    comando.Parameters.AddWithValue("@login", BoxLogin.Text);
+                    comando.Parameters.AddWithValue("@senha", BoxSenha.Text);
+
+                    conexao.Open();
+
+                    MySqlDataReader reader = comando.ExecuteReader();
+
+                    if (reader.HasRows)
+                    {
+                        MessageBox.Show("Login realizado com sucesso!");
+
+                        BoxSenha.Clear();
+
+                        Form1 produto = new Form1();
+                        produto.StartPosition = FormStartPosition.CenterScreen;
+                        produto.Show();
+
+                        Hide();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Dados de login incorretos.");
+                    }
+
+                    reader.Close(); 
+                }
+                else
+                {
+                    MessageBox.Show("Por favor, preencha os campos de login e senha.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                if (conexao.State == System.Data.ConnectionState.Open)
+                {
+                    conexao.Close();
+                }
+            }
+        }
+
+    }
+}
+

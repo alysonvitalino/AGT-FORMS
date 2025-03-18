@@ -86,7 +86,7 @@ namespace FUNCIONARIOS
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Form2 produto = new Form2();
+            login produto = new login();
             produto.StartPosition = FormStartPosition.CenterScreen; // Ajusta a posição da janela
             produto.Show();
             Hide();
