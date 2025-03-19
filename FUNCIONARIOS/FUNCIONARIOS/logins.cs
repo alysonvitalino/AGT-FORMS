@@ -10,22 +10,19 @@ using System.Windows.Forms;
 
 namespace FUNCIONARIOS
 {
-    public partial class Aliquotas : Form
+    public partial class logins : Form
     {
-        public Aliquotas()
+        public logins()
         {
             InitializeComponent();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void logins_Load(object sender, EventArgs e)
         {
-            Form1 produto = new Form1();
-            produto.StartPosition = FormStartPosition.CenterScreen;
-            produto.Show();
-            Hide();
+
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)
         {
             cadastros produto = new cadastros();
             produto.StartPosition = FormStartPosition.CenterScreen;
@@ -33,17 +30,25 @@ namespace FUNCIONARIOS
             Hide();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void button4_Click(object sender, EventArgs e)
         {
-            calculadora produto = new calculadora();
+            Aliquotas produto = new Aliquotas();
             produto.StartPosition = FormStartPosition.CenterScreen;
             produto.Show();
             Hide();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            logins produto = new logins();
+            Form1 produto = new Form1();
+            produto.StartPosition = FormStartPosition.CenterScreen;
+            produto.Show();
+            Hide();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            calculadora produto = new calculadora();
             produto.StartPosition = FormStartPosition.CenterScreen;
             produto.Show();
             Hide();
@@ -56,8 +61,7 @@ namespace FUNCIONARIOS
             produto.Show();
             Hide();
         }
-
-        private void cadastrosToolStripMenuItem_Click(object sender, EventArgs e)
+        private void cadastrosToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             cadastros produto = new cadastros();
             produto.StartPosition = FormStartPosition.CenterScreen;
@@ -65,7 +69,7 @@ namespace FUNCIONARIOS
             Hide();
         }
 
-        private void leisEAlíquotasToolStripMenuItem_Click(object sender, EventArgs e)
+        private void leisEAlíquotasToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             Aliquotas produto = new Aliquotas();
             produto.StartPosition = FormStartPosition.CenterScreen;
@@ -73,7 +77,7 @@ namespace FUNCIONARIOS
             Hide();
         }
 
-        private void loginsESenhasToolStripMenuItem_Click(object sender, EventArgs e)
+        private void loginsESenhasToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             logins produto = new logins();
             produto.StartPosition = FormStartPosition.CenterScreen;

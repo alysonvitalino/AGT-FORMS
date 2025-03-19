@@ -32,9 +32,10 @@
             // 
             // calculadora
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Margin = new Padding(2);
             Name = "calculadora";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "calculadora";
