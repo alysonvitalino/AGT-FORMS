@@ -115,7 +115,7 @@
             button4.Name = "button4";
             button4.Size = new Size(104, 58);
             button4.TabIndex = 24;
-            button4.Text = "Logins";
+            button4.Text = "Logins e Senhas";
             button4.UseVisualStyleBackColor = true;
             button4.Click += button4_Click;
             // 
@@ -138,35 +138,35 @@
             // paginaInicialToolStripMenuItem
             // 
             paginaInicialToolStripMenuItem.Name = "paginaInicialToolStripMenuItem";
-            paginaInicialToolStripMenuItem.Size = new Size(180, 22);
+            paginaInicialToolStripMenuItem.Size = new Size(158, 22);
             paginaInicialToolStripMenuItem.Text = "Pagina Inicial";
             paginaInicialToolStripMenuItem.Click += paginaInicialToolStripMenuItem_Click;
             // 
             // calculadoraToolStripMenuItem
             // 
             calculadoraToolStripMenuItem.Name = "calculadoraToolStripMenuItem";
-            calculadoraToolStripMenuItem.Size = new Size(180, 22);
+            calculadoraToolStripMenuItem.Size = new Size(158, 22);
             calculadoraToolStripMenuItem.Text = "Calculadora";
             calculadoraToolStripMenuItem.Click += calculadoraToolStripMenuItem_Click;
             // 
             // cadastrosToolStripMenuItem
             // 
             cadastrosToolStripMenuItem.Name = "cadastrosToolStripMenuItem";
-            cadastrosToolStripMenuItem.Size = new Size(180, 22);
+            cadastrosToolStripMenuItem.Size = new Size(158, 22);
             cadastrosToolStripMenuItem.Text = "Cadastros";
             cadastrosToolStripMenuItem.Click += cadastrosToolStripMenuItem_Click;
             // 
             // leisEAlíquotasToolStripMenuItem
             // 
             leisEAlíquotasToolStripMenuItem.Name = "leisEAlíquotasToolStripMenuItem";
-            leisEAlíquotasToolStripMenuItem.Size = new Size(180, 22);
+            leisEAlíquotasToolStripMenuItem.Size = new Size(158, 22);
             leisEAlíquotasToolStripMenuItem.Text = "Leis e Alíquotas";
             leisEAlíquotasToolStripMenuItem.Click += leisEAlíquotasToolStripMenuItem_Click;
             // 
             // loginsESenhasToolStripMenuItem
             // 
             loginsESenhasToolStripMenuItem.Name = "loginsESenhasToolStripMenuItem";
-            loginsESenhasToolStripMenuItem.Size = new Size(180, 22);
+            loginsESenhasToolStripMenuItem.Size = new Size(158, 22);
             loginsESenhasToolStripMenuItem.Text = "Logins e Senhas";
             loginsESenhasToolStripMenuItem.Click += loginsESenhasToolStripMenuItem_Click;
             // 
