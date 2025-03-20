@@ -85,6 +85,11 @@ namespace FUNCIONARIOS
         {
 
         }
+
+        private void BoxLogin_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

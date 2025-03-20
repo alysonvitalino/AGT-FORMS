@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(login));
             button1 = new Button();
             label1 = new Label();
             label2 = new Label();
@@ -37,18 +38,24 @@
             // 
             // button1
             // 
-            button1.Location = new Point(321, 254);
+            button1.BackColor = Color.Transparent;
+            button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
+            button1.ForeColor = SystemColors.ButtonFace;
+            button1.Location = new Point(406, 249);
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
             button1.TabIndex = 0;
             button1.Text = "Login";
-            button1.UseVisualStyleBackColor = true;
+            button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(321, 144);
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Segoe UI", 9F);
+            label1.ForeColor = SystemColors.ButtonFace;
+            label1.Location = new Point(406, 144);
             label1.Name = "label1";
             label1.Size = new Size(37, 15);
             label1.TabIndex = 2;
@@ -58,7 +65,10 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(321, 188);
+            label2.BackColor = Color.Transparent;
+            label2.Font = new Font("Segoe UI", 9F);
+            label2.ForeColor = SystemColors.ButtonFace;
+            label2.Location = new Point(406, 188);
             label2.Name = "label2";
             label2.Size = new Size(39, 15);
             label2.TabIndex = 3;
@@ -66,14 +76,17 @@
             // 
             // BoxLogin
             // 
-            BoxLogin.Location = new Point(321, 162);
+            BoxLogin.BackColor = SystemColors.HotTrack;
+            BoxLogin.Location = new Point(406, 162);
             BoxLogin.Name = "BoxLogin";
             BoxLogin.Size = new Size(186, 23);
             BoxLogin.TabIndex = 4;
+            BoxLogin.TextChanged += BoxLogin_TextChanged;
             // 
             // BoxSenha
             // 
-            BoxSenha.Location = new Point(321, 206);
+            BoxSenha.BackColor = SystemColors.HotTrack;
+            BoxSenha.Location = new Point(406, 206);
             BoxSenha.Name = "BoxSenha";
             BoxSenha.Size = new Size(186, 23);
             BoxSenha.TabIndex = 5;
@@ -82,6 +95,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(800, 450);
             Controls.Add(BoxSenha);
             Controls.Add(BoxLogin);
@@ -90,7 +104,6 @@
             Controls.Add(button1);
             Name = "login";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "login";
             Load += login_Load;
             ResumeLayout(false);
             PerformLayout();
