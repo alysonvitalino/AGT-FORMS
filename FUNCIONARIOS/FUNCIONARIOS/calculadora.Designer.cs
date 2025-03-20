@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+<<<<<<< HEAD
+<<<<<<< HEAD
             menuStrip1 = new MenuStrip();
             menuToolStripMenuItem = new ToolStripMenuItem();
             paginaInicialToolStripMenuItem = new ToolStripMenuItem();
@@ -50,6 +52,12 @@
             dataGridView1 = new DataGridView();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+=======
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(calculadora));
+>>>>>>> a836518 (Que inferno)
+=======
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(calculadora));
+>>>>>>> a836518c97718830e5709f9d2df62484dcd52241
             SuspendLayout();
             // 
             // menuStrip1
@@ -229,6 +237,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(800, 450);
             Controls.Add(dataGridView1);
             Controls.Add(button5);
