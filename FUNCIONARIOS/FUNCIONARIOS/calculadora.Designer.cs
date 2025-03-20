@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             menuStrip1 = new MenuStrip();
             menuToolStripMenuItem = new ToolStripMenuItem();
             paginaInicialToolStripMenuItem = new ToolStripMenuItem();
@@ -54,6 +55,9 @@
 =======
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(calculadora));
 >>>>>>> a836518 (Que inferno)
+=======
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(calculadora));
+>>>>>>> a836518c97718830e5709f9d2df62484dcd52241
             SuspendLayout();
             // 
             // menuStrip1
