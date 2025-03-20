@@ -37,24 +37,7 @@ namespace FUNCIONARIOS
         }
         private void Buscar_Click(object sender, EventArgs e)
         {
-            /* select * from funcionario;
-            string data_source = "datasource=localhost; username=root;password='';database=funcionarios";
-            conexao = new MySqlConnection(data_source);
-            string sql = "SELECT * FROM funcionario;";
-            //MessageBox.Show(sql);
-            MySqlCommand comando = new MySqlCommand(sql, conexao);
-            conexao.Open();
-
-            MySqlDataAdapter dataAdapter = new MySqlDataAdapter(comando);
-            DataTable dataTable = new DataTable();
-
-            // Preenche o DataTable com os dados
-            dataAdapter.Fill(dataTable);
-
-            // Define o DataSource do DataGridView para o DataTable
-            dataGridView1.DataSource = dataTable;
-
-            MessageBox.Show("Dados carregados com sucesso!");*/
+            
         }
         private void label3_Click(object sender, EventArgs e)
         {
@@ -132,6 +115,11 @@ namespace FUNCIONARIOS
             produto.StartPosition = FormStartPosition.CenterScreen;
             produto.Show();
             Hide();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

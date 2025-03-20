@@ -214,13 +214,15 @@
             button5.TabIndex = 12;
             button5.Text = "CALCULAR";
             button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
             // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(242, 67);
+            dataGridView1.Location = new Point(203, 67);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(415, 371);
+            dataGridView1.ReadOnly = true;
+            dataGridView1.Size = new Size(469, 371);
             dataGridView1.TabIndex = 13;
             // 
             // calculadora

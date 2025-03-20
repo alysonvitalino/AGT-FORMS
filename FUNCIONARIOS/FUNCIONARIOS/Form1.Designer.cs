@@ -104,6 +104,7 @@
             dataGridView1.RowHeadersWidth = 62;
             dataGridView1.Size = new Size(285, 209);
             dataGridView1.TabIndex = 17;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // menuStrip1
             // 

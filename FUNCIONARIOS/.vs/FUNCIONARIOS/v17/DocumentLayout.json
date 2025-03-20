@@ -3,20 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\aluno\\Desktop\\AGT-FORMS\\FUNCIONARIOS\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D017C148-6845-4DAE-8BAD-1E1DE6B426FB}|FUNCIONARIOS\\FUNCIONARIOS.csproj|c:\\users\\aluno\\desktop\\agt-forms\\funcionarios\\funcionarios\\calculadora.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{D017C148-6845-4DAE-8BAD-1E1DE6B426FB}|FUNCIONARIOS\\FUNCIONARIOS.csproj|solutionrelative:funcionarios\\calculadora.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{D017C148-6845-4DAE-8BAD-1E1DE6B426FB}|FUNCIONARIOS\\FUNCIONARIOS.csproj|C:\\Users\\aluno\\Desktop\\AGT-FORMS\\FUNCIONARIOS\\funcionarios\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{D017C148-6845-4DAE-8BAD-1E1DE6B426FB}|FUNCIONARIOS\\FUNCIONARIOS.csproj|solutionrelative:funcionarios\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D017C148-6845-4DAE-8BAD-1E1DE6B426FB}|FUNCIONARIOS\\FUNCIONARIOS.csproj|C:\\Users\\aluno\\Desktop\\AGT-FORMS\\FUNCIONARIOS\\funcionarios\\cadastros.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D017C148-6845-4DAE-8BAD-1E1DE6B426FB}|FUNCIONARIOS\\FUNCIONARIOS.csproj|solutionrelative:funcionarios\\cadastros.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D017C148-6845-4DAE-8BAD-1E1DE6B426FB}|FUNCIONARIOS\\FUNCIONARIOS.csproj|c:\\users\\aluno\\desktop\\agt-forms\\funcionarios\\funcionarios\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D017C148-6845-4DAE-8BAD-1E1DE6B426FB}|FUNCIONARIOS\\FUNCIONARIOS.csproj|solutionrelative:funcionarios\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D017C148-6845-4DAE-8BAD-1E1DE6B426FB}|FUNCIONARIOS\\FUNCIONARIOS.csproj|C:\\Users\\aluno\\Desktop\\AGT-FORMS\\FUNCIONARIOS\\funcionarios\\calculadora.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D017C148-6845-4DAE-8BAD-1E1DE6B426FB}|FUNCIONARIOS\\FUNCIONARIOS.csproj|solutionrelative:funcionarios\\calculadora.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D017C148-6845-4DAE-8BAD-1E1DE6B426FB}|FUNCIONARIOS\\FUNCIONARIOS.csproj|C:\\Users\\aluno\\Desktop\\AGT-FORMS\\FUNCIONARIOS\\funcionarios\\cadastros.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D017C148-6845-4DAE-8BAD-1E1DE6B426FB}|FUNCIONARIOS\\FUNCIONARIOS.csproj|solutionrelative:funcionarios\\cadastros.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D017C148-6845-4DAE-8BAD-1E1DE6B426FB}|FUNCIONARIOS\\FUNCIONARIOS.csproj|c:\\users\\aluno\\desktop\\agt-forms\\funcionarios\\funcionarios\\calculadora.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D017C148-6845-4DAE-8BAD-1E1DE6B426FB}|FUNCIONARIOS\\FUNCIONARIOS.csproj|solutionrelative:funcionarios\\calculadora.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,24 +30,37 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\aluno\\Desktop\\AGT-FORMS\\FUNCIONARIOS\\FUNCIONARIOS\\Form1.cs",
+              "RelativeDocumentMoniker": "FUNCIONARIOS\\Form1.cs",
+              "ToolTip": "C:\\Users\\aluno\\Desktop\\AGT-FORMS\\FUNCIONARIOS\\FUNCIONARIOS\\Form1.cs",
+              "RelativeToolTip": "FUNCIONARIOS\\Form1.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-19T23:53:57.762Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "calculadora.cs",
               "DocumentMoniker": "C:\\Users\\aluno\\Desktop\\AGT-FORMS\\FUNCIONARIOS\\FUNCIONARIOS\\calculadora.cs",
               "RelativeDocumentMoniker": "FUNCIONARIOS\\calculadora.cs",
               "ToolTip": "C:\\Users\\aluno\\Desktop\\AGT-FORMS\\FUNCIONARIOS\\FUNCIONARIOS\\calculadora.cs",
               "RelativeToolTip": "FUNCIONARIOS\\calculadora.cs",
-              "ViewState": "AQIAAD0AAAAAAAAAAAAhwF8AAAATAAAA",
+              "ViewState": "AQIAAHMAAAAAAAAAAAAmwLAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-19T22:39:47.95Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "calculadora.cs [Projeto]",
               "DocumentMoniker": "C:\\Users\\aluno\\Desktop\\AGT-FORMS\\FUNCIONARIOS\\FUNCIONARIOS\\calculadora.cs",
               "RelativeDocumentMoniker": "FUNCIONARIOS\\calculadora.cs",
@@ -55,7 +72,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "cadastros.cs",
               "DocumentMoniker": "C:\\Users\\aluno\\Desktop\\AGT-FORMS\\FUNCIONARIOS\\FUNCIONARIOS\\cadastros.cs",
               "RelativeDocumentMoniker": "FUNCIONARIOS\\cadastros.cs",
@@ -68,7 +85,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Form1.cs [Projeto]",
               "DocumentMoniker": "C:\\Users\\aluno\\Desktop\\AGT-FORMS\\FUNCIONARIOS\\FUNCIONARIOS\\Form1.cs",
               "RelativeDocumentMoniker": "FUNCIONARIOS\\Form1.cs",
