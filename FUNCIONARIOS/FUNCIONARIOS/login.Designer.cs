@@ -34,6 +34,8 @@
             label2 = new Label();
             BoxLogin = new TextBox();
             BoxSenha = new TextBox();
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // button1
@@ -91,12 +93,24 @@
             BoxSenha.Size = new Size(186, 23);
             BoxSenha.TabIndex = 5;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.LOGIN_E_SENHAS__4_;
+            pictureBox1.Location = new Point(540, 319);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(149, 80);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 6;
+            pictureBox1.TabStop = false;
+            // 
             // login
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoSize = true;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(800, 450);
+            Controls.Add(pictureBox1);
             Controls.Add(BoxSenha);
             Controls.Add(BoxLogin);
             Controls.Add(label2);
@@ -104,7 +118,9 @@
             Controls.Add(button1);
             Name = "login";
             StartPosition = FormStartPosition.CenterScreen;
+            WindowState = FormWindowState.Maximized;
             Load += login_Load;
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -116,5 +132,6 @@
         private Label label2;
         private TextBox BoxLogin;
         private TextBox BoxSenha;
+        private PictureBox pictureBox1;
     }
 }

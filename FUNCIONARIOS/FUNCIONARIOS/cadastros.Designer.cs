@@ -159,6 +159,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoSize = true;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(800, 450);
             Controls.Add(button4);
@@ -173,6 +174,7 @@
             Name = "cadastros";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "cadastros";
+            WindowState = FormWindowState.Maximized;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();

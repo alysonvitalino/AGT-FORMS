@@ -28,8 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(calculadora));
             menuStrip1 = new MenuStrip();
             menuToolStripMenuItem = new ToolStripMenuItem();
             paginaInicialToolStripMenuItem = new ToolStripMenuItem();
@@ -50,14 +49,12 @@
             comboBox2 = new ComboBox();
             button5 = new Button();
             dataGridView1 = new DataGridView();
+            textBox2 = new TextBox();
+            label5 = new Label();
+            label6 = new Label();
+            comboBox3 = new ComboBox();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-=======
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(calculadora));
->>>>>>> a836518 (Que inferno)
-=======
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(calculadora));
->>>>>>> a836518c97718830e5709f9d2df62484dcd52241
             SuspendLayout();
             // 
             // menuStrip1
@@ -65,7 +62,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { menuToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(800, 24);
+            menuStrip1.Size = new Size(1691, 24);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -113,7 +110,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(678, 67);
+            button1.Location = new Point(1559, 67);
             button1.Name = "button1";
             button1.Size = new Size(110, 50);
             button1.TabIndex = 1;
@@ -123,7 +120,7 @@
             // 
             // button2
             // 
-            button2.Location = new Point(678, 169);
+            button2.Location = new Point(1559, 169);
             button2.Name = "button2";
             button2.Size = new Size(110, 50);
             button2.TabIndex = 2;
@@ -133,7 +130,7 @@
             // 
             // button3
             // 
-            button3.Location = new Point(678, 277);
+            button3.Location = new Point(1559, 277);
             button3.Name = "button3";
             button3.Size = new Size(110, 50);
             button3.TabIndex = 3;
@@ -143,7 +140,7 @@
             // 
             // button4
             // 
-            button4.Location = new Point(678, 388);
+            button4.Location = new Point(1559, 388);
             button4.Name = "button4";
             button4.Size = new Size(110, 50);
             button4.TabIndex = 4;
@@ -155,7 +152,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 14F);
-            label1.Location = new Point(76, 67);
+            label1.Location = new Point(42, 64);
             label1.Name = "label1";
             label1.Size = new Size(113, 25);
             label1.TabIndex = 5;
@@ -165,7 +162,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F);
-            label2.Location = new Point(76, 123);
+            label2.Location = new Point(42, 103);
             label2.Name = "label2";
             label2.Size = new Size(105, 21);
             label2.TabIndex = 6;
@@ -173,7 +170,7 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(76, 147);
+            textBox1.Location = new Point(42, 127);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(100, 23);
             textBox1.TabIndex = 7;
@@ -182,7 +179,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 12F);
-            label3.Location = new Point(76, 182);
+            label3.Location = new Point(42, 153);
             label3.Name = "label3";
             label3.Size = new Size(79, 21);
             label3.TabIndex = 8;
@@ -192,7 +189,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 12F);
-            label4.Location = new Point(76, 240);
+            label4.Location = new Point(42, 203);
             label4.Name = "label4";
             label4.Size = new Size(61, 21);
             label4.TabIndex = 9;
@@ -201,7 +198,7 @@
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(76, 206);
+            comboBox1.Location = new Point(42, 177);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(121, 23);
             comboBox1.TabIndex = 10;
@@ -209,14 +206,14 @@
             // comboBox2
             // 
             comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(76, 264);
+            comboBox2.Location = new Point(42, 227);
             comboBox2.Name = "comboBox2";
             comboBox2.Size = new Size(121, 23);
             comboBox2.TabIndex = 11;
             // 
             // button5
             // 
-            button5.Location = new Point(95, 306);
+            button5.Location = new Point(60, 365);
             button5.Name = "button5";
             button5.Size = new Size(82, 41);
             button5.TabIndex = 12;
@@ -230,15 +227,56 @@
             dataGridView1.Location = new Point(203, 67);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
-            dataGridView1.Size = new Size(469, 371);
+            dataGridView1.Size = new Size(1350, 371);
             dataGridView1.TabIndex = 13;
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(42, 277);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(100, 23);
+            textBox2.TabIndex = 14;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 12F);
+            label5.Location = new Point(42, 253);
+            label5.Name = "label5";
+            label5.Size = new Size(78, 21);
+            label5.TabIndex = 15;
+            label5.Text = "Deduções";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 12F);
+            label6.Location = new Point(42, 303);
+            label6.Name = "label6";
+            label6.Size = new Size(42, 21);
+            label6.TabIndex = 16;
+            label6.Text = "IRRF";
+            // 
+            // comboBox3
+            // 
+            comboBox3.FormattingEnabled = true;
+            comboBox3.Items.AddRange(new object[] { "1", "1.5" });
+            comboBox3.Location = new Point(42, 327);
+            comboBox3.Name = "comboBox3";
+            comboBox3.Size = new Size(121, 23);
+            comboBox3.TabIndex = 17;
             // 
             // calculadora
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoSize = true;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1691, 464);
+            Controls.Add(comboBox3);
+            Controls.Add(label6);
+            Controls.Add(label5);
+            Controls.Add(textBox2);
             Controls.Add(dataGridView1);
             Controls.Add(button5);
             Controls.Add(comboBox2);
@@ -258,6 +296,7 @@
             Name = "calculadora";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "calculadora";
+            WindowState = FormWindowState.Maximized;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
@@ -287,5 +326,9 @@
         private ComboBox comboBox2;
         private Button button5;
         private DataGridView dataGridView1;
+        private TextBox textBox2;
+        private Label label5;
+        private Label label6;
+        private ComboBox comboBox3;
     }
 }

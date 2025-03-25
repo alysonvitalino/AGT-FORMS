@@ -18,14 +18,24 @@ namespace FUNCIONARIOS
         {
             InitializeComponent();
             PreencherComboBox();
-            dataGridView1.ColumnCount = 5; // Define o número de colunas
 
-            // Define os cabeçalhos das colunas
-            dataGridView1.Columns[0].Name = "Código";
-            dataGridView1.Columns[1].Name = "Serviço";
-            dataGridView1.Columns[2].Name = "Alíquota";
-            dataGridView1.Columns[3].Name = "Valor Base";
-            dataGridView1.Columns[4].Name = "Valor Final";
+            // Definindo novas colunas
+            dataGridView1.ColumnCount = 14;
+
+            // Definindo os cabeçalhos das colunas
+            dataGridView1.Columns[0].Name = "ValorBase";
+            dataGridView1.Columns[1].Name = "LIQ CSRF";
+            dataGridView1.Columns[2].Name = "LIQ ISS";
+            dataGridView1.Columns[3].Name = "LIQ INSS";
+            dataGridView1.Columns[4].Name = "LIQ IR";
+            dataGridView1.Columns[5].Name = "LIQ IR+CSRF";
+            dataGridView1.Columns[6].Name = "LIQ IR+CSRF+ INSS";
+            dataGridView1.Columns[7].Name = "LIQ IR+CSRF+ INSS+ISS";
+            dataGridView1.Columns[8].Name = "LIQ IR+CSRF+ISS";
+            dataGridView1.Columns[9].Name = "LIQ CSRF+ISS";
+            dataGridView1.Columns[10].Name = "LIQ INSS+ISS";
+            dataGridView1.Columns[11].Name = "LIQ IR+ISS";
+            dataGridView1.Columns[12].Name = "LIQ CSRF+ISS";
 
             // Ajusta o tamanho automático das colunas
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -118,7 +128,7 @@ namespace FUNCIONARIOS
         {
             try
             {
-                // Verifica se um valor foi inserido na TextBox
+                // Verifica se um valor foi inserido na TextBox1
                 if (string.IsNullOrWhiteSpace(textBox1.Text))
                 {
                     MessageBox.Show("Por favor, insira um valor antes de calcular.");
@@ -132,7 +142,7 @@ namespace FUNCIONARIOS
                     return;
                 }
 
-                // Verifica se há uma alíquota selecionada
+                // Verifica se há uma alíquota selecionada na ComboBox2
                 if (comboBox2.SelectedItem == null)
                 {
                     MessageBox.Show("Selecione uma alíquota na ComboBox.");
@@ -147,26 +157,83 @@ namespace FUNCIONARIOS
                     return;
                 }
 
-                // Obtém a alíquota e converte para double
+                // Obtém a alíquota de ISS a partir da seleção da ComboBox2
                 if (!double.TryParse(rowSelecionada["aliquota_iss"].ToString(), out double aliquotaIss))
                 {
-                    MessageBox.Show("Erro ao converter a alíquota.");
+                    MessageBox.Show("Erro ao converter a alíquota de ISS.");
                     return;
                 }
 
-                // Converte a alíquota de percentual para decimal (ex: 5% -> 0.05)
-                double aliquotaDecimal = aliquotaIss / 100;
+                // Converte a alíquota de ISS para porcentagem (por exemplo, 4 -> 0.04)
+                aliquotaIss = aliquotaIss / 100;
 
-                // Calcula o valor final
-                double valorFinal = valorBase + (valorBase * aliquotaDecimal);
+                // Pega o valor das deduções (TextBox2). Se estiver vazio, define como 0
+                double deducoes = 0;
+                if (!string.IsNullOrWhiteSpace(textBox2.Text))
+                {
+                    if (!double.TryParse(textBox2.Text, out deducoes))
+                    {
+                        MessageBox.Show("Digite um valor válido para as deduções.");
+                        return;
+                    }
+                }
 
-                // Adiciona os valores no DataGridView1
+                // Obtém a alíquota de IR a partir da ComboBox3
+                double aliquotaIr = 0;
+                if (comboBox3.SelectedItem != null)
+                {
+                    if (comboBox3.SelectedItem.ToString() == "1")
+                        aliquotaIr = 0.01;
+                    else if (comboBox3.SelectedItem.ToString() == "1.5")
+                        aliquotaIr = 0.015;
+                }
+                else
+                {
+                    MessageBox.Show("Selecione uma alíquota de IR na ComboBox3.");
+                    return;
+                }
+
+                // Calculando os diferentes valores
+                double liqCsr = valorBase * 0.0465; // 4.65%
+                double liqIss = valorBase * aliquotaIss; // Alíquota de ISS dinâmica
+                double liqInss = (valorBase - deducoes) * 0.11; // 11% após deduções
+                double liqIr = valorBase * aliquotaIr;
+                double liqIrCsr = liqIr + liqCsr;
+                double liqIrCsrInss = liqIrCsr + liqInss;
+                double liqIrCsrInssIss = liqIrCsrInss + liqIss;
+                double liqIrCsrIss = liqIrCsr + liqIss;
+                double liqIrIss = liqIr + liqIss;
+                double liqCsrIss = liqCsr + liqIss;
+                double liqInssIss = liqInss + liqIss;
+
+                // Calculando o valor restante após as deduções para cada coluna
+                double liqCsrRestante = valorBase - liqCsr;
+                double liqIssRestante = valorBase - liqIss;
+                double liqInssRestante = valorBase - liqInss;
+                double liqIrRestante = valorBase - liqIr;
+                double liqIrCsrRestante = valorBase - liqIrCsr;
+                double liqIrCsrInssRestante = valorBase - liqIrCsrInss;
+                double liqIrCsrInssIssRestante = valorBase - liqIrCsrInssIss;
+                double liqIrIssRestante = valorBase - liqIrIss;
+                double liqCsrIssRestante = valorBase - liqCsrIss;
+                double liqInssIssRestante = valorBase - liqInssIss;
+                double liqIrCsrIssRestante = valorBase - liqIrCsrIss;
+
+                // Adicionando os valores restantes na DataGridView
                 dataGridView1.Rows.Add(
-                    rowSelecionada["cod_servico"].ToString(),
-                    rowSelecionada["desc_servico"].ToString(),
-                    aliquotaIss.ToString("0.00") + "%",  // Exibe a alíquota com o símbolo "%"
-                    valorBase.ToString("C2"),  // Formata o valor base como moeda
-                    valorFinal.ToString("C2")  // Formata o valor final como moeda
+                valorBase.ToString("C2"), // Valor Base
+                liqCsrRestante.ToString("C2"),
+                liqIssRestante.ToString("C2"),
+                liqInssRestante.ToString("C2"),
+                liqIrRestante.ToString("C2"),
+                liqIrCsrRestante.ToString("C2"),
+                liqIrCsrInssRestante.ToString("C2"),
+                liqIrCsrInssIssRestante.ToString("C2"),
+                liqIrCsrIssRestante.ToString("C2"),
+                liqCsrIssRestante.ToString("C2"),
+                liqInssIssRestante.ToString("C2"),
+                liqIrIssRestante.ToString("C2"), 
+                liqCsrIssRestante.ToString("C2") 
                 );
             }
             catch (Exception ex)
