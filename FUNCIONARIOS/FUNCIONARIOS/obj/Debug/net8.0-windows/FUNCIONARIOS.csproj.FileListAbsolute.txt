@@ -121,7 +121,6 @@ C:\Users\aluno\Desktop\AGT-FORMS\FUNCIONARIOS\FUNCIONARIOS\bin\Debug\net8.0-wind
 C:\Users\aluno\Desktop\AGT-FORMS\FUNCIONARIOS\FUNCIONARIOS\bin\Debug\net8.0-windows\K4os.Compression.LZ4.Streams.dll
 C:\Users\aluno\Desktop\AGT-FORMS\FUNCIONARIOS\FUNCIONARIOS\bin\Debug\net8.0-windows\K4os.Hash.xxHash.dll
 C:\Users\aluno\Desktop\AGT-FORMS\FUNCIONARIOS\FUNCIONARIOS\bin\Debug\net8.0-windows\MySql.Data.dll
-C:\Users\aluno\Desktop\AGT-FORMS\FUNCIONARIOS\FUNCIONARIOS\bin\Debug\net8.0-windows\System.Diagnostics.DiagnosticSource.dll
 C:\Users\aluno\Desktop\AGT-FORMS\FUNCIONARIOS\FUNCIONARIOS\bin\Debug\net8.0-windows\System.IO.Pipelines.dll
 C:\Users\aluno\Desktop\AGT-FORMS\FUNCIONARIOS\FUNCIONARIOS\bin\Debug\net8.0-windows\System.Text.Encodings.Web.dll
 C:\Users\aluno\Desktop\AGT-FORMS\FUNCIONARIOS\FUNCIONARIOS\bin\Debug\net8.0-windows\System.Text.Json.dll

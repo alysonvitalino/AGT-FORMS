@@ -41,7 +41,11 @@ vencimento_cadastro INT NOT NULL,
 obervacao_cadastro VARCHAR (2048)
 );
 
-
+INSERT INTO aliquotas VALUES (1, "Curitiba", "7.04", "Demolição", "5");
+INSERT INTO aliquotas VALUES (2, "Guaratuba", "7.04", "Demolição", "5");
+INSERT INTO aliquotas VALUES (3, "Curitiba", "7.02", "Construção", "10");
+INSERT INTO aliquotas VALUES (4, "Guaratuba", "7.02", "Construção", "10");
+INSERT INTO aliquotas VALUES (5, "Curitiba", "7.10", "Coleta", "3");
 INSERT INTO logins(login, senha)  VALUES("Alyson", "123456");
 select * from logins;
 select login, senha FROM logins WHERE login = "alyson" AND senha = "123456";
