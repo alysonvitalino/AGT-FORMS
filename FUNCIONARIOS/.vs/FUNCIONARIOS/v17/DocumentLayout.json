@@ -1,18 +1,14 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\aluno\\Desktop\\AGT-FORMS\\FUNCIONARIOS\\",
+  "WorkspaceRootPath": "C:\\Users\\Aluno\\Desktop\\AGT-FORMS\\FUNCIONARIOS\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D017C148-6845-4DAE-8BAD-1E1DE6B426FB}|FUNCIONARIOS\\FUNCIONARIOS.csproj|c:\\users\\aluno\\desktop\\agt-forms\\funcionarios\\funcionarios\\calculadora.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D017C148-6845-4DAE-8BAD-1E1DE6B426FB}|FUNCIONARIOS\\FUNCIONARIOS.csproj|solutionrelative:funcionarios\\calculadora.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D017C148-6845-4DAE-8BAD-1E1DE6B426FB}|FUNCIONARIOS\\FUNCIONARIOS.csproj|c:\\users\\aluno\\desktop\\agt-forms\\funcionarios\\funcionarios\\calculadora.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{D017C148-6845-4DAE-8BAD-1E1DE6B426FB}|FUNCIONARIOS\\FUNCIONARIOS.csproj|C:\\Users\\Aluno\\Desktop\\AGT-FORMS\\FUNCIONARIOS\\funcionarios\\calculadora.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{D017C148-6845-4DAE-8BAD-1E1DE6B426FB}|FUNCIONARIOS\\FUNCIONARIOS.csproj|solutionrelative:funcionarios\\calculadora.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D017C148-6845-4DAE-8BAD-1E1DE6B426FB}|FUNCIONARIOS\\FUNCIONARIOS.csproj|c:\\users\\aluno\\desktop\\agt-forms\\funcionarios\\funcionarios\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D017C148-6845-4DAE-8BAD-1E1DE6B426FB}|FUNCIONARIOS\\FUNCIONARIOS.csproj|solutionrelative:funcionarios\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D017C148-6845-4DAE-8BAD-1E1DE6B426FB}|FUNCIONARIOS\\FUNCIONARIOS.csproj|c:\\users\\aluno\\desktop\\agt-forms\\funcionarios\\funcionarios\\calculadora.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D017C148-6845-4DAE-8BAD-1E1DE6B426FB}|FUNCIONARIOS\\FUNCIONARIOS.csproj|solutionrelative:funcionarios\\calculadora.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,37 +22,24 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\aluno\\Desktop\\AGT-FORMS\\FUNCIONARIOS\\FUNCIONARIOS\\Program.cs",
-              "RelativeDocumentMoniker": "FUNCIONARIOS\\Program.cs",
-              "ToolTip": "C:\\Users\\aluno\\Desktop\\AGT-FORMS\\FUNCIONARIOS\\FUNCIONARIOS\\Program.cs",
-              "RelativeToolTip": "FUNCIONARIOS\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAaAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-25T00:37:38.754Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "calculadora.cs",
-              "DocumentMoniker": "C:\\Users\\aluno\\Desktop\\AGT-FORMS\\FUNCIONARIOS\\FUNCIONARIOS\\calculadora.cs",
+              "DocumentMoniker": "C:\\Users\\Aluno\\Desktop\\AGT-FORMS\\FUNCIONARIOS\\FUNCIONARIOS\\calculadora.cs",
               "RelativeDocumentMoniker": "FUNCIONARIOS\\calculadora.cs",
-              "ToolTip": "C:\\Users\\aluno\\Desktop\\AGT-FORMS\\FUNCIONARIOS\\FUNCIONARIOS\\calculadora.cs",
+              "ToolTip": "C:\\Users\\Aluno\\Desktop\\AGT-FORMS\\FUNCIONARIOS\\FUNCIONARIOS\\calculadora.cs",
               "RelativeToolTip": "FUNCIONARIOS\\calculadora.cs",
-              "ViewState": "AQIAAL0AAAAAAAAAAADwv90AAABDAAAA",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAkwBYAAAAWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-25T00:24:02.262Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "calculadora.cs [Projeto]",
-              "DocumentMoniker": "C:\\Users\\aluno\\Desktop\\AGT-FORMS\\FUNCIONARIOS\\FUNCIONARIOS\\calculadora.cs",
+              "DocumentMoniker": "C:\\Users\\Aluno\\Desktop\\AGT-FORMS\\FUNCIONARIOS\\FUNCIONARIOS\\calculadora.cs",
               "RelativeDocumentMoniker": "FUNCIONARIOS\\calculadora.cs",
-              "ToolTip": "C:\\Users\\aluno\\Desktop\\AGT-FORMS\\FUNCIONARIOS\\FUNCIONARIOS\\calculadora.cs [Projeto]",
+              "ToolTip": "C:\\Users\\Aluno\\Desktop\\AGT-FORMS\\FUNCIONARIOS\\FUNCIONARIOS\\calculadora.cs [Projeto]",
               "RelativeToolTip": "FUNCIONARIOS\\calculadora.cs [Projeto]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-25T00:09:15.417Z",

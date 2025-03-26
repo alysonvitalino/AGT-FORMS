@@ -17,7 +17,24 @@ namespace FUNCIONARIOS
         public calculadora()
         {
             InitializeComponent();
-            PreencherComboBox();
+            PreencherComboBox();/*
+            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom;
+            textBox1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom;
+            textBox2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom;
+            comboBox1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom;
+            comboBox2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom;
+            comboBox3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom;
+            label1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom;
+            label2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom;
+            label3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom;
+            label4.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom;
+            label5.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom;
+            button1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom;
+            button2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom;
+            button3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom;
+            button4.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom;
+            button5.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom;*/
+
 
             // Definindo novas colunas
             dataGridView1.ColumnCount = 14;
@@ -38,11 +55,11 @@ namespace FUNCIONARIOS
             dataGridView1.Columns[12].Name = "LIQ CSRF+ISS";
 
             // Ajusta o tamanho automático das colunas
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
         }
         private void SeuFormulario_Load(object sender, EventArgs e)
         {
-            
+
         }
 
 
@@ -221,20 +238,23 @@ namespace FUNCIONARIOS
 
                 // Adicionando os valores restantes na DataGridView
                 dataGridView1.Rows.Add(
-                valorBase.ToString("C2"), // Valor Base
-                liqCsrRestante.ToString("C2"),
-                liqIssRestante.ToString("C2"),
-                liqInssRestante.ToString("C2"),
-                liqIrRestante.ToString("C2"),
-                liqIrCsrRestante.ToString("C2"),
-                liqIrCsrInssRestante.ToString("C2"),
-                liqIrCsrInssIssRestante.ToString("C2"),
-                liqIrCsrIssRestante.ToString("C2"),
-                liqCsrIssRestante.ToString("C2"),
-                liqInssIssRestante.ToString("C2"),
-                liqIrIssRestante.ToString("C2"), 
-                liqCsrIssRestante.ToString("C2") 
+                    valorBase.ToString("C2"),
+                    liqCsrRestante.ToString("C2"),
+                    liqIssRestante.ToString("C2"),
+                    liqInssRestante.ToString("C2"),
+                    liqIrRestante.ToString("C2"),
+                    liqIrCsrRestante.ToString("C2"),
+                    liqIrCsrInssRestante.ToString("C2"),
+                    liqIrCsrInssIssRestante.ToString("C2"),
+                    liqIrCsrIssRestante.ToString("C2"),
+                    liqCsrIssRestante.ToString("C2"),
+                    liqInssIssRestante.ToString("C2"),
+                    liqIrIssRestante.ToString("C2"),
+                    liqCsrIssRestante.ToString("C2")
                 );
+
+                // Ajustando o tamanho das colunas de acordo com o conteúdo
+                dataGridView1.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             }
             catch (Exception ex)
             {
@@ -327,7 +347,9 @@ namespace FUNCIONARIOS
             }
         }
 
+        private void calculadora_Load(object sender, EventArgs e)
+        {
 
-
+        }
     }
 }
