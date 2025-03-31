@@ -48,10 +48,12 @@
             // 
             // menuStrip1
             // 
+            menuStrip1.ImageScalingSize = new Size(20, 20);
             menuStrip1.Items.AddRange(new ToolStripItem[] { menuToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(800, 24);
+            menuStrip1.Padding = new Padding(7, 3, 0, 3);
+            menuStrip1.Size = new Size(914, 30);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -59,41 +61,41 @@
             // 
             menuToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { páginaInicialToolStripMenuItem, calculadoraToolStripMenuItem, cadastrosToolStripMenuItem, leisEAlíquotasToolStripMenuItem, loginsESenhasToolStripMenuItem });
             menuToolStripMenuItem.Name = "menuToolStripMenuItem";
-            menuToolStripMenuItem.Size = new Size(50, 20);
+            menuToolStripMenuItem.Size = new Size(60, 24);
             menuToolStripMenuItem.Text = "Menu";
             // 
             // páginaInicialToolStripMenuItem
             // 
             páginaInicialToolStripMenuItem.Name = "páginaInicialToolStripMenuItem";
-            páginaInicialToolStripMenuItem.Size = new Size(158, 22);
+            páginaInicialToolStripMenuItem.Size = new Size(197, 26);
             páginaInicialToolStripMenuItem.Text = "Página Inicial";
             páginaInicialToolStripMenuItem.Click += páginaInicialToolStripMenuItem_Click;
             // 
             // calculadoraToolStripMenuItem
             // 
             calculadoraToolStripMenuItem.Name = "calculadoraToolStripMenuItem";
-            calculadoraToolStripMenuItem.Size = new Size(158, 22);
+            calculadoraToolStripMenuItem.Size = new Size(197, 26);
             calculadoraToolStripMenuItem.Text = "Calculadora";
             calculadoraToolStripMenuItem.Click += calculadoraToolStripMenuItem_Click;
             // 
             // cadastrosToolStripMenuItem
             // 
             cadastrosToolStripMenuItem.Name = "cadastrosToolStripMenuItem";
-            cadastrosToolStripMenuItem.Size = new Size(158, 22);
+            cadastrosToolStripMenuItem.Size = new Size(197, 26);
             cadastrosToolStripMenuItem.Text = "Cadastros";
             cadastrosToolStripMenuItem.Click += cadastrosToolStripMenuItem_Click;
             // 
             // leisEAlíquotasToolStripMenuItem
             // 
             leisEAlíquotasToolStripMenuItem.Name = "leisEAlíquotasToolStripMenuItem";
-            leisEAlíquotasToolStripMenuItem.Size = new Size(158, 22);
+            leisEAlíquotasToolStripMenuItem.Size = new Size(197, 26);
             leisEAlíquotasToolStripMenuItem.Text = "Leis e Alíquotas";
             leisEAlíquotasToolStripMenuItem.Click += leisEAlíquotasToolStripMenuItem_Click;
             // 
             // loginsESenhasToolStripMenuItem
             // 
             loginsESenhasToolStripMenuItem.Name = "loginsESenhasToolStripMenuItem";
-            loginsESenhasToolStripMenuItem.Size = new Size(158, 22);
+            loginsESenhasToolStripMenuItem.Size = new Size(197, 26);
             loginsESenhasToolStripMenuItem.Text = "Logins e Senhas";
             loginsESenhasToolStripMenuItem.Click += loginsESenhasToolStripMenuItem_Click;
             // 
@@ -101,25 +103,30 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F);
-            label1.Location = new Point(40, 39);
+            label1.Location = new Point(46, 52);
             label1.Name = "label1";
-            label1.Size = new Size(79, 21);
+            label1.Size = new Size(98, 28);
             label1.TabIndex = 1;
             label1.Text = "Cadastros";
             // 
             // dataGridView1
             // 
+            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(17, 81);
+            dataGridView1.Location = new Point(19, 108);
+            dataGridView1.Margin = new Padding(3, 4, 3, 4);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(647, 338);
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.Size = new Size(739, 451);
             dataGridView1.TabIndex = 2;
             // 
             // button1
             // 
-            button1.Location = new Point(687, 81);
+            button1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            button1.Location = new Point(785, 108);
+            button1.Margin = new Padding(3, 4, 3, 4);
             button1.Name = "button1";
-            button1.Size = new Size(101, 53);
+            button1.Size = new Size(115, 71);
             button1.TabIndex = 3;
             button1.Text = "Página Inicial";
             button1.UseVisualStyleBackColor = true;
@@ -127,9 +134,11 @@
             // 
             // button2
             // 
-            button2.Location = new Point(687, 366);
+            button2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            button2.Location = new Point(785, 488);
+            button2.Margin = new Padding(3, 4, 3, 4);
             button2.Name = "button2";
-            button2.Size = new Size(101, 53);
+            button2.Size = new Size(115, 71);
             button2.TabIndex = 4;
             button2.Text = "Logins e Senhas";
             button2.UseVisualStyleBackColor = true;
@@ -137,9 +146,11 @@
             // 
             // button3
             // 
-            button3.Location = new Point(687, 269);
+            button3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            button3.Location = new Point(785, 359);
+            button3.Margin = new Padding(3, 4, 3, 4);
             button3.Name = "button3";
-            button3.Size = new Size(101, 53);
+            button3.Size = new Size(115, 71);
             button3.TabIndex = 5;
             button3.Text = "Alíquotas";
             button3.UseVisualStyleBackColor = true;
@@ -147,9 +158,11 @@
             // 
             // button4
             // 
-            button4.Location = new Point(687, 176);
+            button4.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            button4.Location = new Point(785, 235);
+            button4.Margin = new Padding(3, 4, 3, 4);
             button4.Name = "button4";
-            button4.Size = new Size(101, 53);
+            button4.Size = new Size(115, 71);
             button4.TabIndex = 6;
             button4.Text = "Calculadora";
             button4.UseVisualStyleBackColor = true;
@@ -157,11 +170,10 @@
             // 
             // cadastros
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            AutoSize = true;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(914, 600);
             Controls.Add(button4);
             Controls.Add(button3);
             Controls.Add(button2);
@@ -170,7 +182,7 @@
             Controls.Add(label1);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
-            Margin = new Padding(2);
+            Margin = new Padding(2, 3, 2, 3);
             Name = "cadastros";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "cadastros";
