@@ -42,6 +42,8 @@
             button2 = new Button();
             button3 = new Button();
             button4 = new Button();
+            comboBox1 = new ComboBox();
+            button5 = new Button();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -116,9 +118,12 @@
             dataGridView1.Location = new Point(19, 108);
             dataGridView1.Margin = new Padding(3, 4, 3, 4);
             dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
+            dataGridView1.RightToLeft = RightToLeft.No;
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(739, 451);
             dataGridView1.TabIndex = 2;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // button1
             // 
@@ -168,12 +173,36 @@
             button4.UseVisualStyleBackColor = true;
             button4.Click += button4_Click;
             // 
+            // comboBox1
+            // 
+            comboBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(299, 52);
+            comboBox1.Margin = new Padding(2, 3, 2, 3);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(352, 28);
+            comboBox1.TabIndex = 7;
+            // 
+            // button5
+            // 
+            button5.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            button5.Location = new Point(664, 52);
+            button5.Margin = new Padding(3, 4, 3, 4);
+            button5.Name = "button5";
+            button5.Size = new Size(94, 28);
+            button5.TabIndex = 8;
+            button5.Text = "Limpar";
+            button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
+            // 
             // cadastros
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(914, 600);
+            Controls.Add(button5);
+            Controls.Add(comboBox1);
             Controls.Add(button4);
             Controls.Add(button3);
             Controls.Add(button2);
@@ -187,6 +216,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "cadastros";
             WindowState = FormWindowState.Maximized;
+            Load += cadastros_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
@@ -209,5 +239,7 @@
         private Button button2;
         private Button button3;
         private Button button4;
+        private ComboBox comboBox1;
+        private Button button5;
     }
 }
