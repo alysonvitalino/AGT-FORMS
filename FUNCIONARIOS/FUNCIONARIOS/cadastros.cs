@@ -18,6 +18,24 @@ namespace FUNCIONARIOS
         {
             InitializeComponent();
             CarregarDados();
+            dataGridView1.Columns[0].HeaderText = "Código_da_Unidade";
+            dataGridView1.Columns[1].HeaderText = "Municipio";
+            dataGridView1.Columns[2].HeaderText = "CNPJ";
+            dataGridView1.Columns[3].HeaderText = "Sistema";
+            dataGridView1.Columns[4].HeaderText = "Login";
+            dataGridView1.Columns[5].HeaderText = "Senha";
+            dataGridView1.Columns[6].HeaderText = "Dia_Do_Vencimento";
+            dataGridView1.Columns[7].HeaderText = "Observação";
+            dataGridView1.Columns[8].HeaderText = "Site";
+            dataGridView1.Columns[0].ReadOnly = true;
+            dataGridView1.Columns[1].ReadOnly = true;
+            dataGridView1.Columns[2].ReadOnly = true;
+            dataGridView1.Columns[3].ReadOnly = true;
+            dataGridView1.Columns[4].ReadOnly = true;
+            dataGridView1.Columns[5].ReadOnly = true;
+            dataGridView1.Columns[6].ReadOnly = true;
+            dataGridView1.Columns[7].ReadOnly = true;
+            dataGridView1.Columns[8].ReadOnly = true;
 
         }
         private void cadastros_Load(object sender, EventArgs e)
@@ -141,24 +159,7 @@ namespace FUNCIONARIOS
                             colunasCriadas = true;
                         }
 
-                        dataGridView1.Columns[0].HeaderText = "Código_da_Unidade";
-                        dataGridView1.Columns[1].HeaderText = "Municipio";
-                        dataGridView1.Columns[2].HeaderText = "CNPJ";
-                        dataGridView1.Columns[3].HeaderText = "Sistema";
-                        dataGridView1.Columns[4].HeaderText = "Login";  
-                        dataGridView1.Columns[5].HeaderText = "Senha";
-                        dataGridView1.Columns[6].HeaderText = "Dia_Do_Vencimento";
-                        dataGridView1.Columns[7].HeaderText = "Observação";
-                        dataGridView1.Columns[8].HeaderText = "Site";
-                        dataGridView1.Columns[0].ReadOnly = true; 
-                        dataGridView1.Columns[1].ReadOnly = true; 
-                        dataGridView1.Columns[2].ReadOnly = true;
-                        dataGridView1.Columns[3].ReadOnly = true; 
-                        dataGridView1.Columns[4].ReadOnly = true; 
-                        dataGridView1.Columns[5].ReadOnly = true; 
-                        dataGridView1.Columns[6].ReadOnly = true; 
-                        dataGridView1.Columns[7].ReadOnly = true; 
-                        dataGridView1.Columns[8].ReadOnly = true;
+                        
 
                         dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                     }
@@ -268,8 +269,8 @@ namespace FUNCIONARIOS
         }
         private void button5_Click(object sender, EventArgs e)
         {
-            comboBox1.SelectedIndex = -1; // Limpa a seleção do ComboBox
-            CarregarDados();  // Recarrega os dados e as colunas
+            comboBox1.SelectedIndex = -1; 
+            CarregarDados();  
         }
     }
 }
