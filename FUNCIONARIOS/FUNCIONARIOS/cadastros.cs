@@ -30,7 +30,7 @@ namespace FUNCIONARIOS
         {
             string conexaoString = "server=localhost; userid=root; password=''; database=agt";
             string query = "SELECT unidade_cadastro, municipio_cadastro, cnpj_cadastro, sistema_cadastro, site_cadastro, " +
-                           "login_cadastro, senha_cadastro, vencimento_cadastro, obervacao_cadastro " +
+                           "login_cadastro, senha_cadastro, vencimento_cadastro, observacao_cadastro " +
                            "FROM cadastro WHERE unidade_cadastro = @unidade AND municipio_cadastro = @municipio AND cnpj_cadastro = @cnpj";
 
             try
@@ -106,11 +106,9 @@ namespace FUNCIONARIOS
         }
         private void CarregarDados()
         {
-
             string conexaoString = "server=localhost; userid=root; password=''; database=agt";
             string query = "SELECT unidade_cadastro, municipio_cadastro, cnpj_cadastro, sistema_cadastro, site_cadastro, " +
-                           "login_cadastro, senha_cadastro, vencimento_cadastro, obervacao_cadastro FROM cadastro";
-           
+                           "login_cadastro, senha_cadastro, vencimento_cadastro, observacao_cadastro FROM cadastro";
 
             try
             {
@@ -126,13 +124,13 @@ namespace FUNCIONARIOS
                         // Verificar se as colunas já foram criadas
                         if (!colunasCriadas)
                         {
-                            // Verifica se a coluna "site_cadastro" existe e remove se necessário
-                            if (dataGridView1.Columns.Contains("Site"))
+                            // Remover a coluna 'site_cadastro' original se existir
+                            if (dataGridView1.Columns.Contains("site_cadastro"))
                             {
-                                dataGridView1.Columns.Remove("Site");
+                                dataGridView1.Columns.Remove("site_cadastro");
                             }
 
-                            // Criar e adicionar a nova coluna do tipo DataGridViewLinkColumn
+                            // Criar e adicionar a nova coluna de link
                             DataGridViewLinkColumn linkColumn = new DataGridViewLinkColumn();
                             linkColumn.Name = "site_cadastro";  // Nome da coluna de link
                             linkColumn.HeaderText = "Site";     // Título da coluna
@@ -143,16 +141,24 @@ namespace FUNCIONARIOS
                             colunasCriadas = true;
                         }
 
-                        // Definir os nomes das outras colunas manualmente
-                        dataGridView1.Columns[0].Name = "Unidade";
-                        dataGridView1.Columns[1].Name = "Municipio";
-                        dataGridView1.Columns[2].Name = "CNPJ";
-                        dataGridView1.Columns[3].Name = "Sistema";
-                        dataGridView1.Columns[4].Name = "Site";  // Coluna que tem o link
-                        dataGridView1.Columns[5].Name = "Login";
-                        dataGridView1.Columns[6].Name = "Senha";
-                        dataGridView1.Columns[7].Name = "Vencimento";
-                        dataGridView1.Columns[8].Name = "Observação";
+                        dataGridView1.Columns[0].HeaderText = "Código_da_Unidade";
+                        dataGridView1.Columns[1].HeaderText = "Municipio";
+                        dataGridView1.Columns[2].HeaderText = "CNPJ";
+                        dataGridView1.Columns[3].HeaderText = "Sistema";
+                        dataGridView1.Columns[4].HeaderText = "Login";  
+                        dataGridView1.Columns[5].HeaderText = "Senha";
+                        dataGridView1.Columns[6].HeaderText = "Dia_Do_Vencimento";
+                        dataGridView1.Columns[7].HeaderText = "Observação";
+                        dataGridView1.Columns[8].HeaderText = "Site";
+                        dataGridView1.Columns[0].ReadOnly = true; 
+                        dataGridView1.Columns[1].ReadOnly = true; 
+                        dataGridView1.Columns[2].ReadOnly = true;
+                        dataGridView1.Columns[3].ReadOnly = true; 
+                        dataGridView1.Columns[4].ReadOnly = true; 
+                        dataGridView1.Columns[5].ReadOnly = true; 
+                        dataGridView1.Columns[6].ReadOnly = true; 
+                        dataGridView1.Columns[7].ReadOnly = true; 
+                        dataGridView1.Columns[8].ReadOnly = true;
 
                         dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                     }
