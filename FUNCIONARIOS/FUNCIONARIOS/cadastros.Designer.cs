@@ -118,7 +118,6 @@
             dataGridView1.Location = new Point(19, 108);
             dataGridView1.Margin = new Padding(3, 4, 3, 4);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
             dataGridView1.RightToLeft = RightToLeft.No;
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(739, 451);

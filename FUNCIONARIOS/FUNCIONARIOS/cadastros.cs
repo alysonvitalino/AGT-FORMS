@@ -13,6 +13,7 @@ namespace FUNCIONARIOS
 {
     public partial class cadastros : Form
     {
+        private bool colunasCriadas = false; // Variável de controle para as colunas
         public cadastros()
         {
             InitializeComponent();
@@ -24,23 +25,7 @@ namespace FUNCIONARIOS
             comboBox1.SelectedIndexChanged += new EventHandler(comboBox1_SelectedIndexChanged);
             CarregarComboBox();
         }
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            // Verifica se há um item selecionado
-            if (comboBox1.SelectedIndex != -1)
-            {
-                string selectedItem = comboBox1.SelectedItem.ToString();
-
-                // Quebra a string selecionada para pegar os valores individuais de Unidade, Municipio e CNPJ
-                string[] partes = selectedItem.Split(new string[] { " - " }, StringSplitOptions.None);
-                string unidadeSelecionada = partes[0];
-                string municipioSelecionado = partes[1];
-                string cnpjSelecionado = partes[2];
-
-                // Filtra os dados com base na seleção
-                CarregarDadosFiltrados(unidadeSelecionada, municipioSelecionado, cnpjSelecionado);
-            }
-        }
+        
         private void CarregarDadosFiltrados(string unidade, string municipio, string cnpj)
         {
             string conexaoString = "server=localhost; userid=root; password=''; database=agt";
@@ -69,6 +54,23 @@ namespace FUNCIONARIOS
             catch (Exception ex)
             {
                 MessageBox.Show("Erro ao carregar dados filtrados: " + ex.Message);
+            }
+        }
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Verifica se há um item selecionado
+            if (comboBox1.SelectedIndex != -1)
+            {
+                string selectedItem = comboBox1.SelectedItem.ToString();
+
+                // Quebra a string selecionada para pegar os valores individuais de Unidade, Municipio e CNPJ
+                string[] partes = selectedItem.Split(new string[] { " - " }, StringSplitOptions.None);
+                string unidadeSelecionada = partes[0];
+                string municipioSelecionado = partes[1];
+                string cnpjSelecionado = partes[2];
+
+                // Filtra os dados com base na seleção
+                CarregarDadosFiltrados(unidadeSelecionada, municipioSelecionado, cnpjSelecionado);
             }
         }
         private void CarregarComboBox()
@@ -104,9 +106,11 @@ namespace FUNCIONARIOS
         }
         private void CarregarDados()
         {
+
             string conexaoString = "server=localhost; userid=root; password=''; database=agt";
             string query = "SELECT unidade_cadastro, municipio_cadastro, cnpj_cadastro, sistema_cadastro, site_cadastro, " +
                            "login_cadastro, senha_cadastro, vencimento_cadastro, obervacao_cadastro FROM cadastro";
+           
 
             try
             {
@@ -118,20 +122,41 @@ namespace FUNCIONARIOS
                         DataTable dt = new DataTable();
                         adapter.Fill(dt);
                         dataGridView1.DataSource = dt;
+
+                        // Verificar se as colunas já foram criadas
+                        if (!colunasCriadas)
+                        {
+                            // Verifica se a coluna "site_cadastro" existe e remove se necessário
+                            if (dataGridView1.Columns.Contains("Site"))
+                            {
+                                dataGridView1.Columns.Remove("Site");
+                            }
+
+                            // Criar e adicionar a nova coluna do tipo DataGridViewLinkColumn
+                            DataGridViewLinkColumn linkColumn = new DataGridViewLinkColumn();
+                            linkColumn.Name = "site_cadastro";  // Nome da coluna de link
+                            linkColumn.HeaderText = "Site";     // Título da coluna
+                            linkColumn.DataPropertyName = "site_cadastro";  // Dados da célula
+                            dataGridView1.Columns.Add(linkColumn);
+
+                            // Atualizar a variável de controle
+                            colunasCriadas = true;
+                        }
+
+                        // Definir os nomes das outras colunas manualmente
+                        dataGridView1.Columns[0].Name = "Unidade";
+                        dataGridView1.Columns[1].Name = "Municipio";
+                        dataGridView1.Columns[2].Name = "CNPJ";
+                        dataGridView1.Columns[3].Name = "Sistema";
+                        dataGridView1.Columns[4].Name = "Site";  // Coluna que tem o link
+                        dataGridView1.Columns[5].Name = "Login";
+                        dataGridView1.Columns[6].Name = "Senha";
+                        dataGridView1.Columns[7].Name = "Vencimento";
+                        dataGridView1.Columns[8].Name = "Observação";
+
+                        dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                     }
                 }
-
-                dataGridView1.Columns[0].Name = "Unidade";
-                dataGridView1.Columns[1].Name = "Municipio";
-                dataGridView1.Columns[2].Name = "CNPJ";
-                dataGridView1.Columns[3].Name = "Sistema";
-                dataGridView1.Columns[4].Name = "Site";
-                dataGridView1.Columns[5].Name = "Login";
-                dataGridView1.Columns[6].Name = "Senha";
-                dataGridView1.Columns[7].Name = "Vencimento";
-                dataGridView1.Columns[8].Name = "Observação";
-
-                dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             }
             catch (Exception ex)
             {
@@ -139,6 +164,39 @@ namespace FUNCIONARIOS
             }
         }
 
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Verificar se clicou na coluna 'site_cadastro' (a coluna de links)
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                if (dataGridView1.Columns[e.ColumnIndex].Name == "site_cadastro")
+                {
+                    string url = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
+
+                    // Verifica se o URL é válido (começa com http:// ou https://)
+                    if (Uri.IsWellFormedUriString(url, UriKind.Absolute))
+                    {
+                        try
+                        {
+                            // Usar Process.Start para abrir o link no navegador padrão
+                            System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
+                            {
+                                FileName = url,
+                                UseShellExecute = true // Garante que o navegador padrão seja utilizado
+                            });
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Erro ao tentar abrir o site: " + ex.Message);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("URL inválido: " + url);
+                    }
+                }
+            }
+        }   
         private void button1_Click(object sender, EventArgs e)
         {
             Form1 produto = new Form1();
@@ -146,7 +204,6 @@ namespace FUNCIONARIOS
             produto.Show();
             Hide();
         }
-
         private void button4_Click(object sender, EventArgs e)
         {
             calculadora produto = new calculadora();
@@ -154,7 +211,6 @@ namespace FUNCIONARIOS
             produto.Show();
             Hide();
         }
-
         private void button3_Click(object sender, EventArgs e)
         {
             Aliquotas produto = new Aliquotas();
@@ -162,7 +218,6 @@ namespace FUNCIONARIOS
             produto.Show();
             Hide();
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
             logins produto = new logins();
@@ -170,7 +225,6 @@ namespace FUNCIONARIOS
             produto.Show();
             Hide();
         }
-
         private void páginaInicialToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form1 produto = new Form1();
@@ -178,7 +232,6 @@ namespace FUNCIONARIOS
             produto.Show();
             Hide();
         }
-
         private void calculadoraToolStripMenuItem_Click(object sender, EventArgs e)
         {
             calculadora produto = new calculadora();
@@ -186,7 +239,6 @@ namespace FUNCIONARIOS
             produto.Show();
             Hide();
         }
-
         private void cadastrosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             cadastros produto = new cadastros();
@@ -194,7 +246,6 @@ namespace FUNCIONARIOS
             produto.Show();
             Hide();
         }
-
         private void leisEAlíquotasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Aliquotas produto = new Aliquotas();
@@ -202,7 +253,6 @@ namespace FUNCIONARIOS
             produto.Show();
             Hide();
         }
-
         private void loginsESenhasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             logins produto = new logins();
@@ -210,17 +260,10 @@ namespace FUNCIONARIOS
             produto.Show();
             Hide();
         }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-
-        }
-
         private void button5_Click(object sender, EventArgs e)
         {
-            comboBox1.SelectedIndex = -1; //LIMPA A SELEÇÃO DO COMBOBOX1
-            CarregarDados();
+            comboBox1.SelectedIndex = -1; // Limpa a seleção do ComboBox
+            CarregarDados();  // Recarrega os dados e as colunas
         }
     }
 }
