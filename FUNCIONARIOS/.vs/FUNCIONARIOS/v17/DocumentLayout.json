@@ -3,11 +3,15 @@
   "WorkspaceRootPath": "C:\\Users\\Aluno\\Desktop\\AGT-FORMS\\FUNCIONARIOS\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{D017C148-6845-4DAE-8BAD-1E1DE6B426FB}|FUNCIONARIOS\\FUNCIONARIOS.csproj|c:\\users\\aluno\\desktop\\agt-forms\\funcionarios\\funcionarios\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D017C148-6845-4DAE-8BAD-1E1DE6B426FB}|FUNCIONARIOS\\FUNCIONARIOS.csproj|solutionrelative:funcionarios\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{D017C148-6845-4DAE-8BAD-1E1DE6B426FB}|FUNCIONARIOS\\FUNCIONARIOS.csproj|c:\\users\\aluno\\desktop\\agt-forms\\funcionarios\\funcionarios\\calculadora.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D017C148-6845-4DAE-8BAD-1E1DE6B426FB}|FUNCIONARIOS\\FUNCIONARIOS.csproj|solutionrelative:funcionarios\\calculadora.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D017C148-6845-4DAE-8BAD-1E1DE6B426FB}|FUNCIONARIOS\\FUNCIONARIOS.csproj|c:\\users\\aluno\\desktop\\agt-forms\\funcionarios\\funcionarios\\calculadora.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{D017C148-6845-4DAE-8BAD-1E1DE6B426FB}|FUNCIONARIOS\\FUNCIONARIOS.csproj|C:\\Users\\Aluno\\Desktop\\AGT-FORMS\\FUNCIONARIOS\\funcionarios\\calculadora.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{D017C148-6845-4DAE-8BAD-1E1DE6B426FB}|FUNCIONARIOS\\FUNCIONARIOS.csproj|solutionrelative:funcionarios\\calculadora.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
@@ -23,27 +27,39 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Form2.cs",
+              "DocumentMoniker": "C:\\Users\\Aluno\\Desktop\\AGT-FORMS\\FUNCIONARIOS\\FUNCIONARIOS\\Form2.cs",
+              "RelativeDocumentMoniker": "FUNCIONARIOS\\Form2.cs",
+              "ToolTip": "C:\\Users\\Aluno\\Desktop\\AGT-FORMS\\FUNCIONARIOS\\FUNCIONARIOS\\Form2.cs",
+              "RelativeToolTip": "FUNCIONARIOS\\Form2.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAA7wB0AAABFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T22:44:09.349Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "calculadora.cs",
               "DocumentMoniker": "C:\\Users\\Aluno\\Desktop\\AGT-FORMS\\FUNCIONARIOS\\FUNCIONARIOS\\calculadora.cs",
               "RelativeDocumentMoniker": "FUNCIONARIOS\\calculadora.cs",
-              "ToolTip": "C:\\Users\\Aluno\\Desktop\\AGT-FORMS\\FUNCIONARIOS\\FUNCIONARIOS\\calculadora.cs*",
-              "RelativeToolTip": "FUNCIONARIOS\\calculadora.cs*",
-              "ViewState": "AQIAAHcAAAAAAAAAAAAUwIIAAAANAAAA",
+              "ToolTip": "C:\\Users\\Aluno\\Desktop\\AGT-FORMS\\FUNCIONARIOS\\FUNCIONARIOS\\calculadora.cs",
+              "RelativeToolTip": "FUNCIONARIOS\\calculadora.cs",
+              "ViewState": "AQIAAHQAAAAAAAAAAAAkwIIAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-03T22:14:54.558Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "calculadora.cs [Projeto]",
               "DocumentMoniker": "C:\\Users\\Aluno\\Desktop\\AGT-FORMS\\FUNCIONARIOS\\FUNCIONARIOS\\calculadora.cs",
               "RelativeDocumentMoniker": "FUNCIONARIOS\\calculadora.cs",
               "ToolTip": "C:\\Users\\Aluno\\Desktop\\AGT-FORMS\\FUNCIONARIOS\\FUNCIONARIOS\\calculadora.cs [Projeto]*",
               "RelativeToolTip": "FUNCIONARIOS\\calculadora.cs [Projeto]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-03T22:14:44.628Z",
-              "EditorCaption": " [Projeto]"
+              "WhenOpened": "2025-04-03T22:14:44.628Z"
             }
           ]
         }

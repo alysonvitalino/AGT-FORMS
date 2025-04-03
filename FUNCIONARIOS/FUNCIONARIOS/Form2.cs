@@ -16,13 +16,19 @@ namespace FUNCIONARIOS
     {
         public Aliquotas()
         {
-            InitializeComponent();
-            CarregarDados();
-          //  CarregarComboBox();
-            dataGridView1.Columns[0].HeaderText = "Munícipio";
-            dataGridView1.Columns[1].HeaderText = "Código do Serviço";
-            dataGridView1.Columns[2].HeaderText = "Descrição do Serviço";
-            dataGridView1.Columns[3].HeaderText = "ISS";
+            try
+            {
+                InitializeComponent();
+                CarregarDados();
+                dataGridView1.Columns[0].HeaderText = "Munícipio";
+                dataGridView1.Columns[1].HeaderText = "Código do Serviço";
+                dataGridView1.Columns[2].HeaderText = "Descrição do Serviço";
+                dataGridView1.Columns[3].HeaderText = "ISS";
+            }
+            catch (Exception ex) 
+            {
+                MessageBox.Show("Conexão com o banco de dados falhou.");
+            }
         }
 
         private void Aliquotas_Load(object sender, EventArgs e)
