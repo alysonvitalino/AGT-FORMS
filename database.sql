@@ -15,7 +15,7 @@ id_aliquota INT NOT NULL PRIMARY KEY,
 municipio VARCHAR (255),
 cod_servico DECIMAL (10,2),
 desc_servico TEXT,
-aliquota_iss DECIMAL (10,1)
+aliquota_iss VARCHAR(10)
 );
 
 CREATE TABLE unidades (
@@ -42,7 +42,9 @@ vencimento_cadastro INT NOT NULL,
 observacao_cadastro VARCHAR (2048)
 );
 
-INSERT INTO aliquotas (id_municipio, municipio, cod_servico, desc_servico, aliquota_iss) VALUES
+SELECT municipio, cod_servico, desc_servico, aliquota_iss FROM aliquotas;
+
+INSERT INTO aliquotas (id_aliquota, municipio, cod_servico, desc_servico, aliquota_iss) VALUES
 (1, 'Curitiba','3.05', 'Cessão de andaimes, palcos, coberturas e outras estruturas de uso temporário. ', '5%'),
 (2, 'Curitiba','7.02', 'Execução, por administração, empreitada ou subempreitada, de obras de construção civil, hidráulica ou elétrica e de outras obras semelhantes, inclusive (exceto - sondagem, perfuração de poços, escavação, drenagem e irrigação, terraplanagem, pavimentação, ', '5%'),
 (3, 'Curitiba','7.04', 'Demolição. ', '5%'),
@@ -57,11 +59,13 @@ INSERT INTO aliquotas (id_municipio, municipio, cod_servico, desc_servico, aliqu
 (12, 'Curitiba','7.19', 'Acompanhamento e fiscalização da execução de obras de engenharia, arquitetura e urbanismo', '5%'),
 (13, 'Curitiba','11.0', 'Vigilância, segurança ou monitoramento de bens e pessoas', '2,50%'),
 (14, 'Curitiba','16.02', 'Outros serviços de transporte de natureza municipal. (Incluído pela Lei Complementar nº 157, de 2016)', '5%'),
-(15, 'Curitiba','17.0', 'Fornecimento de mão-de-obra, mesmo em caráter temporário, inclusive de empregados ou trabalhadores, avulsos ou temporários, contratados pelo prestador de serviço.', '5%'),
-(16, 'Curitiba','17.1', 'Planejamento, organização e administração de feiras, exposições, congressos e congêneres.', '5%');
+(15, 'Curitiba','17.05', 'Fornecimento de mão-de-obra, mesmo em caráter temporário, inclusive de empregados ou trabalhadores, avulsos ou temporários, contratados pelo prestador de serviço.', '5%'),
+(16, 'Curitiba','17.10', 'Planejamento, organização e administração de feiras, exposições, congressos e congêneres.', '5%'),
+(17, 'Pinhais','3.05', 'Cessão de andaimes, palcos, coberturas e outras estruturas de uso temporário.', '5%');
+
 
 INSERT INTO logins(login, senha)  VALUES("Alyson", "123456");
-select * from logins;
+
 select login, senha FROM logins WHERE login = "alyson" AND senha = "123456";
 INSERT INTO cadastro (
     id_cadastro, unidade_cadastro, municipio_cadastro, cnpj_cadastro, 
