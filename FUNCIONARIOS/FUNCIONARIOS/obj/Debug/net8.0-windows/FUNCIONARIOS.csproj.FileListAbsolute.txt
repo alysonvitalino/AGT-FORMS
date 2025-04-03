@@ -151,4 +151,3 @@ C:\Users\aluno\Desktop\AGT-FORMS\FUNCIONARIOS\FUNCIONARIOS\obj\Debug\net8.0-wind
 C:\Users\aluno\Desktop\AGT-FORMS\FUNCIONARIOS\FUNCIONARIOS\obj\Debug\net8.0-windows\FUNCIONARIOS.genruntimeconfig.cache
 C:\Users\aluno\Desktop\AGT-FORMS\FUNCIONARIOS\FUNCIONARIOS\obj\Debug\net8.0-windows\ref\FUNCIONARIOS.dll
 C:\Users\Aluno\Desktop\AGT-FORMS\FUNCIONARIOS\FUNCIONARIOS\obj\Debug\net8.0-windows\FUNCIONA.EE182A09.Up2Date
-C:\Users\aluno\Desktop\AGT-FORMS\FUNCIONARIOS\FUNCIONARIOS\bin\Debug\net8.0-windows\System.Diagnostics.DiagnosticSource.dll
