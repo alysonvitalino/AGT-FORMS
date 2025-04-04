@@ -52,8 +52,6 @@
             label5 = new Label();
             label6 = new Label();
             comboBox3 = new ComboBox();
-            panel1 = new Panel();
-            label1 = new Label();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -114,7 +112,8 @@
             // button1
             // 
             button1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            button1.BackColor = Color.CornflowerBlue;
+            button1.BackColor = Color.Lavender;
+            button1.BackgroundImageLayout = ImageLayout.Center;
             button1.Cursor = Cursors.Hand;
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -136,6 +135,7 @@
             // 
             button2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             button2.BackColor = Color.CornflowerBlue;
+            button2.BackgroundImageLayout = ImageLayout.Center;
             button2.Cursor = Cursors.Hand;
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -156,6 +156,7 @@
             // 
             button3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             button3.BackColor = Color.CornflowerBlue;
+            button3.BackgroundImageLayout = ImageLayout.Center;
             button3.Cursor = Cursors.Hand;
             button3.FlatStyle = FlatStyle.Flat;
             button3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -175,7 +176,8 @@
             // button4
             // 
             button4.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            button4.BackColor = Color.CornflowerBlue;
+            button4.BackColor = Color.Gainsboro;
+            button4.BackgroundImageLayout = ImageLayout.Center;
             button4.Cursor = Cursors.Hand;
             button4.FlatStyle = FlatStyle.Flat;
             button4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -268,7 +270,7 @@
             // 
             // button5
             // 
-            button5.BackColor = Color.CornflowerBlue;
+            button5.BackColor = Color.White;
             button5.BackgroundImageLayout = ImageLayout.Center;
             button5.Cursor = Cursors.Hand;
             button5.FlatStyle = FlatStyle.Flat;
@@ -290,7 +292,7 @@
             // dataGridView1
             // 
             dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dataGridView1.BackgroundColor = Color.CornflowerBlue;
+            dataGridView1.BackgroundColor = Color.Gainsboro;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(212, 178);
             dataGridView1.Margin = new Padding(4, 5, 4, 5);
@@ -350,39 +352,11 @@
             comboBox3.Size = new Size(150, 33);
             comboBox3.TabIndex = 17;
             // 
-            // panel1
-            // 
-            panel1.Anchor = AnchorStyles.Right;
-            panel1.AutoSize = true;
-            panel1.BackColor = Color.Transparent;
-            panel1.ForeColor = Color.Transparent;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1142, 784);
-            panel1.TabIndex = 18;
-            panel1.Paint += panel1_Paint;
-            // 
-            // label1
-            // 
-            label1.BackColor = Color.Transparent;
-            label1.BorderStyle = BorderStyle.FixedSingle;
-            label1.Dock = DockStyle.Fill;
-            label1.Font = new Font("Segoe UI", 16F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.Navy;
-            label1.Location = new Point(0, 33);
-            label1.Margin = new Padding(4, 0, 4, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(1142, 751);
-            label1.TabIndex = 5;
-            label1.Text = "CALCULADORA";
-            label1.TextAlign = ContentAlignment.TopCenter;
-            label1.Click += label1_Click;
-            // 
             // calculadora
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackColor = Color.White;
             ClientSize = new Size(1142, 784);
             Controls.Add(button4);
             Controls.Add(button3);
@@ -400,9 +374,7 @@
             Controls.Add(label3);
             Controls.Add(textBox1);
             Controls.Add(label2);
-            Controls.Add(label1);
             Controls.Add(menuStrip1);
-            Controls.Add(panel1);
             MainMenuStrip = menuStrip1;
             Margin = new Padding(2);
             Name = "calculadora";
@@ -443,7 +415,5 @@
         private Label label5;
         private Label label6;
         private ComboBox comboBox3;
-        private Panel panel1;
-        private Label label1;
     }
 }
