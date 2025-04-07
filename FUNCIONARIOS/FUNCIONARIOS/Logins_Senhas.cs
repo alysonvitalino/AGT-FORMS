@@ -206,7 +206,7 @@ namespace FUNCIONARIOS
         }   
         private void button1_Click(object sender, EventArgs e)
         {
-            Form1 produto = new Form1();
+            HomePage produto = new HomePage();
             produto.StartPosition = FormStartPosition.CenterScreen;
             produto.Show();
             Hide();
@@ -234,7 +234,7 @@ namespace FUNCIONARIOS
         }
         private void páginaInicialToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form1 produto = new Form1();
+            HomePage produto = new HomePage();
             produto.StartPosition = FormStartPosition.CenterScreen;
             produto.Show();
             Hide();

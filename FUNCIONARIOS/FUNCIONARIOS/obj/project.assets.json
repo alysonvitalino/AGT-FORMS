@@ -1614,9 +1614,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\user\\Desktop\\AGT-FORMS\\FUNCIONARIOS\\FUNCIONARIOS\\AGT_FORMS.csproj",
-      "projectName": "AGT_FORMS",
-      "projectPath": "C:\\Users\\user\\Desktop\\AGT-FORMS\\FUNCIONARIOS\\FUNCIONARIOS\\AGT_FORMS.csproj",
+      "projectUniqueName": "C:\\Users\\user\\Desktop\\AGT-FORMS\\FUNCIONARIOS\\FUNCIONARIOS\\FUNCIONARIOS.csproj",
+      "projectName": "FUNCIONARIOS",
+      "projectPath": "C:\\Users\\user\\Desktop\\AGT-FORMS\\FUNCIONARIOS\\FUNCIONARIOS\\FUNCIONARIOS.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\user\\Desktop\\AGT-FORMS\\FUNCIONARIOS\\FUNCIONARIOS\\obj\\",
       "projectStyle": "PackageReference",

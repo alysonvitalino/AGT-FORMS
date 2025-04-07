@@ -3,10 +3,10 @@ using System.Data;
 
 namespace FUNCIONARIOS
 {
-    public partial class Form1 : Form
+    public partial class HomePage : Form
     {
         MySqlConnection conexao;
-        public Form1()
+        public HomePage()
         {
             InitializeComponent();
         }
