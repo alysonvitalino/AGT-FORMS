@@ -50,7 +50,7 @@ namespace FUNCIONARIOS
 
                         BoxSenha.Clear();
 
-                        Form1 produto = new Form1();
+                        HomePage produto = new HomePage();
                         produto.StartPosition = FormStartPosition.CenterScreen;
                         produto.Show();
 
