@@ -11,10 +11,10 @@ using System.Windows.Forms;
 
 namespace FUNCIONARIOS
 {
-    public partial class cadastros : Form
+    public partial class Logins_Senhas : Form
     {
         private bool colunasCriadas = false; // Variável de controle para as colunas
-        public cadastros()
+        public Logins_Senhas()
         {
             InitializeComponent();
             CarregarDados();
@@ -213,7 +213,7 @@ namespace FUNCIONARIOS
         }
         private void button4_Click(object sender, EventArgs e)
         {
-            calculadora produto = new calculadora();
+            Calculadora produto = new Calculadora();
             produto.StartPosition = FormStartPosition.CenterScreen;
             produto.Show();
             Hide();
@@ -241,14 +241,14 @@ namespace FUNCIONARIOS
         }
         private void calculadoraToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            calculadora produto = new calculadora();
+            Calculadora produto = new Calculadora();
             produto.StartPosition = FormStartPosition.CenterScreen;
             produto.Show();
             Hide();
         }
         private void cadastrosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            cadastros produto = new cadastros();
+            Logins_Senhas produto = new Logins_Senhas();
             produto.StartPosition = FormStartPosition.CenterScreen;
             produto.Show();
             Hide();

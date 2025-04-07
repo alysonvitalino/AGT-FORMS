@@ -1,6 +1,6 @@
 ﻿namespace FUNCIONARIOS
 {
-    partial class login
+    partial class LoginPage
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(login));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginPage));
             button1 = new Button();
             label1 = new Label();
             label2 = new Label();
@@ -41,10 +41,9 @@
             button1.BackColor = Color.Transparent;
             button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
             button1.ForeColor = SystemColors.ButtonFace;
-            button1.Location = new Point(580, 415);
-            button1.Margin = new Padding(4, 5, 4, 5);
+            button1.Location = new Point(406, 249);
             button1.Name = "button1";
-            button1.Size = new Size(108, 39);
+            button1.Size = new Size(76, 23);
             button1.TabIndex = 0;
             button1.Text = "Login";
             button1.UseVisualStyleBackColor = false;
@@ -56,10 +55,9 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI", 9F);
             label1.ForeColor = SystemColors.ButtonFace;
-            label1.Location = new Point(580, 240);
-            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Location = new Point(406, 144);
             label1.Name = "label1";
-            label1.Size = new Size(56, 25);
+            label1.Size = new Size(37, 15);
             label1.TabIndex = 2;
             label1.Text = "Login";
             label1.Click += label1_Click;
@@ -70,46 +68,42 @@
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Segoe UI", 9F);
             label2.ForeColor = SystemColors.ButtonFace;
-            label2.Location = new Point(580, 314);
-            label2.Margin = new Padding(4, 0, 4, 0);
+            label2.Location = new Point(406, 188);
             label2.Name = "label2";
-            label2.Size = new Size(60, 25);
+            label2.Size = new Size(39, 15);
             label2.TabIndex = 3;
             label2.Text = "Senha";
             // 
             // BoxLogin
             // 
             BoxLogin.BackColor = SystemColors.HotTrack;
-            BoxLogin.Location = new Point(580, 270);
-            BoxLogin.Margin = new Padding(4, 5, 4, 5);
+            BoxLogin.Location = new Point(406, 162);
             BoxLogin.Name = "BoxLogin";
-            BoxLogin.Size = new Size(264, 31);
+            BoxLogin.Size = new Size(186, 23);
             BoxLogin.TabIndex = 4;
             BoxLogin.TextChanged += BoxLogin_TextChanged;
             // 
             // BoxSenha
             // 
             BoxSenha.BackColor = SystemColors.HotTrack;
-            BoxSenha.Location = new Point(580, 344);
-            BoxSenha.Margin = new Padding(4, 5, 4, 5);
+            BoxSenha.Location = new Point(406, 206);
             BoxSenha.Name = "BoxSenha";
-            BoxSenha.Size = new Size(264, 31);
+            BoxSenha.Size = new Size(186, 23);
             BoxSenha.TabIndex = 5;
             // 
-            // login
+            // LoginPage
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
-            ClientSize = new Size(1142, 750);
+            ClientSize = new Size(799, 450);
             Controls.Add(BoxSenha);
             Controls.Add(BoxLogin);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(button1);
-            Margin = new Padding(4, 5, 4, 5);
-            Name = "login";
+            Name = "LoginPage";
             StartPosition = FormStartPosition.CenterScreen;
             Load += login_Load;
             ResumeLayout(false);

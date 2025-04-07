@@ -12,10 +12,10 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace FUNCIONARIOS
 {
-    public partial class login : Form
+    public partial class LoginPage : Form
     {
         MySqlConnection conexao;
-        public login()
+        public LoginPage()
         {
             InitializeComponent();
         }
