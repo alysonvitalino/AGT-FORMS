@@ -21,7 +21,7 @@ namespace FUNCIONARIOS
             PreencherComboBox();
 
 
-            dataGridView1.ColumnCount = 14;
+            dataGridView1.ColumnCount = 13;
 
             // Definindo os cabeçalhos das colunas
             dataGridView1.Columns[0].Name = "ValorBase";
