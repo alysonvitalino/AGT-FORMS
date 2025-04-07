@@ -188,11 +188,7 @@ namespace FUNCIONARIOS
                     else if (comboBox3.SelectedItem.ToString() == "1.5")
                         aliquotaIr = 0.015;
                 }
-                else
-                {
-                    MessageBox.Show("Selecione uma alíquota de IR na ComboBox3.");
-                    return;
-                }
+                
 
                 // Calculando os diferentes valores
                 double liqCsr = valorBase * 0.0465; // 4.65%
