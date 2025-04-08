@@ -134,10 +134,7 @@ C:\Users\aluno\Desktop\AGT-FORMS\FUNCIONARIOS\FUNCIONARIOS\bin\Debug\net8.0-wind
 C:\Users\aluno\Desktop\AGT-FORMS\FUNCIONARIOS\FUNCIONARIOS\obj\Debug\net8.0-windows\FUNCIONARIOS.csproj.AssemblyReference.cache
 C:\Users\aluno\Desktop\AGT-FORMS\FUNCIONARIOS\FUNCIONARIOS\obj\Debug\net8.0-windows\FUNCIONARIOS.cadastros.resources
 C:\Users\aluno\Desktop\AGT-FORMS\FUNCIONARIOS\FUNCIONARIOS\obj\Debug\net8.0-windows\FUNCIONARIOS.calculadora.resources
-C:\Users\aluno\Desktop\AGT-FORMS\FUNCIONARIOS\FUNCIONARIOS\obj\Debug\net8.0-windows\FUNCIONARIOS.Form1.resources
 C:\Users\aluno\Desktop\AGT-FORMS\FUNCIONARIOS\FUNCIONARIOS\obj\Debug\net8.0-windows\FUNCIONARIOS.Aliquotas.resources
-C:\Users\aluno\Desktop\AGT-FORMS\FUNCIONARIOS\FUNCIONARIOS\obj\Debug\net8.0-windows\FUNCIONARIOS.login.resources
-C:\Users\aluno\Desktop\AGT-FORMS\FUNCIONARIOS\FUNCIONARIOS\obj\Debug\net8.0-windows\FUNCIONARIOS.logins.resources
 C:\Users\aluno\Desktop\AGT-FORMS\FUNCIONARIOS\FUNCIONARIOS\obj\Debug\net8.0-windows\FUNCIONARIOS.Properties.Resources.resources
 C:\Users\aluno\Desktop\AGT-FORMS\FUNCIONARIOS\FUNCIONARIOS\obj\Debug\net8.0-windows\FUNCIONARIOS.csproj.GenerateResource.cache
 C:\Users\aluno\Desktop\AGT-FORMS\FUNCIONARIOS\FUNCIONARIOS\obj\Debug\net8.0-windows\FUNCIONARIOS.GeneratedMSBuildEditorConfig.editorconfig
@@ -192,3 +189,6 @@ C:\Users\user\Desktop\AGT-FORMS\FUNCIONARIOS\FUNCIONARIOS\obj\Debug\net8.0-windo
 C:\Users\user\Desktop\AGT-FORMS\FUNCIONARIOS\FUNCIONARIOS\obj\Debug\net8.0-windows\FUNCIONARIOS.pdb
 C:\Users\user\Desktop\AGT-FORMS\FUNCIONARIOS\FUNCIONARIOS\obj\Debug\net8.0-windows\FUNCIONARIOS.genruntimeconfig.cache
 C:\Users\user\Desktop\AGT-FORMS\FUNCIONARIOS\FUNCIONARIOS\obj\Debug\net8.0-windows\ref\FUNCIONARIOS.dll
+C:\Users\Aluno\Desktop\AGT-FORMS\FUNCIONARIOS\FUNCIONARIOS\obj\Debug\net8.0-windows\FUNCIONARIOS.HomePage.resources
+C:\Users\Aluno\Desktop\AGT-FORMS\FUNCIONARIOS\FUNCIONARIOS\obj\Debug\net8.0-windows\FUNCIONARIOS.LoginPage.resources
+C:\Users\Aluno\Desktop\AGT-FORMS\FUNCIONARIOS\FUNCIONARIOS\obj\Debug\net8.0-windows\FUNCIONARIOS.Logins_Senhas.resources

@@ -87,7 +87,7 @@ namespace FUNCIONARIOS
 
         private void loginsESenhasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            logins produto = new logins();
+            Logins_Senhas produto = new Logins_Senhas();
             produto.StartPosition = FormStartPosition.CenterScreen;
             produto.Show();
             Hide();
@@ -119,7 +119,7 @@ namespace FUNCIONARIOS
 
         private void button4_Click(object sender, EventArgs e)
         {
-            logins produto = new logins();
+            Logins_Senhas produto = new Logins_Senhas();
             produto.StartPosition = FormStartPosition.CenterScreen;
             produto.Show();
             Hide();

@@ -48,7 +48,7 @@ namespace FUNCIONARIOS
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Calculadora produto = new Calculadora();
+            calculadora produto = new calculadora();
             produto.StartPosition = FormStartPosition.CenterScreen;
             produto.Show();
             Hide();
@@ -56,7 +56,7 @@ namespace FUNCIONARIOS
 
         private void calculadoraToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Calculadora produto = new Calculadora();
+            calculadora produto = new calculadora();
             produto.StartPosition = FormStartPosition.CenterScreen;
             produto.Show();
             Hide();
