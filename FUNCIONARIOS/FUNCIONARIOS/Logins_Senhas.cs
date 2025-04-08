@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FUNCIONARIOS
+namespace AGT_FORMS
 {
     public partial class Logins_Senhas : Form
     {

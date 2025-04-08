@@ -1,4 +1,4 @@
-﻿namespace FUNCIONARIOS
+﻿namespace AGT_FORMS
 {
     partial class LoginPage
     {

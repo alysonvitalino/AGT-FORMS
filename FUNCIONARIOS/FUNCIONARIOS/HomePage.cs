@@ -1,7 +1,7 @@
 using MySql.Data.MySqlClient;
 using System.Data;
 
-namespace FUNCIONARIOS
+namespace AGT_FORMS
 {
     public partial class HomePage : Form
     {
