@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(calculadora));
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             menuStrip1 = new MenuStrip();
             menuToolStripMenuItem = new ToolStripMenuItem();
             paginaInicialToolStripMenuItem = new ToolStripMenuItem();
@@ -114,7 +118,7 @@
             // button1
             // 
             button1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            button1.BackColor = Color.CornflowerBlue;
+            button1.BackColor = Color.Lavender;
             button1.Cursor = Cursors.Hand;
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -135,7 +139,7 @@
             // button2
             // 
             button2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            button2.BackColor = Color.CornflowerBlue;
+            button2.BackColor = Color.Lavender;
             button2.Cursor = Cursors.Hand;
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -155,7 +159,7 @@
             // button3
             // 
             button3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            button3.BackColor = Color.CornflowerBlue;
+            button3.BackColor = Color.Lavender;
             button3.Cursor = Cursors.Hand;
             button3.FlatStyle = FlatStyle.Flat;
             button3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -175,7 +179,7 @@
             // button4
             // 
             button4.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            button4.BackColor = Color.CornflowerBlue;
+            button4.BackColor = Color.Lavender;
             button4.Cursor = Cursors.Hand;
             button4.FlatStyle = FlatStyle.Flat;
             button4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -196,7 +200,7 @@
             // 
             label2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label2.AutoSize = true;
-            label2.BackColor = Color.Transparent;
+            label2.BackColor = Color.White;
             label2.Font = new Font("Segoe UI", 12F);
             label2.ForeColor = Color.Navy;
             label2.Location = new Point(22, 178);
@@ -208,8 +212,8 @@
             // 
             // textBox1
             // 
-            textBox1.BackColor = Color.SteelBlue;
-            textBox1.ForeColor = Color.Lavender;
+            textBox1.BackColor = Color.WhiteSmoke;
+            textBox1.ForeColor = Color.MidnightBlue;
             textBox1.Location = new Point(22, 215);
             textBox1.Margin = new Padding(4, 5, 4, 5);
             textBox1.Name = "textBox1";
@@ -220,7 +224,7 @@
             // 
             label3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label3.AutoSize = true;
-            label3.BackColor = Color.Transparent;
+            label3.BackColor = Color.White;
             label3.Font = new Font("Segoe UI", 12F);
             label3.ForeColor = Color.Navy;
             label3.Location = new Point(22, 299);
@@ -234,7 +238,7 @@
             // 
             label4.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label4.AutoSize = true;
-            label4.BackColor = Color.Transparent;
+            label4.BackColor = Color.White;
             label4.Font = new Font("Segoe UI", 12F);
             label4.ForeColor = Color.Navy;
             label4.Location = new Point(22, 90);
@@ -246,8 +250,8 @@
             // 
             // comboBox1
             // 
-            comboBox1.BackColor = Color.SteelBlue;
-            comboBox1.ForeColor = Color.Lavender;
+            comboBox1.BackColor = Color.WhiteSmoke;
+            comboBox1.ForeColor = Color.MidnightBlue;
             comboBox1.FormattingEnabled = true;
             comboBox1.Location = new Point(22, 336);
             comboBox1.Margin = new Padding(4, 5, 4, 5);
@@ -257,8 +261,8 @@
             // 
             // comboBox2
             // 
-            comboBox2.BackColor = Color.SteelBlue;
-            comboBox2.ForeColor = Color.Lavender;
+            comboBox2.BackColor = Color.WhiteSmoke;
+            comboBox2.ForeColor = Color.MidnightBlue;
             comboBox2.FormattingEnabled = true;
             comboBox2.Location = new Point(22, 127);
             comboBox2.Margin = new Padding(4, 5, 4, 5);
@@ -268,7 +272,7 @@
             // 
             // button5
             // 
-            button5.BackColor = Color.CornflowerBlue;
+            button5.BackColor = Color.Lavender;
             button5.BackgroundImageLayout = ImageLayout.Center;
             button5.Cursor = Cursors.Hand;
             button5.FlatStyle = FlatStyle.Flat;
@@ -289,21 +293,51 @@
             // 
             // dataGridView1
             // 
+            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 8.25F);
+            dataGridViewCellStyle1.Format = "C2";
+            dataGridViewCellStyle1.NullValue = null;
+            dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dataGridView1.BackgroundColor = Color.CornflowerBlue;
+            dataGridView1.BackgroundColor = Color.Silver;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Control;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.Window;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridView1.GridColor = Color.MidnightBlue;
             dataGridView1.Location = new Point(212, 178);
             dataGridView1.Margin = new Padding(4, 5, 4, 5);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = SystemColors.Control;
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             dataGridView1.RowHeadersWidth = 62;
             dataGridView1.Size = new Size(728, 535);
             dataGridView1.TabIndex = 13;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // textBox2
             // 
-            textBox2.BackColor = Color.SteelBlue;
-            textBox2.ForeColor = Color.Lavender;
+            textBox2.BackColor = Color.WhiteSmoke;
+            textBox2.ForeColor = Color.MidnightBlue;
             textBox2.Location = new Point(22, 445);
             textBox2.Margin = new Padding(4, 5, 4, 5);
             textBox2.Name = "textBox2";
@@ -314,7 +348,7 @@
             // 
             label5.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label5.AutoSize = true;
-            label5.BackColor = Color.Transparent;
+            label5.BackColor = Color.White;
             label5.Font = new Font("Segoe UI", 12F);
             label5.ForeColor = Color.Navy;
             label5.Location = new Point(22, 408);
@@ -328,7 +362,7 @@
             // 
             label6.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label6.AutoSize = true;
-            label6.BackColor = Color.Transparent;
+            label6.BackColor = Color.White;
             label6.Font = new Font("Segoe UI", 12F);
             label6.ForeColor = Color.Navy;
             label6.Location = new Point(22, 508);
@@ -340,8 +374,8 @@
             // 
             // comboBox3
             // 
-            comboBox3.BackColor = Color.SteelBlue;
-            comboBox3.ForeColor = Color.Lavender;
+            comboBox3.BackColor = Color.WhiteSmoke;
+            comboBox3.ForeColor = Color.MidnightBlue;
             comboBox3.FormattingEnabled = true;
             comboBox3.Items.AddRange(new object[] { "1", "1.5" });
             comboBox3.Location = new Point(22, 545);
@@ -364,7 +398,7 @@
             // 
             // label1
             // 
-            label1.BackColor = Color.Transparent;
+            label1.BackColor = Color.White;
             label1.BorderStyle = BorderStyle.FixedSingle;
             label1.Dock = DockStyle.Fill;
             label1.Font = new Font("Segoe UI", 16F, FontStyle.Bold, GraphicsUnit.Point, 0);
