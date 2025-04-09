@@ -1,4 +1,4 @@
-﻿namespace FUNCIONARIOS
+﻿namespace AGT_FORMS
 {
     partial class Cadastros
     {
@@ -105,7 +105,7 @@
             button3.Name = "button3";
             button3.Size = new Size(142, 91);
             button3.TabIndex = 3;
-            button3.Text = "Cadastros";
+            button3.Text = "Logins e Senhas";
             button3.UseVisualStyleBackColor = false;
             button3.Click += button3_Click;
             // 
@@ -186,9 +186,9 @@
             label1.Location = new Point(14, 105);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(186, 32);
+            label1.Size = new Size(266, 32);
             label1.TabIndex = 6;
-            label1.Text = "Logins e Senhas";
+            label1.Text = "Cadastros das Unidades";
             label1.Click += label1_Click;
             // 
             // textBox1
@@ -217,7 +217,7 @@
             label2.Text = "Unidade";
             label2.Click += label2_Click;
             // 
-            // logins
+            // Cadastros
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -235,8 +235,8 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             MainMenuStrip = menuStrip1;
             Margin = new Padding(4, 5, 4, 5);
-            Name = "logins";
-            Text = "Logins";
+            Name = "Cadastros";
+            Text = "Cadastros";
             WindowState = FormWindowState.Maximized;
             Load += logins_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();

@@ -1,7 +1,7 @@
 using MySql.Data.MySqlClient;
 using System.Data;
 
-namespace FUNCIONARIOS
+namespace AGT_FORMS
 {
     public partial class HomePage : Form
     {
@@ -71,7 +71,7 @@ namespace FUNCIONARIOS
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Logins_Senhas produto = new Logins_Senhas();
+            Cadastros produto = new Cadastros();
             produto.StartPosition = FormStartPosition.CenterScreen;
             produto.Show();
             Hide();
@@ -95,7 +95,7 @@ namespace FUNCIONARIOS
 
         private void cadastrosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Logins_Senhas produto = new Logins_Senhas();
+            Cadastros produto = new Cadastros();
             produto.StartPosition = FormStartPosition.CenterScreen;
             produto.Show();
             Hide();

@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
-namespace FUNCIONARIOS
+namespace AGT_FORMS
 {
     public partial class LoginPage : Form
     {

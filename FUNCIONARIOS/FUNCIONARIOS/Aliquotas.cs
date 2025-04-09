@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.ComponentModel.Design.ObjectSelectorEditor;
 
-namespace FUNCIONARIOS
+namespace AGT_FORMS
 {
     public partial class Aliquotas : Form
     {
@@ -130,7 +130,7 @@ namespace FUNCIONARIOS
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Logins_Senhas produto = new Logins_Senhas();
+            Cadastros produto = new Cadastros();
             produto.StartPosition = FormStartPosition.CenterScreen;
             produto.Show();
             Hide();
@@ -162,7 +162,7 @@ namespace FUNCIONARIOS
 
         private void cadastrosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Logins_Senhas produto = new Logins_Senhas();
+            Cadastros produto = new Cadastros();
             produto.StartPosition = FormStartPosition.CenterScreen;
             produto.Show();
             Hide();
