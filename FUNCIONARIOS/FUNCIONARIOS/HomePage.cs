@@ -71,7 +71,7 @@ namespace AGT_FORMS
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Logins_Senhas produto = new Logins_Senhas();
+            Cadastros produto = new Cadastros();
             produto.StartPosition = FormStartPosition.CenterScreen;
             produto.Show();
             Hide();
@@ -95,7 +95,7 @@ namespace AGT_FORMS
 
         private void cadastrosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Logins_Senhas produto = new Logins_Senhas();
+            Cadastros produto = new Cadastros();
             produto.StartPosition = FormStartPosition.CenterScreen;
             produto.Show();
             Hide();
