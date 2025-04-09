@@ -268,30 +268,6 @@ namespace AGT_FORMS
                     vazia
                 );
 
-                int lastRowIndex = dataGridView1.Rows.Count - 1;
-                dataGridView1.Rows[lastRowIndex].DefaultCellStyle.BackColor = Color.Green;
-                dataGridView1.Rows[lastRowIndex].DefaultCellStyle.ForeColor = Color.White;
-
-                dataGridView1.Rows.Add(
-                    valorBase.ToString("C2"),
-                    liqCsrRestante.ToString("C2"),
-                    liqIssRestante.ToString("C2"),
-                    liqInssRestante.ToString("C2"),
-                    liqIrRestante.ToString("C2"),
-                    liqIrCsrRestante.ToString("C2"),
-                    liqIrCsrInssRestante.ToString("C2"),
-                    liqIrCsrInssIssRestante.ToString("C2"),
-                    liqIrCsrIssRestante.ToString("C2"),
-                    liqCsrIssRestante.ToString("C2"),
-                    liqInssIssRestante.ToString("C2"),
-                    liqIrIssRestante.ToString("C2"),
-                    liqCsrIssRestante.ToString("C2")
-                );
-
-                lastRowIndex = dataGridView1.Rows.Count - 1;
-                dataGridView1.Rows[lastRowIndex].DefaultCellStyle.BackColor = Color.Blue;
-                dataGridView1.Rows[lastRowIndex].DefaultCellStyle.ForeColor = Color.White;
-
                 // Ajustando o tamanho das colunas de acordo com o conteúdo
                 dataGridView1.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             }
