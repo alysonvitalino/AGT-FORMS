@@ -45,6 +45,7 @@ observacao_cadastro VARCHAR (2048)
 SELECT municipio, cod_servico, desc_servico, aliquota_iss FROM aliquotas;
 
 INSERT INTO aliquotas (id_aliquota, municipio, cod_servico, desc_servico, aliquota_iss) VALUES
+(0, 'Nenhum','0.00','Nenhuma alíquota selecionada.','0'),
 (1, 'Curitiba','3.05', 'Cessão de andaimes, palcos, coberturas e outras estruturas de uso temporário. ', '5'),
 (2, 'Curitiba','7.02', 'Execução, por administração, empreitada ou subempreitada, de obras de construção civil, hidráulica ou elétrica e de outras obras semelhantes, inclusive (exceto - sondagem, perfuração de poços, escavação, drenagem e irrigação, terraplanagem, pavimentação, ', '5'),
 (3, 'Curitiba','7.04', 'Demolição. ', '5'),
