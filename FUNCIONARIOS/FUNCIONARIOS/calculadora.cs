@@ -143,30 +143,33 @@ namespace AGT_FORMS
                     return;
                 }
 
-                // Verifica se há uma alíquota selecionada na ComboBox2
+                //Verifica se há uma alíquota selecionada na ComboBox2
                 if (comboBox2.SelectedItem == null)
                 {
                     MessageBox.Show("Selecione uma alíquota na ComboBox.");
                     return;
                 }
-
+                
+                
                 // Obtém o DataRowView da seleção atual da ComboBox2
                 DataRowView rowSelecionada = comboBox2.SelectedItem as DataRowView;
+                
                 if (rowSelecionada == null)
                 {
                     MessageBox.Show("Erro ao obter os dados da alíquota.");
                     return;
                 }
-
+                
                 // Obtém a alíquota de ISS a partir da seleção da ComboBox2
+                
                 if (!double.TryParse(rowSelecionada["aliquota_iss"].ToString(), out double aliquotaIss))
                 {
                     MessageBox.Show("Erro ao converter a alíquota de ISS.");
                     return;
                 }
 
-                // Converte a alíquota de ISS para porcentagem (por exemplo, 4 -> 0.04)
-                aliquotaIss = aliquotaIss / 100;
+                    aliquotaIss = aliquotaIss / 100;
+                
 
                 // Pega o valor das deduções (TextBox2). Se estiver vazio, define como 0
                 double deducoes = 0;
@@ -216,7 +219,24 @@ namespace AGT_FORMS
                 double liqInssIssRestante = valorBase - liqInssIss;
                 double liqIrCsrIssRestante = valorBase - liqIrCsrIss;
 
+                string vazia = "";
+
                 // Adicionando os valores restantes na DataGridView
+                dataGridView1.Rows.Add(
+                    valorBase.ToString("C2"),
+                    liqCsr.ToString("C2"),
+                    liqIss.ToString("C2"),
+                    liqInss.ToString("C2"),
+                    liqIr.ToString("C2"),
+                    liqIrCsr.ToString("C2"),
+                    liqIrCsrInss.ToString("C2"),
+                    liqIrCsrInssIss.ToString("C2"),
+                    liqIrCsrIss.ToString("C2"),
+                    liqCsrIss.ToString("C2"),
+                    liqInssIss.ToString("C2"),
+                    liqIrIss.ToString("C2"),
+                    liqCsrIss.ToString("C2")
+                );
                 dataGridView1.Rows.Add(
                     valorBase.ToString("C2"),
                     liqCsrRestante.ToString("C2"),
@@ -231,6 +251,21 @@ namespace AGT_FORMS
                     liqInssIssRestante.ToString("C2"),
                     liqIrIssRestante.ToString("C2"),
                     liqCsrIssRestante.ToString("C2")
+                );
+                dataGridView1.Rows.Add(
+                    vazia,
+                    vazia,
+                    vazia,
+                    vazia,
+                    vazia,
+                    vazia,
+                    vazia,
+                    vazia,
+                    vazia,
+                    vazia,
+                    vazia,
+                    vazia,
+                    vazia
                 );
 
                 // Ajustando o tamanho das colunas de acordo com o conteúdo
