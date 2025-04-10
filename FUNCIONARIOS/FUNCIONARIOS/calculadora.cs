@@ -125,6 +125,9 @@ namespace AGT_FORMS
             Hide();
         }
 
+        // Adiciona uma variável para controlar a alternância de cores
+        private bool corAlternada = false;
+
         private void button5_Click(object sender, EventArgs e)
         {
             try
@@ -221,8 +224,8 @@ namespace AGT_FORMS
 
                 string vazia = "";
 
-                // Adicionando os valores restantes na DataGridView
-                dataGridView1.Rows.Add(
+                // Adicionando os valores na DataGridView
+                int rowIndex1 = dataGridView1.Rows.Add(
                     valorBase.ToString("C2"),
                     liqCsr.ToString("C2"),
                     liqIss.ToString("C2"),
@@ -237,7 +240,8 @@ namespace AGT_FORMS
                     liqIrIss.ToString("C2"),
                     liqCsrIss.ToString("C2")
                 );
-                dataGridView1.Rows.Add(
+
+                int rowIndex2 = dataGridView1.Rows.Add(
                     valorBase.ToString("C2"),
                     liqCsrRestante.ToString("C2"),
                     liqIssRestante.ToString("C2"),
@@ -251,22 +255,25 @@ namespace AGT_FORMS
                     liqInssIssRestante.ToString("C2"),
                     liqIrIssRestante.ToString("C2"),
                     liqCsrIssRestante.ToString("C2")
-                );
-                dataGridView1.Rows.Add(
-                    vazia,
-                    vazia,
-                    vazia,
-                    vazia,
-                    vazia,
-                    vazia,
-                    vazia,
-                    vazia,
-                    vazia,
-                    vazia,
-                    vazia,
-                    vazia,
-                    vazia
-                );
+                );                
+
+                // Alterna as cores das linhas
+                if (corAlternada)
+                {
+                    // Define a cor de fundo das linhas para verde claro
+                    dataGridView1.Rows[rowIndex1].DefaultCellStyle.BackColor = Color.LightGray;
+                    dataGridView1.Rows[rowIndex2].DefaultCellStyle.BackColor = Color.LightGray;
+                }
+                else
+                {
+                    // Define a cor de fundo das linhas para azul claro
+                    dataGridView1.Rows[rowIndex1].DefaultCellStyle.BackColor = Color.LightSteelBlue;
+                    dataGridView1.Rows[rowIndex2].DefaultCellStyle.BackColor = Color.LightSteelBlue;
+                }
+
+                // Alterna o valor da variável
+                corAlternada = !corAlternada;
+
 
                 // Ajustando o tamanho das colunas de acordo com o conteúdo
                 dataGridView1.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
