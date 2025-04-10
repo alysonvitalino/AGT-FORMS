@@ -24,6 +24,11 @@ namespace AGT_FORMS
             dataGridView1.ColumnCount = 13;
 
             // Definindo os cabeçalhos das colunas
+            DataGridViewTextBoxColumn nomeColuna = new DataGridViewTextBoxColumn();
+            nomeColuna.Name = "Nome";  // Nome da coluna
+            nomeColuna.HeaderText = "Nome da Linha";  // Cabeçalho da coluna
+            dataGridView1.Columns.Insert(0, nomeColuna);  // Inserir na primeira posição (índice 0)
+
             dataGridView1.Columns[0].Name = "ValorBase";
             dataGridView1.Columns[1].Name = "LIQ CSRF";
             dataGridView1.Columns[2].Name = "LIQ ISS";
@@ -252,24 +257,28 @@ namespace AGT_FORMS
                     liqIrIssRestante.ToString("C2"),
                     liqCsrIssRestante.ToString("C2")
                 );
-                dataGridView1.Rows.Add(
-                    vazia,
-                    vazia,
-                    vazia,
-                    vazia,
-                    vazia,
-                    vazia,
-                    vazia,
-                    vazia,
-                    vazia,
-                    vazia,
-                    vazia,
-                    vazia,
-                    vazia
-                );
 
                 // Ajustando o tamanho das colunas de acordo com o conteúdo
                 dataGridView1.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+
+                
+
+                // Preencher o DataGridView com dados e adicionar valores à nova coluna
+                for (int i = 0; i < dataGridView1.RowCount; i++)
+                {
+                    // A partir da segunda linha (índice 1), alternar entre "Valor do Imposto:" e "Valor Líquido"
+                    if (i > 0)  // Começando da segunda linha (contando com o cabeçalho)
+                    {
+                        if (i % 2 == 0)  // Linhas de índice par (2ª, 4ª, 6ª, ...)
+                        {
+                            dataGridView1.Rows[i].Cells[0].Value = "Valor do Imposto:";
+                        }
+                        else  // Linhas de índice ímpar (3ª, 5ª, 7ª, ...)
+                        {
+                            dataGridView1.Rows[i].Cells[0].Value = "Valor Líquido";
+                        }
+                    }
+                }
             }
             catch (Exception ex)
             {
