@@ -405,8 +405,9 @@
             button7.Name = "button7";
             button7.Size = new Size(163, 122);
             button7.TabIndex = 20;
-            button7.Text = "button7";
+            button7.Text = "Limpar";
             button7.UseVisualStyleBackColor = true;
+            button7.Click += button7_Click;
             // 
             // calculadora
             // 

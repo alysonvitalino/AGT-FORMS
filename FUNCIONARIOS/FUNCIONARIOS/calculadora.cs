@@ -157,27 +157,27 @@ namespace AGT_FORMS
                     MessageBox.Show("Selecione uma alíquota na ComboBox.");
                     return;
                 }
-                
-                
+
+
                 // Obtém o DataRowView da seleção atual da ComboBox2
                 DataRowView rowSelecionada = comboBox2.SelectedItem as DataRowView;
-                
+
                 if (rowSelecionada == null)
                 {
                     MessageBox.Show("Erro ao obter os dados da alíquota.");
                     return;
                 }
-                
+
                 // Obtém a alíquota de ISS a partir da seleção da ComboBox2
-                
+
                 if (!double.TryParse(rowSelecionada["aliquota_iss"].ToString(), out double aliquotaIss))
                 {
                     MessageBox.Show("Erro ao converter a alíquota de ISS.");
                     return;
                 }
 
-                    aliquotaIss = aliquotaIss / 100;
-                
+                aliquotaIss = aliquotaIss / 100;
+
 
                 // Pega o valor das deduções (TextBox2). Se estiver vazio, define como 0
                 double deducoes = 0;
@@ -260,7 +260,7 @@ namespace AGT_FORMS
                     liqInssIssRestante.ToString("C2"),
                     liqIrIssRestante.ToString("C2"),
                     liqCsrIssRestante.ToString("C2")
-                );                
+                );
 
                 // Alterna as cores das linhas
                 if (corAlternada)
@@ -283,7 +283,7 @@ namespace AGT_FORMS
                 // Ajustando o tamanho das colunas de acordo com o conteúdo
                 dataGridView1.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
 
-                
+
 
                 // Preencher o DataGridView com dados e adicionar valores à nova coluna
                 for (int i = 0; i < dataGridView1.RowCount; i++)
@@ -411,6 +411,11 @@ namespace AGT_FORMS
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            dataGridView1.Rows.Clear();
         }
     }
 }
