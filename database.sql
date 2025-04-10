@@ -42,8 +42,6 @@ vencimento_cadastro INT NOT NULL,
 observacao_cadastro VARCHAR (2048)
 );
 
-SELECT municipio, cod_servico, desc_servico, aliquota_iss FROM aliquotas;
-
 INSERT INTO aliquotas (id_aliquota, municipio, cod_servico, desc_servico, aliquota_iss) VALUES
 (0, 'Nenhum','0.00','Nenhuma alíquota selecionada.','0'),
 (1, 'Curitiba','3.05', 'Cessão de andaimes, palcos, coberturas e outras estruturas de uso temporário. ', '5'),
@@ -64,10 +62,6 @@ INSERT INTO aliquotas (id_aliquota, municipio, cod_servico, desc_servico, aliquo
 (16, 'Curitiba','17.10', 'Planejamento, organização e administração de feiras, exposições, congressos e congêneres.', '5'),
 (17, 'Pinhais','3.05', 'Cessão de andaimes, palcos, coberturas e outras estruturas de uso temporário.', '5');
 
-
-INSERT INTO logins(login, senha)  VALUES("Alyson", "123456");
-
-select login, senha FROM logins WHERE login = "alyson" AND senha = "123456";
 INSERT INTO cadastro (
     id_cadastro, unidade_cadastro, municipio_cadastro, cnpj_cadastro, 
     sistema_cadastro, site_cadastro, login_cadastro, senha_cadastro, 
@@ -84,6 +78,27 @@ INSERT INTO cadastro (
 (9, 109, 'Manaus', '89.012.345/0001-11', 'Sistema I', 'https://classroom.google.com/', 'usuario9', 'senha606', 27, 'Nono registro'),
 (10, 110, 'Goiânia', '90.123.456/0001-00', 'Sistema J', 'https://www.excalidraw.com', 'usuario10', 'senha707', 30, 'Décimo registro');
 
+INSERT INTO unidades (id_unidade, cod_erp, cod_entidade, cnpj_unidade, nome_fantasia, endereco_unidade, cidade_unidade, cep_unidade) 
+VALUES 
+(1, 1001, 'SESI', '12.345.678/0001-90', 'Unidade A', 'Rua das Flores, 123', 'São Paulo', '01234-567'),
+(2, 1002, 'SENAI', '98.765.432/0001-01', 'Unidade B', 'Avenida Paulista, 987', 'São Paulo', '01310-000'),
+(3, 1003, 'FIEP', '21.987.654/0001-02', 'Unidade C', 'Rua Rio de Janeiro, 456', 'Rio de Janeiro', '20000-000'),
+(4, 1004, 'IEL', '34.567.890/0001-03', 'Unidade D', 'Rua Bahia, 789', 'Salvador', '40000-000'),
+(5, 1005, 'MATRIZ', '45.678.901/0001-04', 'Unidade E', 'Avenida Brasil, 234', 'Belo Horizonte', '30100-000'),
+(6, 1006, 'ENT006', '56.789.012/0001-05', 'Unidade F', 'Rua dos Andradas, 555', 'Porto Alegre', '90000-000'),
+(7, 1007, 'ENT007', '67.890.123/0001-06', 'Unidade G', 'Rua Paraná, 321', 'Curitiba', '80000-000'),
+(8, 1008, 'ENT008', '78.901.234/0001-07', 'Unidade H', 'Rua Amazonas, 1234', 'Recife', '50000-000'),
+(9, 1009, 'ENT009', '89.012.345/0001-08', 'Unidade I', 'Avenida Rio Branco, 432', 'Fortaleza', '60000-000'),
+(10, 1010, 'ENT010', '90.123.456/0001-09', 'Unidade J', 'Rua Sergipe, 765', 'Manaus', '69000-000');
+
+SELECT cod_erp, cod_entidade, cnpj_unidade, nome_fantasia, endereco_unidade, cidade_unidade, cep_unidade FROM unidades;
+
+SELECT municipio, cod_servico, desc_servico, aliquota_iss FROM aliquotas;
+
 SELECT * FROM aliquotas;
+
+INSERT INTO logins(login, senha)  VALUES("Alyson", "123456");
+
+select login, senha FROM logins WHERE login = "alyson" AND senha = "123456";
 
 

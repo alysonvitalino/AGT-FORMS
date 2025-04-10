@@ -42,8 +42,9 @@
             leisEAlíquotasToolStripMenuItem = new ToolStripMenuItem();
             loginsESenhasToolStripMenuItem = new ToolStripMenuItem();
             label1 = new Label();
-            textBox1 = new TextBox();
             label2 = new Label();
+            comboBox1 = new ComboBox();
+            button5 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             menuStrip1.SuspendLayout();
             SuspendLayout();
@@ -55,11 +56,11 @@
             dataGridView1.BorderStyle = BorderStyle.Fixed3D;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.GridColor = Color.CornflowerBlue;
-            dataGridView1.Location = new Point(20, 151);
-            dataGridView1.Margin = new Padding(4, 5, 4, 5);
+            dataGridView1.Location = new Point(14, 91);
             dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(931, 539);
+            dataGridView1.Size = new Size(652, 323);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
@@ -72,10 +73,9 @@
             button1.FlatAppearance.MouseOverBackColor = Color.Transparent;
             button1.ForeColor = Color.Navy;
             button1.ImageAlign = ContentAlignment.TopLeft;
-            button1.Location = new Point(982, 151);
-            button1.Margin = new Padding(4, 5, 4, 5);
+            button1.Location = new Point(687, 91);
             button1.Name = "button1";
-            button1.Size = new Size(142, 91);
+            button1.Size = new Size(99, 55);
             button1.TabIndex = 1;
             button1.Text = "Tela Inicial";
             button1.UseVisualStyleBackColor = false;
@@ -86,10 +86,9 @@
             button2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             button2.BackColor = Color.CornflowerBlue;
             button2.ForeColor = Color.Navy;
-            button2.Location = new Point(982, 300);
-            button2.Margin = new Padding(4, 5, 4, 5);
+            button2.Location = new Point(687, 180);
             button2.Name = "button2";
-            button2.Size = new Size(142, 91);
+            button2.Size = new Size(99, 55);
             button2.TabIndex = 2;
             button2.Text = "Calculadora";
             button2.UseVisualStyleBackColor = false;
@@ -100,10 +99,9 @@
             button3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             button3.BackColor = Color.CornflowerBlue;
             button3.ForeColor = Color.Navy;
-            button3.Location = new Point(982, 449);
-            button3.Margin = new Padding(4, 5, 4, 5);
+            button3.Location = new Point(687, 269);
             button3.Name = "button3";
-            button3.Size = new Size(142, 91);
+            button3.Size = new Size(99, 55);
             button3.TabIndex = 3;
             button3.Text = "Logins e Senhas";
             button3.UseVisualStyleBackColor = false;
@@ -114,10 +112,9 @@
             button4.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             button4.BackColor = Color.CornflowerBlue;
             button4.ForeColor = Color.Navy;
-            button4.Location = new Point(982, 599);
-            button4.Margin = new Padding(4, 5, 4, 5);
+            button4.Location = new Point(687, 359);
             button4.Name = "button4";
-            button4.Size = new Size(142, 91);
+            button4.Size = new Size(99, 55);
             button4.TabIndex = 4;
             button4.Text = "Alíquotas";
             button4.UseVisualStyleBackColor = false;
@@ -130,8 +127,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { menuToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Padding = new Padding(9, 4, 0, 4);
-            menuStrip1.Size = new Size(1142, 37);
+            menuStrip1.Size = new Size(799, 24);
             menuStrip1.TabIndex = 5;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -139,41 +135,41 @@
             // 
             menuToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { paginaInicialToolStripMenuItem, calculadoraToolStripMenuItem, cadastrosToolStripMenuItem, leisEAlíquotasToolStripMenuItem, loginsESenhasToolStripMenuItem });
             menuToolStripMenuItem.Name = "menuToolStripMenuItem";
-            menuToolStripMenuItem.Size = new Size(73, 29);
+            menuToolStripMenuItem.Size = new Size(50, 20);
             menuToolStripMenuItem.Text = "Menu";
             // 
             // paginaInicialToolStripMenuItem
             // 
             paginaInicialToolStripMenuItem.Name = "paginaInicialToolStripMenuItem";
-            paginaInicialToolStripMenuItem.Size = new Size(241, 34);
+            paginaInicialToolStripMenuItem.Size = new Size(158, 22);
             paginaInicialToolStripMenuItem.Text = "Pagina Inicial";
             paginaInicialToolStripMenuItem.Click += paginaInicialToolStripMenuItem_Click;
             // 
             // calculadoraToolStripMenuItem
             // 
             calculadoraToolStripMenuItem.Name = "calculadoraToolStripMenuItem";
-            calculadoraToolStripMenuItem.Size = new Size(241, 34);
+            calculadoraToolStripMenuItem.Size = new Size(158, 22);
             calculadoraToolStripMenuItem.Text = "Calculadora";
             calculadoraToolStripMenuItem.Click += calculadoraToolStripMenuItem_Click;
             // 
             // cadastrosToolStripMenuItem
             // 
             cadastrosToolStripMenuItem.Name = "cadastrosToolStripMenuItem";
-            cadastrosToolStripMenuItem.Size = new Size(241, 34);
+            cadastrosToolStripMenuItem.Size = new Size(158, 22);
             cadastrosToolStripMenuItem.Text = "Cadastros";
             cadastrosToolStripMenuItem.Click += cadastrosToolStripMenuItem_Click_1;
             // 
             // leisEAlíquotasToolStripMenuItem
             // 
             leisEAlíquotasToolStripMenuItem.Name = "leisEAlíquotasToolStripMenuItem";
-            leisEAlíquotasToolStripMenuItem.Size = new Size(241, 34);
+            leisEAlíquotasToolStripMenuItem.Size = new Size(158, 22);
             leisEAlíquotasToolStripMenuItem.Text = "Leis e Alíquotas";
             leisEAlíquotasToolStripMenuItem.Click += leisEAlíquotasToolStripMenuItem_Click_1;
             // 
             // loginsESenhasToolStripMenuItem
             // 
             loginsESenhasToolStripMenuItem.Name = "loginsESenhasToolStripMenuItem";
-            loginsESenhasToolStripMenuItem.Size = new Size(241, 34);
+            loginsESenhasToolStripMenuItem.Size = new Size(158, 22);
             loginsESenhasToolStripMenuItem.Text = "Logins e Senhas";
             loginsESenhasToolStripMenuItem.Click += loginsESenhasToolStripMenuItem_Click_1;
             // 
@@ -183,24 +179,12 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI", 12F);
             label1.ForeColor = Color.Navy;
-            label1.Location = new Point(14, 105);
-            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Location = new Point(10, 63);
             label1.Name = "label1";
-            label1.Size = new Size(266, 32);
+            label1.Size = new Size(176, 21);
             label1.TabIndex = 6;
             label1.Text = "Cadastros das Unidades";
             label1.Click += label1_Click;
-            // 
-            // textBox1
-            // 
-            textBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            textBox1.BackColor = Color.SteelBlue;
-            textBox1.ForeColor = Color.White;
-            textBox1.Location = new Point(686, 101);
-            textBox1.Margin = new Padding(4, 5, 4, 5);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(264, 31);
-            textBox1.TabIndex = 7;
             // 
             // label2
             // 
@@ -209,22 +193,42 @@
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Segoe UI", 12F);
             label2.ForeColor = Color.Navy;
-            label2.Location = new Point(571, 100);
-            label2.Margin = new Padding(4, 0, 4, 0);
+            label2.Location = new Point(308, 63);
             label2.Name = "label2";
-            label2.Size = new Size(103, 32);
+            label2.Size = new Size(68, 21);
             label2.TabIndex = 8;
             label2.Text = "Unidade";
             label2.Click += label2_Click;
             // 
+            // comboBox1
+            // 
+            comboBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(382, 61);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(186, 23);
+            comboBox1.TabIndex = 9;
+            // 
+            // button5
+            // 
+            button5.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            button5.Location = new Point(574, 61);
+            button5.Name = "button5";
+            button5.Size = new Size(83, 24);
+            button5.TabIndex = 10;
+            button5.Text = "Limpar";
+            button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
+            // 
             // Cadastros
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
-            ClientSize = new Size(1142, 750);
+            ClientSize = new Size(799, 450);
+            Controls.Add(button5);
+            Controls.Add(comboBox1);
             Controls.Add(label2);
-            Controls.Add(textBox1);
             Controls.Add(label1);
             Controls.Add(button4);
             Controls.Add(button3);
@@ -234,7 +238,6 @@
             Controls.Add(menuStrip1);
             Icon = (Icon)resources.GetObject("$this.Icon");
             MainMenuStrip = menuStrip1;
-            Margin = new Padding(4, 5, 4, 5);
             Name = "Cadastros";
             Text = "Cadastros";
             WindowState = FormWindowState.Maximized;
@@ -261,7 +264,8 @@
         private Label label1;
         private ToolStripMenuItem paginaInicialToolStripMenuItem;
         private ToolStripMenuItem loginsESenhasToolStripMenuItem;
-        private TextBox textBox1;
         private Label label2;
+        private ComboBox comboBox1;
+        private Button button5;
     }
 }
