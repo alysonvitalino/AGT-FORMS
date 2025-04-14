@@ -21,27 +21,23 @@ namespace AGT_FORMS
             PreencherComboBox();
 
 
-            dataGridView1.ColumnCount = 13;
+            dataGridView1.ColumnCount = 14;
 
-            // Definindo os cabeçalhos das colunas
-            DataGridViewTextBoxColumn nomeColuna = new DataGridViewTextBoxColumn();
-            nomeColuna.Name = "Nome";  // Nome da coluna
-            nomeColuna.HeaderText = "Nome da Linha";  // Cabeçalho da coluna
-            dataGridView1.Columns.Insert(0, nomeColuna);  // Inserir na primeira posição (índice 0)
 
+            dataGridView1.Columns[1].Name = "";
             dataGridView1.Columns[0].Name = "ValorBase";
-            dataGridView1.Columns[1].Name = "LIQ CSRF";
-            dataGridView1.Columns[2].Name = "LIQ ISS";
-            dataGridView1.Columns[3].Name = "LIQ INSS";
-            dataGridView1.Columns[4].Name = "LIQ IR";
-            dataGridView1.Columns[5].Name = "LIQ IR+CSRF";
-            dataGridView1.Columns[6].Name = "LIQ IR+CSRF+ INSS";
-            dataGridView1.Columns[7].Name = "LIQ IR+CSRF+ INSS+ISS";
-            dataGridView1.Columns[8].Name = "LIQ IR+CSRF+ISS";
-            dataGridView1.Columns[9].Name = "LIQ CSRF+ISS";
-            dataGridView1.Columns[10].Name = "LIQ INSS+ISS";
-            dataGridView1.Columns[11].Name = "LIQ IR+ISS";
-            dataGridView1.Columns[12].Name = "LIQ CSRF+ISS";
+            dataGridView1.Columns[2].Name = "LIQ CSRF";
+            dataGridView1.Columns[3].Name = "LIQ ISS";
+            dataGridView1.Columns[4].Name = "LIQ INSS";
+            dataGridView1.Columns[5].Name = "LIQ IR";
+            dataGridView1.Columns[6].Name = "LIQ IR+CSRF";
+            dataGridView1.Columns[7].Name = "LIQ IR+CSRF+ INSS";
+            dataGridView1.Columns[8].Name = "LIQ IR+CSRF+ INSS+ISS";
+            dataGridView1.Columns[9].Name = "LIQ IR+CSRF+ISS";
+            dataGridView1.Columns[10].Name = "LIQ CSRF+ISS";
+            dataGridView1.Columns[11].Name = "LIQ INSS+ISS";
+            dataGridView1.Columns[12].Name = "LIQ IR+ISS";
+            dataGridView1.Columns[13].Name = "LIQ CSRF+ISS";
 
             // Ajusta o tamanho automático das colunas
             dataGridView1.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
@@ -151,13 +147,12 @@ namespace AGT_FORMS
                     return;
                 }
 
-                //Verifica se há uma alíquota selecionada na ComboBox2
+                // Verifica se há uma alíquota selecionada na ComboBox2
                 if (comboBox2.SelectedItem == null)
                 {
                     MessageBox.Show("Selecione uma alíquota na ComboBox.");
                     return;
                 }
-
 
                 // Obtém o DataRowView da seleção atual da ComboBox2
                 DataRowView rowSelecionada = comboBox2.SelectedItem as DataRowView;
@@ -169,7 +164,6 @@ namespace AGT_FORMS
                 }
 
                 // Obtém a alíquota de ISS a partir da seleção da ComboBox2
-
                 if (!double.TryParse(rowSelecionada["aliquota_iss"].ToString(), out double aliquotaIss))
                 {
                     MessageBox.Show("Erro ao converter a alíquota de ISS.");
@@ -177,7 +171,6 @@ namespace AGT_FORMS
                 }
 
                 aliquotaIss = aliquotaIss / 100;
-
 
                 // Pega o valor das deduções (TextBox2). Se estiver vazio, define como 0
                 double deducoes = 0;
@@ -199,7 +192,6 @@ namespace AGT_FORMS
                     else if (comboBox3.SelectedItem.ToString() == "1.5")
                         aliquotaIr = 0.015;
                 }
-
 
                 // Calculando os diferentes valores
                 double liqCsr = valorBase * 0.0465; // 4.65%
@@ -227,11 +219,10 @@ namespace AGT_FORMS
                 double liqInssIssRestante = valorBase - liqInssIss;
                 double liqIrCsrIssRestante = valorBase - liqIrCsrIss;
 
-                string vazia = "";
-
-                // Adicionando os valores na DataGridView
+                // Primeira linha de "Valor do Imposto" e "Valor Líquido"
                 int rowIndex1 = dataGridView1.Rows.Add(
                     valorBase.ToString("C2"),
+                    "Valor do Imposto",
                     liqCsr.ToString("C2"),
                     liqIss.ToString("C2"),
                     liqInss.ToString("C2"),
@@ -246,8 +237,10 @@ namespace AGT_FORMS
                     liqCsrIss.ToString("C2")
                 );
 
+                // Segunda linha de "Valor Líquido"
                 int rowIndex2 = dataGridView1.Rows.Add(
                     valorBase.ToString("C2"),
+                    "Valor Líquido",
                     liqCsrRestante.ToString("C2"),
                     liqIssRestante.ToString("C2"),
                     liqInssRestante.ToString("C2"),
@@ -262,45 +255,22 @@ namespace AGT_FORMS
                     liqCsrIssRestante.ToString("C2")
                 );
 
-                // Alterna as cores das linhas
+                // Alternando as cores das linhas
                 if (corAlternada)
                 {
-                    // Define a cor de fundo das linhas para verde claro
                     dataGridView1.Rows[rowIndex1].DefaultCellStyle.BackColor = Color.LightGray;
                     dataGridView1.Rows[rowIndex2].DefaultCellStyle.BackColor = Color.LightGray;
                 }
                 else
                 {
-                    // Define a cor de fundo das linhas para azul claro
                     dataGridView1.Rows[rowIndex1].DefaultCellStyle.BackColor = Color.LightSteelBlue;
                     dataGridView1.Rows[rowIndex2].DefaultCellStyle.BackColor = Color.LightSteelBlue;
                 }
 
-                // Alterna o valor da variável
                 corAlternada = !corAlternada;
-
 
                 // Ajustando o tamanho das colunas de acordo com o conteúdo
                 dataGridView1.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
-
-
-
-                // Preencher o DataGridView com dados e adicionar valores à nova coluna
-                for (int i = 0; i < dataGridView1.RowCount; i++)
-                {
-                    // A partir da segunda linha (índice 1), alternar entre "Valor do Imposto:" e "Valor Líquido"
-                    if (i > 0)  // Começando da segunda linha (contando com o cabeçalho)
-                    {
-                        if (i % 2 == 0)  // Linhas de índice par (2ª, 4ª, 6ª, ...)
-                        {
-                            dataGridView1.Rows[i].Cells[0].Value = "Valor do Imposto:";
-                        }
-                        else  // Linhas de índice ímpar (3ª, 5ª, 7ª, ...)
-                        {
-                            dataGridView1.Rows[i].Cells[0].Value = "Valor Líquido";
-                        }
-                    }
-                }
             }
             catch (Exception ex)
             {
