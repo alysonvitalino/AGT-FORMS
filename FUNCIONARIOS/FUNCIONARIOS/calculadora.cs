@@ -26,18 +26,18 @@ namespace AGT_FORMS
 
             dataGridView1.Columns[1].Name = "";
             dataGridView1.Columns[0].Name = "ValorBase";
-            dataGridView1.Columns[2].Name = "LIQ CSRF";
-            dataGridView1.Columns[3].Name = "LIQ ISS";
-            dataGridView1.Columns[4].Name = "LIQ INSS";
-            dataGridView1.Columns[5].Name = "LIQ IR";
-            dataGridView1.Columns[6].Name = "LIQ IR+CSRF";
-            dataGridView1.Columns[7].Name = "LIQ IR+CSRF+ INSS";
-            dataGridView1.Columns[8].Name = "LIQ IR+CSRF+ INSS+ISS";
-            dataGridView1.Columns[9].Name = "LIQ IR+CSRF+ISS";
-            dataGridView1.Columns[10].Name = "LIQ CSRF+ISS";
-            dataGridView1.Columns[11].Name = "LIQ INSS+ISS";
-            dataGridView1.Columns[12].Name = "LIQ IR+ISS";
-            dataGridView1.Columns[13].Name = "LIQ CSRF+ISS";
+            dataGridView1.Columns[2].Name = "CSRF";
+            dataGridView1.Columns[3].Name = "ISS";
+            dataGridView1.Columns[4].Name = "INSS";
+            dataGridView1.Columns[5].Name = "IR";
+            dataGridView1.Columns[6].Name = "IR+CSRF";
+            dataGridView1.Columns[7].Name = "IR+CSRF+ INSS";
+            dataGridView1.Columns[8].Name = "IR+CSRF+ INSS+ISS";
+            dataGridView1.Columns[9].Name = "IR+CSRF+ISS";
+            dataGridView1.Columns[10].Name = "CSRF+ISS";
+            dataGridView1.Columns[11].Name = "INSS+ISS";
+            dataGridView1.Columns[12].Name = "IR+ISS";
+            dataGridView1.Columns[13].Name = "CSRF+ISS";
 
             // Ajusta o tamanho automático das colunas
             dataGridView1.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
@@ -187,9 +187,9 @@ namespace AGT_FORMS
                 double aliquotaIr = 0;
                 if (comboBox3.SelectedItem != null)
                 {
-                    if (comboBox3.SelectedItem.ToString() == "1")
+                    if (comboBox3.SelectedItem.ToString() == "1%")
                         aliquotaIr = 0.01;
-                    else if (comboBox3.SelectedItem.ToString() == "1.5")
+                    else if (comboBox3.SelectedItem.ToString() == "1.5%")
                         aliquotaIr = 0.015;
                 }
 
