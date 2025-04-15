@@ -42,6 +42,7 @@
             label4 = new Label();
             button3 = new Button();
             label1 = new Label();
+            label2 = new Label();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -52,18 +53,22 @@
             // 
             // menuStrip1
             // 
+            menuStrip1.BackColor = Color.FromArgb(18, 87, 123);
+            menuStrip1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             menuStrip1.ImageScalingSize = new Size(24, 24);
             menuStrip1.Items.AddRange(new ToolStripItem[] { menuToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Padding = new Padding(4, 1, 0, 1);
-            menuStrip1.Size = new Size(799, 24);
+            menuStrip1.Size = new Size(1001, 24);
             menuStrip1.TabIndex = 18;
             menuStrip1.Text = "menuStrip1";
+            menuStrip1.ItemClicked += menuStrip1_ItemClicked;
             // 
             // menuToolStripMenuItem
             // 
             menuToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { calculadoraToolStripMenuItem, cadastrosToolStripMenuItem, leisEAlíquotasToolStripMenuItem, loginsESenhasToolStripMenuItem });
+            menuToolStripMenuItem.ForeColor = Color.FromArgb(247, 247, 247);
             menuToolStripMenuItem.Name = "menuToolStripMenuItem";
             menuToolStripMenuItem.Size = new Size(50, 22);
             menuToolStripMenuItem.Text = "Menu";
@@ -100,37 +105,61 @@
             // button1
             // 
             button1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            button1.Location = new Point(396, 116);
-            button1.Margin = new Padding(1, 1, 1, 1);
+            button1.BackColor = Color.FromArgb(18, 87, 123);
+            button1.Cursor = Cursors.Hand;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            button1.ForeColor = Color.FromArgb(169, 207, 229);
+            button1.Image = (Image)resources.GetObject("button1.Image");
+            button1.Location = new Point(523, 116);
+            button1.Margin = new Padding(1);
             button1.Name = "button1";
-            button1.Size = new Size(158, 117);
+            button1.Size = new Size(195, 180);
             button1.TabIndex = 19;
             button1.Text = "Alíquotas";
-            button1.UseVisualStyleBackColor = true;
+            button1.TextAlign = ContentAlignment.BottomCenter;
+            button1.TextImageRelation = TextImageRelation.ImageAboveText;
+            button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click_1;
             // 
             // button4
             // 
             button4.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            button4.Location = new Point(396, 281);
-            button4.Margin = new Padding(1, 1, 1, 1);
+            button4.BackColor = Color.FromArgb(18, 87, 123);
+            button4.Cursor = Cursors.Hand;
+            button4.FlatStyle = FlatStyle.Flat;
+            button4.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            button4.ForeColor = Color.FromArgb(169, 207, 229);
+            button4.Image = (Image)resources.GetObject("button4.Image");
+            button4.Location = new Point(523, 343);
+            button4.Margin = new Padding(1);
             button4.Name = "button4";
-            button4.Size = new Size(158, 117);
+            button4.Size = new Size(195, 180);
             button4.TabIndex = 21;
             button4.Text = "Cadastros";
-            button4.UseVisualStyleBackColor = true;
+            button4.TextAlign = ContentAlignment.BottomCenter;
+            button4.TextImageRelation = TextImageRelation.ImageAboveText;
+            button4.UseVisualStyleBackColor = false;
             button4.Click += button4_Click;
             // 
             // btnLogins
             // 
             btnLogins.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnLogins.Location = new Point(598, 281);
-            btnLogins.Margin = new Padding(1, 1, 1, 1);
+            btnLogins.BackColor = Color.FromArgb(18, 87, 123);
+            btnLogins.Cursor = Cursors.Hand;
+            btnLogins.FlatStyle = FlatStyle.Flat;
+            btnLogins.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnLogins.ForeColor = Color.FromArgb(169, 207, 229);
+            btnLogins.Image = (Image)resources.GetObject("btnLogins.Image");
+            btnLogins.Location = new Point(771, 343);
+            btnLogins.Margin = new Padding(1);
             btnLogins.Name = "btnLogins";
-            btnLogins.Size = new Size(158, 117);
+            btnLogins.Size = new Size(195, 180);
             btnLogins.TabIndex = 22;
             btnLogins.Text = "Login e Senhas";
-            btnLogins.UseVisualStyleBackColor = true;
+            btnLogins.TextAlign = ContentAlignment.BottomCenter;
+            btnLogins.TextImageRelation = TextImageRelation.ImageAboveText;
+            btnLogins.UseVisualStyleBackColor = false;
             btnLogins.Click += btnUsuario_Click_1;
             // 
             // label4
@@ -148,13 +177,21 @@
             // button3
             // 
             button3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            button3.Location = new Point(598, 116);
-            button3.Margin = new Padding(1, 1, 1, 1);
+            button3.BackColor = Color.FromArgb(18, 87, 123);
+            button3.Cursor = Cursors.Hand;
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            button3.ForeColor = Color.FromArgb(169, 207, 229);
+            button3.Image = (Image)resources.GetObject("button3.Image");
+            button3.Location = new Point(771, 116);
+            button3.Margin = new Padding(1);
             button3.Name = "button3";
-            button3.Size = new Size(158, 117);
+            button3.Size = new Size(195, 180);
             button3.TabIndex = 26;
             button3.Text = "Calculadora";
-            button3.UseVisualStyleBackColor = true;
+            button3.TextAlign = ContentAlignment.BottomCenter;
+            button3.TextImageRelation = TextImageRelation.ImageAboveText;
+            button3.UseVisualStyleBackColor = false;
             button3.Click += button3_Click;
             // 
             // label1
@@ -167,12 +204,22 @@
             label1.TabIndex = 27;
             label1.Text = "TEXTO INTRODUTÓRIO E EXPLICATIVO DO PROGRAMA";
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(308, 320);
+            label2.Name = "label2";
+            label2.Size = new Size(38, 15);
+            label2.TabIndex = 28;
+            label2.Text = "label2";
+            // 
             // HomePage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
-            ClientSize = new Size(799, 450);
+            BackColor = Color.FromArgb(169, 207, 229);
+            ClientSize = new Size(1001, 588);
+            Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(button3);
             Controls.Add(label4);
@@ -206,5 +253,6 @@
         private Button button3;
         private ToolStripMenuItem loginsESenhasToolStripMenuItem;
         private Label label1;
+        private Label label2;
     }
 }

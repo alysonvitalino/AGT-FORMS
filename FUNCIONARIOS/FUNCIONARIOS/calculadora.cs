@@ -266,14 +266,14 @@ namespace AGT_FORMS
                 if (corAlternada)
                 {
                     // Define a cor de fundo das linhas para verde claro
-                    dataGridView1.Rows[rowIndex1].DefaultCellStyle.BackColor = Color.LightGray;
-                    dataGridView1.Rows[rowIndex2].DefaultCellStyle.BackColor = Color.LightGray;
+                    dataGridView1.Rows[rowIndex1].DefaultCellStyle.BackColor = Color.LightBlue;
+                    dataGridView1.Rows[rowIndex2].DefaultCellStyle.BackColor = Color.LightBlue;
                 }
                 else
                 {
                     // Define a cor de fundo das linhas para azul claro
-                    dataGridView1.Rows[rowIndex1].DefaultCellStyle.BackColor = Color.LightSteelBlue;
-                    dataGridView1.Rows[rowIndex2].DefaultCellStyle.BackColor = Color.LightSteelBlue;
+                    dataGridView1.Rows[rowIndex1].DefaultCellStyle.BackColor = Color.Azure;
+                    dataGridView1.Rows[rowIndex2].DefaultCellStyle.BackColor = Color.Azure;
                 }
 
                 // Alterna o valor da variável

@@ -65,20 +65,20 @@
             // 
             // menuStrip1
             // 
-            menuStrip1.BackColor = Color.White;
+            menuStrip1.BackColor = Color.FromArgb(18, 87, 123);
             menuStrip1.ImageScalingSize = new Size(24, 24);
             menuStrip1.Items.AddRange(new ToolStripItem[] { menuToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Padding = new Padding(6, 1, 0, 1);
             menuStrip1.Size = new Size(1434, 24);
-            menuStrip1.TabIndex = 0;
+            menuStrip1.TabIndex = 18;
             menuStrip1.Text = "menuStrip1";
             // 
             // menuToolStripMenuItem
             // 
             menuToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { paginaInicialToolStripMenuItem, calculadoraToolStripMenuItem, cadastrosToolStripMenuItem, leisEAlíquotasToolStripMenuItem, loginsESenhasToolStripMenuItem });
-            menuToolStripMenuItem.ForeColor = Color.Black;
+            menuToolStripMenuItem.ForeColor = Color.FromArgb(247, 247, 247);
             menuToolStripMenuItem.Name = "menuToolStripMenuItem";
             menuToolStripMenuItem.Size = new Size(50, 22);
             menuToolStripMenuItem.Text = "Menu";
@@ -121,11 +121,11 @@
             // button1
             // 
             button1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            button1.BackColor = Color.LightSteelBlue;
+            button1.BackColor = Color.FromArgb(18, 87, 123);
             button1.Cursor = Cursors.Hand;
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.Navy;
+            button1.ForeColor = Color.FromArgb(169, 207, 229);
             button1.Image = (Image)resources.GetObject("button1.Image");
             button1.Location = new Point(1259, 150);
             button1.Name = "button1";
@@ -141,11 +141,11 @@
             // button2
             // 
             button2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            button2.BackColor = Color.LightSteelBlue;
+            button2.BackColor = Color.FromArgb(18, 87, 123);
             button2.Cursor = Cursors.Hand;
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.ForeColor = Color.Navy;
+            button2.ForeColor = Color.FromArgb(169, 207, 229);
             button2.Image = (Image)resources.GetObject("button2.Image");
             button2.Location = new Point(1259, 310);
             button2.Name = "button2";
@@ -160,11 +160,11 @@
             // button3
             // 
             button3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            button3.BackColor = Color.LightSteelBlue;
+            button3.BackColor = Color.FromArgb(18, 87, 123);
             button3.Cursor = Cursors.Hand;
             button3.FlatStyle = FlatStyle.Flat;
             button3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button3.ForeColor = Color.Navy;
+            button3.ForeColor = Color.FromArgb(169, 207, 229);
             button3.Image = (Image)resources.GetObject("button3.Image");
             button3.Location = new Point(1259, 460);
             button3.Name = "button3";
@@ -179,11 +179,11 @@
             // button4
             // 
             button4.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            button4.BackColor = Color.LightSteelBlue;
+            button4.BackColor = Color.FromArgb(18, 87, 123);
             button4.Cursor = Cursors.Hand;
             button4.FlatStyle = FlatStyle.Flat;
             button4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button4.ForeColor = Color.Navy;
+            button4.ForeColor = Color.FromArgb(169, 207, 229);
             button4.Image = (Image)resources.GetObject("button4.Image");
             button4.Location = new Point(1259, 613);
             button4.Name = "button4";
@@ -199,7 +199,7 @@
             // 
             label2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label2.AutoSize = true;
-            label2.BackColor = Color.White;
+            label2.BackColor = Color.FromArgb(169, 207, 229);
             label2.Font = new Font("Segoe UI", 12F);
             label2.ForeColor = Color.Navy;
             label2.Location = new Point(16, 157);
@@ -221,7 +221,7 @@
             // 
             label3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label3.AutoSize = true;
-            label3.BackColor = Color.White;
+            label3.BackColor = Color.FromArgb(169, 207, 229);
             label3.Font = new Font("Segoe UI", 12F);
             label3.ForeColor = Color.Navy;
             label3.Location = new Point(16, 47);
@@ -234,7 +234,7 @@
             // 
             label4.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label4.AutoSize = true;
-            label4.BackColor = Color.White;
+            label4.BackColor = Color.FromArgb(169, 207, 229);
             label4.Font = new Font("Segoe UI", 12F);
             label4.ForeColor = Color.Navy;
             label4.Location = new Point(17, 97);
@@ -265,14 +265,14 @@
             // 
             // button5
             // 
-            button5.BackColor = Color.LightSteelBlue;
+            button5.BackColor = Color.FromArgb(18, 87, 123);
             button5.BackgroundImageLayout = ImageLayout.Center;
             button5.Cursor = Cursors.Hand;
             button5.FlatStyle = FlatStyle.Flat;
             button5.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button5.ForeColor = Color.Navy;
+            button5.ForeColor = Color.FromArgb(169, 207, 229);
             button5.Image = (Image)resources.GetObject("button5.Image");
-            button5.Location = new Point(17, 328);
+            button5.Location = new Point(12, 461);
             button5.Name = "button5";
             button5.RightToLeft = RightToLeft.Yes;
             button5.Size = new Size(163, 115);
@@ -286,12 +286,12 @@
             // dataGridView1
             // 
             dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 8.25F);
-            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
             dataGridViewCellStyle1.Format = "C2";
             dataGridViewCellStyle1.NullValue = null;
             dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dataGridView1.BackgroundColor = Color.Silver;
+            dataGridView1.BackgroundColor = Color.FromArgb(247, 247, 247);
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = SystemColors.Control;
             dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
@@ -339,7 +339,7 @@
             // 
             label5.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label5.AutoSize = true;
-            label5.BackColor = Color.White;
+            label5.BackColor = Color.FromArgb(169, 207, 229);
             label5.Font = new Font("Segoe UI", 12F);
             label5.ForeColor = Color.Navy;
             label5.Location = new Point(16, 207);
@@ -352,7 +352,7 @@
             // 
             label6.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label6.AutoSize = true;
-            label6.BackColor = Color.White;
+            label6.BackColor = Color.FromArgb(169, 207, 229);
             label6.Font = new Font("Segoe UI", 12F);
             label6.ForeColor = Color.Navy;
             label6.Location = new Point(16, 257);
@@ -388,7 +388,7 @@
             // label1
             // 
             label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            label1.BackColor = Color.Lavender;
+            label1.BackColor = Color.FromArgb(169, 207, 229);
             label1.BorderStyle = BorderStyle.FixedSingle;
             label1.Font = new Font("Segoe UI", 16F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.Navy;
@@ -401,11 +401,20 @@
             // 
             // button7
             // 
-            button7.Location = new Point(16, 567);
+            button7.BackgroundImageLayout = ImageLayout.Center;
+            button7.Cursor = Cursors.Hand;
+            button7.FlatStyle = FlatStyle.Flat;
+            button7.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            button7.ForeColor = Color.FromArgb(169, 207, 229);
+            button7.Image = (Image)resources.GetObject("button7.Image");
+            button7.Location = new Point(12, 613);
             button7.Name = "button7";
-            button7.Size = new Size(163, 122);
+            button7.RightToLeft = RightToLeft.Yes;
+            button7.Size = new Size(163, 115);
             button7.TabIndex = 20;
             button7.Text = "Limpar";
+            button7.TextAlign = ContentAlignment.BottomCenter;
+            button7.TextImageRelation = TextImageRelation.ImageAboveText;
             button7.UseVisualStyleBackColor = true;
             button7.Click += button7_Click;
             // 
@@ -413,8 +422,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.CornflowerBlue;
-            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackColor = Color.FromArgb(18, 87, 123);
             ClientSize = new Size(1434, 741);
             Controls.Add(button7);
             Controls.Add(button4);
