@@ -14,6 +14,8 @@ namespace AGT_FORMS
 {
     public partial class Aliquotas : Form
     {
+
+        private string nomeUsuario;
         public Aliquotas()
         {
             InitializeComponent();

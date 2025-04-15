@@ -15,6 +15,8 @@ namespace AGT_FORMS
     public partial class calculadora : Form
     {
         MySqlConnection conexao;
+
+        private string nomeUsuario;
         public calculadora()
         {
             InitializeComponent();

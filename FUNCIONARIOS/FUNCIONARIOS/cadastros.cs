@@ -14,6 +14,8 @@ namespace AGT_FORMS
 {
     public partial class Cadastros : Form
     {
+
+        private string nomeUsuario;
         public Cadastros()
         {
             InitializeComponent();

@@ -15,6 +15,8 @@ namespace AGT_FORMS
     public partial class LoginPage : Form
     {
         MySqlConnection conexao;
+
+        private string nomeUsuario;
         public LoginPage()
         {
             InitializeComponent();
@@ -31,7 +33,7 @@ namespace AGT_FORMS
             {
                 if (BoxLogin.Text != "" && BoxSenha.Text != "")
                 {
-                    string data_source = "datasource=localhost; username=root;password='';database=agt";
+                    string data_source = "datasource=localhost; username=root;password=;database=agt";
                     conexao = new MySqlConnection(data_source);
 
                     string loginQuery = "SELECT login, senha FROM logins WHERE login = @login AND senha = @senha";

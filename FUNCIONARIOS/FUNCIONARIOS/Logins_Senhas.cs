@@ -14,6 +14,8 @@ namespace AGT_FORMS
     public partial class Logins_Senhas : Form
     {
         private bool colunasCriadas = false; // Variável de controle para as colunas
+
+        private string nomeUsuario;
         public Logins_Senhas()
         {
             InitializeComponent();

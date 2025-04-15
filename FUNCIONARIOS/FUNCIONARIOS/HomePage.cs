@@ -18,13 +18,11 @@ namespace AGT_FORMS
         public HomePage()
         {
             InitializeComponent();
-
-            labelUsuario.Text = $"Olá, {nomeUsuario}! Acesse as funcionalidades no menu ao lado";
         }
 
         private void HomePage_Load(object sender, EventArgs e)
         {
-            labelUsuario.Text = $"Olá, {nomeUsuario}! Acesse as funcionalidades no menu ao lado";
+            label3.Text = $"Olá, {nomeUsuario}! Acesse as funcionalidades no menu ao lado";
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -51,19 +49,6 @@ namespace AGT_FORMS
             produto.Show();
             Hide();
         }
-        private void Buscar_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void menuToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
         private void btnUsuario_Click_1(object sender, EventArgs e)
         {
             Logins_Senhas produto = new Logins_Senhas();
@@ -79,12 +64,6 @@ namespace AGT_FORMS
             produto.Show();
             Hide();
         }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void button4_Click(object sender, EventArgs e)
         {
             Cadastros produto = new Cadastros();
@@ -131,16 +110,6 @@ namespace AGT_FORMS
             produto.StartPosition = FormStartPosition.CenterScreen;
             produto.Show();
             Hide();
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
         }
     }
 }
