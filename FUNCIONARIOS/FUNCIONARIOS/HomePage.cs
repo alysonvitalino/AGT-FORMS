@@ -6,9 +6,25 @@ namespace AGT_FORMS
     public partial class HomePage : Form
     {
         MySqlConnection conexao;
+
+        private string nomeUsuario;
+
+        
+        public HomePage(string usuario)
+        {
+            InitializeComponent();
+            nomeUsuario = usuario;
+        }
         public HomePage()
         {
             InitializeComponent();
+
+            labelUsuario.Text = $"Olá, {nomeUsuario}! Acesse as funcionalidades no menu ao lado";
+        }
+
+        private void HomePage_Load(object sender, EventArgs e)
+        {
+            labelUsuario.Text = $"Olá, {nomeUsuario}! Acesse as funcionalidades no menu ao lado";
         }
 
         private void button1_Click(object sender, EventArgs e)
