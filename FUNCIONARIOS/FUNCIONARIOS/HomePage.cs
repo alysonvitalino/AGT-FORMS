@@ -53,7 +53,7 @@ namespace AGT_FORMS
         }
         private void Buscar_Click(object sender, EventArgs e)
         {
-            
+
         }
         private void label3_Click(object sender, EventArgs e)
         {
@@ -134,6 +134,11 @@ namespace AGT_FORMS
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
         }
