@@ -366,7 +366,7 @@
             comboBox3.BackColor = Color.WhiteSmoke;
             comboBox3.ForeColor = Color.MidnightBlue;
             comboBox3.FormattingEnabled = true;
-            comboBox3.Items.AddRange(new object[] { "1", "1.5" });
+            comboBox3.Items.AddRange(new object[] { "1%", "1.5%" });
             comboBox3.Location = new Point(16, 281);
             comboBox3.Name = "comboBox3";
             comboBox3.Size = new Size(163, 23);

@@ -46,11 +46,13 @@ namespace AGT_FORMS
 
                     if (reader.HasRows)
                     {
-                        MessageBox.Show("Login realizado com sucesso!");
+                        string usuario = BoxLogin.Text;
+
+                        MessageBox.Show($"{usuario}, login realizado com sucesso!");
 
                         BoxSenha.Clear();
 
-                        HomePage produto = new HomePage();
+                        HomePage produto = new HomePage(usuario); 
                         produto.StartPosition = FormStartPosition.CenterScreen;
                         produto.Show();
 

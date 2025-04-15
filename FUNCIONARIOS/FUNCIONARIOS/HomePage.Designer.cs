@@ -39,10 +39,9 @@
             button1 = new Button();
             button4 = new Button();
             btnLogins = new Button();
-            label4 = new Label();
             button3 = new Button();
             label1 = new Label();
-            label2 = new Label();
+            labelUsuario = new Label();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -162,18 +161,6 @@
             btnLogins.UseVisualStyleBackColor = false;
             btnLogins.Click += btnUsuario_Click_1;
             // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 12F);
-            label4.Location = new Point(96, 62);
-            label4.Margin = new Padding(1, 0, 1, 0);
-            label4.Name = "label4";
-            label4.Size = new Size(135, 21);
-            label4.TabIndex = 23;
-            label4.Text = "Bem Vindo @user";
-            label4.TextAlign = ContentAlignment.MiddleLeft;
-            // 
             // button3
             // 
             button3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
@@ -222,7 +209,6 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(button3);
-            Controls.Add(label4);
             Controls.Add(btnLogins);
             Controls.Add(button4);
             Controls.Add(button1);
@@ -249,7 +235,6 @@
         private Button button1;
         private Button button4;
         private Button btnLogins;
-        private Label label4;
         private Button button3;
         private ToolStripMenuItem loginsESenhasToolStripMenuItem;
         private Label label1;

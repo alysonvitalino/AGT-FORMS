@@ -23,6 +23,7 @@ namespace AGT_FORMS
             dataGridView1.Columns[1].HeaderText = "Código do Serviço";
             dataGridView1.Columns[2].HeaderText = "Descrição do Serviço";
             dataGridView1.Columns[3].HeaderText = "ISS";
+            dataGridView1.Columns[4].HeaderText = "Lei Vigente";
         }
 
         private void Aliquotas_Load(object sender, EventArgs e)
@@ -33,7 +34,7 @@ namespace AGT_FORMS
         private void CarregarDados()
         {
             string conexaoString = "server=localhost; userid=root; password=''; database=agt";
-            string query = "SELECT municipio, cod_servico, desc_servico, aliquota_iss FROM aliquotas";
+            string query = "SELECT municipio, cod_servico, desc_servico, aliquota_iss, lei_vigente FROM aliquotas WHERE id_aliquota <> 0";
 
             try
             {
@@ -46,6 +47,7 @@ namespace AGT_FORMS
                         adapter.Fill(dt);
                         dataGridView1.DataSource = dt;
                         dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+
                     }
                 }
             }
@@ -97,7 +99,7 @@ namespace AGT_FORMS
         private void CarregarDadosFiltrados(string municipio)
         {
             string conexaoString = "server=localhost; userid=root; password=''; database=agt";
-            string query = "SELECT municipio, cod_servico, desc_servico, aliquota_iss FROM aliquotas WHERE municipio = @municipio";
+            string query = "SELECT municipio, cod_servico, desc_servico, aliquota_iss, lei_vigente FROM aliquotas WHERE municipio = @municipio";
 
             try
             {
@@ -111,6 +113,8 @@ namespace AGT_FORMS
                         DataTable dt = new DataTable();
                         adapter.Fill(dt);
                         dataGridView1.DataSource = dt;
+
+                        dataGridView1.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
                     }
                 }
             }
