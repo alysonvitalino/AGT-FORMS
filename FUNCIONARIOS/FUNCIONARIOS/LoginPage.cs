@@ -44,6 +44,8 @@ namespace AGT_FORMS
 
                     conexao.Open();
 
+
+
                     MySqlDataReader reader = comando.ExecuteReader();
 
                     if (reader.HasRows)
@@ -66,6 +68,7 @@ namespace AGT_FORMS
                     }
 
                     reader.Close();
+
                 }
                 else
                 {

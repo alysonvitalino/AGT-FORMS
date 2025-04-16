@@ -5,11 +5,7 @@ namespace AGT_FORMS
 {
     public partial class HomePage : Form
     {
-        MySqlConnection conexao;
-
-        private string nomeUsuario;
-
-        
+        private string nomeUsuario;        
         public HomePage(string usuario)
         {
             InitializeComponent();
@@ -24,24 +20,6 @@ namespace AGT_FORMS
         {
             label3.Text = $"Olá, {nomeUsuario}! Acesse as funcionalidades no menu ao lado";
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            try
-            {
-
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                conexao.Close();
-            }
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
             LoginPage produto = new LoginPage();
