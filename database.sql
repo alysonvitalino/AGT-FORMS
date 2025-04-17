@@ -99,8 +99,6 @@ SELECT municipio, cod_servico, desc_servico, aliquota_iss FROM aliquotas;
 
 SELECT * FROM aliquotas;
 
-INSERT INTO logins(login, senha)  VALUES("Alyson", "123456");
-
-select login, senha FROM logins WHERE login = "alyson" AND senha = "123456";
+select * from logins;
 
 
