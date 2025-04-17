@@ -14,8 +14,6 @@ namespace AGT_FORMS
 {
     public partial class Cadastros : Form
     {
-
-        private string nomeUsuario;
         public Cadastros()
         {
             InitializeComponent();
@@ -38,14 +36,12 @@ namespace AGT_FORMS
         }
         private void CarregarDados()
         {
-            string conexaoString = "server=localhost; userid=root; password=''; database=agt";
             string query = "SELECT cod_erp, cod_entidade, cnpj_unidade, nome_fantasia, endereco_unidade, cidade_unidade, cep_unidade FROM unidades";
 
             try
             {
-                using (MySqlConnection conexao = new MySqlConnection(conexaoString))
+                using (MySqlConnection conexao = DBHelper.ObterConexao())
                 {
-                    conexao.Open();
                     using (MySqlDataAdapter adapter = new MySqlDataAdapter(query, conexao))
                     {
                         DataTable dt = new DataTable();
@@ -62,27 +58,23 @@ namespace AGT_FORMS
         }
         private void CarregarComboBox()
         {
-            string conexaoString = "server=localhost; userid=root; password=''; database=agt";
             string query = "SELECT cod_erp FROM unidades";
 
-            // MessageBox.Show(query);
             try
             {
-                using (MySqlConnection conexao = new MySqlConnection(conexaoString))
+                using (MySqlConnection conexao = DBHelper.ObterConexao())
                 {
-                    conexao.Open();
                     using (MySqlCommand cmd = new MySqlCommand(query, conexao))
                     {
-                        MySqlDataReader reader = cmd.ExecuteReader();
-
-                        // Limpa a comboBox antes de adicionar os novos itens
-                        comboBox1.Items.Clear();
-                        while (reader.Read())
+                        using (MySqlDataReader reader = cmd.ExecuteReader())
                         {
-                            string item = reader["cod_erp"].ToString();
-                            comboBox1.Items.Add(item);
+                            comboBox1.Items.Clear();
+                            while (reader.Read())
+                            {
+                                string item = reader["cod_erp"].ToString();
+                                comboBox1.Items.Add(item);
+                            }
                         }
-
                     }
                 }
             }
@@ -102,21 +94,19 @@ namespace AGT_FORMS
         }
         private void CarregarDadosFiltrados(string cod_erp)
         {
-            string conexaoString = "server=localhost; userid=root; password=''; database=agt";
             string query = "SELECT cod_erp, cod_entidade, cnpj_unidade, nome_fantasia, endereco_unidade, cidade_unidade, cep_unidade FROM unidades WHERE cod_erp = @cod_erp";
 
             try
             {
-                using (MySqlConnection conexao = new MySqlConnection(conexaoString))
+                using (MySqlConnection conexao = DBHelper.ObterConexao())
                 {
-                    conexao.Open();
                     using (MySqlDataAdapter adapter = new MySqlDataAdapter(query, conexao))
                     {
                         adapter.SelectCommand.Parameters.AddWithValue("@cod_erp", cod_erp);
-
                         DataTable dt = new DataTable();
                         adapter.Fill(dt);
                         dataGridView1.DataSource = dt;
+                        dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                     }
                 }
             }
@@ -196,22 +186,6 @@ namespace AGT_FORMS
             produto.Show();
             Hide();
         }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button5_Click(object sender, EventArgs e)
         {
             comboBox1.SelectedIndex = -1;

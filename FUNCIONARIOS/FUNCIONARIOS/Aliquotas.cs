@@ -35,21 +35,18 @@ namespace AGT_FORMS
         }
         private void CarregarDados()
         {
-            string conexaoString = "server=localhost; userid=root; password=''; database=agt";
             string query = "SELECT municipio, cod_servico, desc_servico, aliquota_iss, lei_vigente FROM aliquotas WHERE id_aliquota <> 0";
 
             try
             {
-                using (MySqlConnection conexao = new MySqlConnection(conexaoString))
+                using (MySqlConnection conexao = DBHelper.ObterConexao())
                 {
-                    conexao.Open();
                     using (MySqlDataAdapter adapter = new MySqlDataAdapter(query, conexao))
                     {
                         DataTable dt = new DataTable();
                         adapter.Fill(dt);
                         dataGridView1.DataSource = dt;
                         dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-
                     }
                 }
             }
@@ -60,27 +57,25 @@ namespace AGT_FORMS
         }
         private void CarregarComboBox()
         {
-            string conexaoString = "server=localhost; userid=root; password=''; database=agt";
             string query = "SELECT DISTINCT (municipio) FROM aliquotas";
 
-           // MessageBox.Show(query);
             try
             {
-                using (MySqlConnection conexao = new MySqlConnection(conexaoString))
+                using (MySqlConnection conexao = DBHelper.ObterConexao())
                 {
-                    conexao.Open();
                     using (MySqlCommand cmd = new MySqlCommand(query, conexao))
                     {
-                        MySqlDataReader reader = cmd.ExecuteReader();
-
-                        // Limpa a comboBox antes de adicionar os novos itens
-                        comboBox1.Items.Clear();
-                        while (reader.Read())
+                        using (MySqlDataReader reader = cmd.ExecuteReader())
                         {
-                            string item = reader["municipio"].ToString();
-                            comboBox1.Items.Add(item);
-                        }
+                            // Limpa a comboBox antes de adicionar os novos itens
+                            comboBox1.Items.Clear();
 
+                            while (reader.Read())
+                            {
+                                string item = reader["municipio"].ToString();
+                                comboBox1.Items.Add(item);
+                            }
+                        }
                     }
                 }
             }
@@ -100,14 +95,12 @@ namespace AGT_FORMS
         }
         private void CarregarDadosFiltrados(string municipio)
         {
-            string conexaoString = "server=localhost; userid=root; password=''; database=agt";
             string query = "SELECT municipio, cod_servico, desc_servico, aliquota_iss, lei_vigente FROM aliquotas WHERE municipio = @municipio";
 
             try
             {
-                using (MySqlConnection conexao = new MySqlConnection(conexaoString))
+                using (MySqlConnection conexao = DBHelper.ObterConexao())
                 {
-                    conexao.Open();
                     using (MySqlDataAdapter adapter = new MySqlDataAdapter(query, conexao))
                     {
                         adapter.SelectCommand.Parameters.AddWithValue("@municipio", municipio);

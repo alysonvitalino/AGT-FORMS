@@ -35,6 +35,7 @@
             textBox3 = new TextBox();
             label2 = new Label();
             label3 = new Label();
+            button2 = new Button();
             SuspendLayout();
             // 
             // label1
@@ -96,11 +97,22 @@
             label3.TabIndex = 6;
             label3.Text = "Senha";
             // 
+            // button2
+            // 
+            button2.Location = new Point(327, 392);
+            button2.Name = "button2";
+            button2.Size = new Size(112, 34);
+            button2.TabIndex = 7;
+            button2.Text = "Sair";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(button2);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(textBox3);
@@ -123,5 +135,6 @@
         private TextBox textBox3;
         private Label label2;
         private Label label3;
+        private Button button2;
     }
 }

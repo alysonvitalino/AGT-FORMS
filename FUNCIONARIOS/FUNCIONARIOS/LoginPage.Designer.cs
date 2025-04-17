@@ -60,7 +60,6 @@
             label1.Size = new Size(37, 15);
             label1.TabIndex = 2;
             label1.Text = "Login";
-            label1.Click += label1_Click;
             // 
             // label2
             // 
@@ -81,7 +80,6 @@
             BoxLogin.Name = "BoxLogin";
             BoxLogin.Size = new Size(186, 23);
             BoxLogin.TabIndex = 4;
-            BoxLogin.TextChanged += BoxLogin_TextChanged;
             // 
             // BoxSenha
             // 
@@ -105,7 +103,6 @@
             Controls.Add(button1);
             Name = "LoginPage";
             StartPosition = FormStartPosition.CenterScreen;
-            Load += login_Load;
             ResumeLayout(false);
             PerformLayout();
         }

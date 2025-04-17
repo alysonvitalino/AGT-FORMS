@@ -44,18 +44,6 @@ namespace AGT_FORMS
             // Ajusta o tamanho automático das colunas
             dataGridView1.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
         }
-        private void SeuFormulario_Load(object sender, EventArgs e)
-        {
-
-        }
-
-
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void paginaInicialToolStripMenuItem_Click(object sender, EventArgs e)
         {
             HomePage produto = new HomePage();
@@ -128,7 +116,6 @@ namespace AGT_FORMS
             Hide();
         }
 
-        // Adiciona uma variável para controlar a alternância de cores
         private bool corAlternada = false;
 
         private void button5_Click(object sender, EventArgs e)
@@ -285,40 +272,38 @@ namespace AGT_FORMS
 
         private void PreencherComboBox()
         {
-            string data_source = "server=localhost; userid=root; password=''; database=agt";
-            conexao = new MySqlConnection(data_source);
-
             try
             {
-                conexao.Open();
-
-                // Preencher ComboBox1 com a coluna "municipio"
-                string sql = "SELECT DISTINCT municipio FROM aliquotas;"; // DISTINCT evita duplicatas
-                MySqlCommand comando = new MySqlCommand(sql, conexao);
-                MySqlDataAdapter dataAdapter = new MySqlDataAdapter(comando);
-                DataTable dataTable = new DataTable();
-                dataAdapter.Fill(dataTable);
-
-                comboBox1.DataSource = dataTable;
-                comboBox1.DisplayMember = "municipio";
-                comboBox1.ValueMember = "municipio";
-
-                // Evento para atualizar ComboBox2 quando um município for selecionado
-                comboBox1.SelectedIndexChanged += ComboBox1_SelectedIndexChanged;
-
-                // Carregar a ComboBox2 com base no primeiro município da lista
-                if (comboBox1.Items.Count > 0)
+                using (MySqlConnection conexao = DBHelper.ObterConexao())
                 {
-                    AtualizarComboBox2(comboBox1.SelectedValue.ToString());
+                    // Preencher ComboBox1 com a coluna "municipio"
+                    string sql = "SELECT DISTINCT municipio FROM aliquotas;"; // DISTINCT evita duplicatas
+                    using (MySqlCommand comando = new MySqlCommand(sql, conexao))
+                    {
+                        using (MySqlDataAdapter dataAdapter = new MySqlDataAdapter(comando))
+                        {
+                            DataTable dataTable = new DataTable();
+                            dataAdapter.Fill(dataTable);
+
+                            comboBox1.DataSource = dataTable;
+                            comboBox1.DisplayMember = "municipio";
+                            comboBox1.ValueMember = "municipio";
+
+                            // Evento para atualizar ComboBox2 quando um município for selecionado
+                            comboBox1.SelectedIndexChanged += ComboBox1_SelectedIndexChanged;
+
+                            // Carregar a ComboBox2 com base no primeiro município da lista
+                            if (comboBox1.Items.Count > 0)
+                            {
+                                AtualizarComboBox2(comboBox1.SelectedValue.ToString());
+                            }
+                        }
+                    }
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Erro ao carregar os municípios: " + ex.Message);
-            }
-            finally
-            {
-                conexao.Close(); // Fecha a conexão ao final do método
             }
         }
 
@@ -334,31 +319,36 @@ namespace AGT_FORMS
         {
             try
             {
-                // Abrimos e fechamos a conexão apenas dentro deste método
-                using (MySqlConnection conexaoTemp = new MySqlConnection("server=localhost; userid=root; password=''; database=agt"))
+                // Usando DBHelper para obter a conexão
+                using (MySqlConnection conexaoTemp = DBHelper.ObterConexao())
                 {
                     conexaoTemp.Open();
 
                     string sql2 = "SELECT cod_servico, desc_servico, aliquota_iss FROM aliquotas WHERE municipio = @municipio;";
-                    MySqlCommand comando2 = new MySqlCommand(sql2, conexaoTemp);
-                    comando2.Parameters.AddWithValue("@municipio", municipio);
-                    MySqlDataAdapter dataAdapter2 = new MySqlDataAdapter(comando2);
-                    DataTable dataTable2 = new DataTable();
-                    dataAdapter2.Fill(dataTable2);
-
-                    // Criar uma nova coluna para armazenar a concatenação
-                    dataTable2.Columns.Add("DescricaoCompleta", typeof(string));
-
-                    foreach (DataRow row in dataTable2.Rows)
+                    using (MySqlCommand comando2 = new MySqlCommand(sql2, conexaoTemp))
                     {
-                        row["DescricaoCompleta"] = row["cod_servico"].ToString() + " - "
-                                                  + row["desc_servico"].ToString() + " - "
-                                                  + row["aliquota_iss"].ToString() + "%";
-                    }
+                        comando2.Parameters.AddWithValue("@municipio", municipio);
+                        using (MySqlDataAdapter dataAdapter2 = new MySqlDataAdapter(comando2))
+                        {
+                            DataTable dataTable2 = new DataTable();
+                            dataAdapter2.Fill(dataTable2);
 
-                    comboBox2.DataSource = dataTable2;
-                    comboBox2.DisplayMember = "DescricaoCompleta"; // Exibe a concatenação
-                    comboBox2.ValueMember = "cod_servico"; // Define o valor interno como o código do serviço
+                            // Criar uma nova coluna para armazenar a concatenação
+                            dataTable2.Columns.Add("DescricaoCompleta", typeof(string));
+
+                            foreach (DataRow row in dataTable2.Rows)
+                            {
+                                row["DescricaoCompleta"] = row["cod_servico"].ToString() + " - "
+                                                          + row["desc_servico"].ToString() + " - "
+                                                          + row["aliquota_iss"].ToString() + "%";
+                            }
+
+                            // Preenche a comboBox2 com os dados
+                            comboBox2.DataSource = dataTable2;
+                            comboBox2.DisplayMember = "DescricaoCompleta"; // Exibe a concatenação
+                            comboBox2.ValueMember = "cod_servico"; // Define o valor interno como o código do serviço
+                        }
+                    }
                 }
             }
             catch (Exception ex)
@@ -366,27 +356,6 @@ namespace AGT_FORMS
                 MessageBox.Show("Erro ao carregar os dados: " + ex.Message);
             }
         }
-
-        private void calculadora_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void button7_Click(object sender, EventArgs e)
         {
             dataGridView1.Rows.Clear();

@@ -61,7 +61,6 @@
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(1087, 654);
             dataGridView1.TabIndex = 0;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // button1
             // 
@@ -206,7 +205,6 @@
             label2.Size = new Size(68, 21);
             label2.TabIndex = 8;
             label2.Text = "Unidade";
-            label2.Click += label2_Click;
             // 
             // comboBox1
             // 

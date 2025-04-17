@@ -21,54 +21,55 @@ namespace AGT_FORMS
         {
             InitializeComponent();
         }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             try
             {
-                if (BoxLogin.Text != "" && BoxSenha.Text != "")
+                if (!string.IsNullOrWhiteSpace(BoxLogin.Text) && !string.IsNullOrWhiteSpace(BoxSenha.Text))
                 {
-                    string data_source = "datasource=localhost; username=root;password=;database=agt";
-                    conexao = new MySqlConnection(data_source);
-
-                    string loginQuery = "SELECT login, senha FROM logins WHERE login = @login AND senha = @senha";
-
-                    MySqlCommand comando = new MySqlCommand(loginQuery, conexao);
-                    comando.Parameters.AddWithValue("@login", BoxLogin.Text);
-                    comando.Parameters.AddWithValue("@senha", BoxSenha.Text);
-
-                    conexao.Open();
-
-
-
-                    MySqlDataReader reader = comando.ExecuteReader();
-
-                    if (reader.HasRows)
+                    // Usar DBHelper para obter a conexão
+                    using (MySqlConnection conexao = DBHelper.ObterConexao())
                     {
-                        string usuario = BoxLogin.Text;
+                        string loginQuery = "SELECT login, senha FROM logins WHERE login = @login";
 
-                        MessageBox.Show($"{usuario}, login realizado com sucesso!");
+                        MySqlCommand comando = new MySqlCommand(loginQuery, conexao);
+                        comando.Parameters.AddWithValue("@login", BoxLogin.Text);
 
-                        BoxSenha.Clear();
+                        MySqlDataReader reader = comando.ExecuteReader();
 
-                        HomePage produto = new HomePage(usuario); 
-                        produto.StartPosition = FormStartPosition.CenterScreen;
-                        produto.Show();
+                        if (reader.HasRows)
+                        {
+                            reader.Read();
+                            string senhaHash = reader["senha"].ToString();
 
-                        Hide();
+                            // Verificar se a senha informada corresponde ao hash no banco
+                            if (BCrypt.Net.BCrypt.Verify(BoxSenha.Text, senhaHash))
+                            {
+                                string usuario = BoxLogin.Text;
+
+                                MessageBox.Show($"{usuario}, login realizado com sucesso!");
+
+                                BoxSenha.Clear();
+
+                                // Passar o nome de usuário para a HomePage
+                                HomePage produto = new HomePage(usuario);
+                                produto.StartPosition = FormStartPosition.CenterScreen;
+                                produto.Show();
+
+                                Hide();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Senha incorreta.");
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Dados de login incorretos.");
+                        }
+
+                        reader.Close();
                     }
-                    else
-                    {
-                        MessageBox.Show("Dados de login incorretos.");
-                    }
-
-                    reader.Close();
-
                 }
                 else
                 {
@@ -77,25 +78,8 @@ namespace AGT_FORMS
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Erro: " + ex.Message);
             }
-            finally
-            {
-                if (conexao.State == System.Data.ConnectionState.Open)
-                {
-                    conexao.Close();
-                }
-            }
-        }
-
-        private void login_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void BoxLogin_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

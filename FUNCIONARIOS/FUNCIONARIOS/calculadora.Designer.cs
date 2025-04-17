@@ -324,7 +324,6 @@
             dataGridView1.RowHeadersWidth = 62;
             dataGridView1.Size = new Size(1049, 579);
             dataGridView1.TabIndex = 13;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // textBox2
             // 
@@ -383,7 +382,6 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(799, 554);
             panel1.TabIndex = 18;
-            panel1.Paint += panel1_Paint;
             // 
             // label1
             // 
@@ -397,7 +395,6 @@
             label1.Size = new Size(1434, 717);
             label1.TabIndex = 5;
             label1.TextAlign = ContentAlignment.TopCenter;
-            label1.Click += label1_Click;
             // 
             // button7
             // 
@@ -451,7 +448,6 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Calculadora";
             WindowState = FormWindowState.Maximized;
-            Load += calculadora_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();

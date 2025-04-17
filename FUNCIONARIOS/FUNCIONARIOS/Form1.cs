@@ -31,41 +31,38 @@ namespace AGT_FORMS
 
             if (!string.IsNullOrWhiteSpace(senha) && !string.IsNullOrWhiteSpace(usuario))
             {
-                // Gerar hash com Bcrypt
-                string hash = BCrypt.Net.BCrypt.HashPassword(senha);
+                int workfactor = 16;
+
+                string salt = BCrypt.Net.BCrypt.GenerateSalt(workfactor);
+
+                string hash = BCrypt.Net.BCrypt.HashPassword(senha, salt);
 
                 // Mostrar o hash
                 MessageBox.Show("Hash gerado:\n\n" + hash, "Senha Hash", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Clipboard.SetText(hash);
                 textBox2.Text = hash;
 
-                // String de conexão
-                string conexaoString = "server=localhost;userid=root;password=;database=agt";
-
                 try
                 {
-                    using (conexao = new MySqlConnection(conexaoString))
+                    using (MySqlConnection conexao = DBHelper.ObterConexao()) // Usando DBHelper para a conexão
                     {
-                        conexao.Open();
-
                         string query = "INSERT INTO logins (login, senha) VALUES (@login, @senha)";
-                        MySqlCommand cmd = new MySqlCommand(query, conexao);
-
-                        cmd.Parameters.AddWithValue("@login", usuario);
-                        cmd.Parameters.AddWithValue("@senha", hash);
-
-                        int resultado = cmd.ExecuteNonQuery();
-
-                        if (resultado > 0)
+                        using (MySqlCommand cmd = new MySqlCommand(query, conexao))
                         {
-                            MessageBox.Show("Usuário cadastrado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                        else
-                        {
-                            MessageBox.Show("Falha ao cadastrar usuário.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
+                            cmd.Parameters.AddWithValue("@login", usuario);
+                            cmd.Parameters.AddWithValue("@senha", hash);
 
-                        conexao.Close();
+                            int resultado = cmd.ExecuteNonQuery();
+
+                            if (resultado > 0)
+                            {
+                                MessageBox.Show("Usuário cadastrado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            else
+                            {
+                                MessageBox.Show("Falha ao cadastrar usuário.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
                     }
                 }
                 catch (Exception ex)
@@ -77,6 +74,14 @@ namespace AGT_FORMS
             {
                 MessageBox.Show("Preencha o login e a senha.", "Campos obrigatórios", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            LoginPage produto = new LoginPage();
+            produto.StartPosition = FormStartPosition.CenterScreen;
+            produto.Show();
+            Hide();
         }
     }
 }

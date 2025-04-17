@@ -48,16 +48,14 @@ namespace AGT_FORMS
         
         private void CarregarDadosFiltrados(string unidade, string municipio, string cnpj)
         {
-            string conexaoString = "server=localhost; userid=root; password=''; database=agt";
             string query = "SELECT unidade_cadastro, municipio_cadastro, cnpj_cadastro, sistema_cadastro, site_cadastro, " +
                            "login_cadastro, senha_cadastro, vencimento_cadastro, observacao_cadastro " +
                            "FROM cadastro WHERE unidade_cadastro = @unidade AND municipio_cadastro = @municipio AND cnpj_cadastro = @cnpj";
 
             try
             {
-                using (MySqlConnection conexao = new MySqlConnection(conexaoString))
+                using (MySqlConnection conexao =DBHelper.ObterConexao())
                 {
-                    conexao.Open();
                     using (MySqlDataAdapter adapter = new MySqlDataAdapter(query, conexao))
                     {
                         // Adiciona os parâmetros para evitar SQL Injection
@@ -65,9 +63,11 @@ namespace AGT_FORMS
                         adapter.SelectCommand.Parameters.AddWithValue("@municipio", municipio);
                         adapter.SelectCommand.Parameters.AddWithValue("@cnpj", cnpj);
 
-                        DataTable dt = new DataTable();
-                        adapter.Fill(dt);
-                        dataGridView1.DataSource = dt;
+                        using (DataTable dt = new DataTable())
+                        {
+                            adapter.Fill(dt);
+                            dataGridView1.DataSource = dt;
+                        }
                     }
                 }
             }
@@ -95,26 +95,22 @@ namespace AGT_FORMS
         }
         private void CarregarComboBox()
         {
-            string conexaoString = "server=localhost; userid=root; password=''; database=agt";
             string query = "SELECT unidade_cadastro, municipio_cadastro, cnpj_cadastro FROM cadastro";
 
             try
             {
-                using (MySqlConnection conexao = new MySqlConnection(conexaoString))
+                using (MySqlConnection conexao = DBHelper.ObterConexao())
                 {
-                    conexao.Open();
                     using (MySqlCommand cmd = new MySqlCommand(query, conexao))
                     {
-                        MySqlDataReader reader = cmd.ExecuteReader();
-
-                        // Limpa a comboBox antes de adicionar os novos itens
-                        comboBox1.Items.Clear();
-
-                        while (reader.Read())
+                        using (MySqlDataReader reader = cmd.ExecuteReader())
                         {
-                            // Concatenando os valores de "Unidade", "Municipio" e "CNPJ"
-                            string item = reader["unidade_cadastro"].ToString() + " - " + reader["municipio_cadastro"].ToString() + " - " + reader["cnpj_cadastro"].ToString();
-                            comboBox1.Items.Add(item);
+                            comboBox1.Items.Clear();
+                            while (reader.Read())
+                            {
+                                string item = reader["unidade_cadastro"].ToString() + " - " + reader["municipio_cadastro"].ToString() + " - " + reader["cnpj_cadastro"].ToString();
+                                comboBox1.Items.Add(item);
+                            }
                         }
                     }
                 }
@@ -126,44 +122,38 @@ namespace AGT_FORMS
         }
         private void CarregarDados()
         {
-            string conexaoString = "server=localhost; userid=root; password=''; database=agt";
             string query = "SELECT unidade_cadastro, municipio_cadastro, cnpj_cadastro, sistema_cadastro, site_cadastro, " +
                            "login_cadastro, senha_cadastro, vencimento_cadastro, observacao_cadastro FROM cadastro";
 
             try
             {
-                using (MySqlConnection conexao = new MySqlConnection(conexaoString))
+                using (MySqlConnection conexao =DBHelper.ObterConexao())
                 {
-                    conexao.Open();
                     using (MySqlDataAdapter adapter = new MySqlDataAdapter(query, conexao))
                     {
-                        DataTable dt = new DataTable();
-                        adapter.Fill(dt);
-                        dataGridView1.DataSource = dt;
-
-                        // Verificar se as colunas já foram criadas
-                        if (!colunasCriadas)
+                        using (DataTable dt = new DataTable())
                         {
-                            // Remover a coluna 'site_cadastro' original se existir
-                            if (dataGridView1.Columns.Contains("site_cadastro"))
+                            adapter.Fill(dt);
+                            dataGridView1.DataSource = dt;
+
+                            if (!colunasCriadas)
                             {
-                                dataGridView1.Columns.Remove("site_cadastro");
+                                // Remover a coluna 'site_cadastro' original se existir
+                                if (dataGridView1.Columns.Contains("site_cadastro"))
+                                {
+                                    dataGridView1.Columns.Remove("site_cadastro");
+                                }
+
+                                DataGridViewLinkColumn linkColumn = new DataGridViewLinkColumn();
+                                linkColumn.Name = "site_cadastro";  // Nome da coluna de link
+                                linkColumn.HeaderText = "Site";     // Título da coluna
+                                linkColumn.DataPropertyName = "site_cadastro";  // Dados da célula
+                                dataGridView1.Columns.Add(linkColumn);
+
+                                colunasCriadas = true;
                             }
-
-                            // Criar e adicionar a nova coluna de link
-                            DataGridViewLinkColumn linkColumn = new DataGridViewLinkColumn();
-                            linkColumn.Name = "site_cadastro";  // Nome da coluna de link
-                            linkColumn.HeaderText = "Site";     // Título da coluna
-                            linkColumn.DataPropertyName = "site_cadastro";  // Dados da célula
-                            dataGridView1.Columns.Add(linkColumn);
-
-                            // Atualizar a variável de controle
-                            colunasCriadas = true;
+                            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                         }
-
-                        
-
-                        dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                     }
                 }
             }
