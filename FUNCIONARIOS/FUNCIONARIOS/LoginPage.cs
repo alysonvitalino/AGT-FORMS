@@ -29,62 +29,68 @@ namespace AGT_FORMS
 
         private void button1_Click(object sender, EventArgs e)
         {
-            try
+            if (BoxLogin.Text != "" && BoxSenha.Text != "")
             {
-                if (BoxLogin.Text != "" && BoxSenha.Text != "")
+                string data_source = "server=localhost;userid=root;password=;database=agt";
+                conexao = new MySqlConnection(data_source);
+
+                try
                 {
-                    string data_source = "datasource=localhost; username=root;password=;database=agt";
-                    conexao = new MySqlConnection(data_source);
-
-                    string loginQuery = "SELECT login, senha FROM logins WHERE login = @login AND senha = @senha";
-
-                    MySqlCommand comando = new MySqlCommand(loginQuery, conexao);
-                    comando.Parameters.AddWithValue("@login", BoxLogin.Text);
-                    comando.Parameters.AddWithValue("@senha", BoxSenha.Text);
-
                     conexao.Open();
 
-
+                    // Busca apenas o hash da senha pelo login
+                    string loginQuery = "SELECT senha FROM logins WHERE login = @login";
+                    MySqlCommand comando = new MySqlCommand(loginQuery, conexao);
+                    comando.Parameters.AddWithValue("@login", BoxLogin.Text);
 
                     MySqlDataReader reader = comando.ExecuteReader();
 
-                    if (reader.HasRows)
+                    if (reader.Read())
                     {
-                        string usuario = BoxLogin.Text;
+                        string hashArmazenado = reader.GetString("senha");
+                        string senhaDigitada = BoxSenha.Text;
 
-                        MessageBox.Show($"{usuario}, login realizado com sucesso!");
+                        // Verifica se a senha digitada bate com o hash
+                        bool senhaValida = BCrypt.Net.BCrypt.Verify(senhaDigitada, hashArmazenado);
 
-                        BoxSenha.Clear();
+                        if (senhaValida)
+                        {
+                            string usuario = BoxLogin.Text;
+                            MessageBox.Show($"{usuario}, login realizado com sucesso!");
 
-                        HomePage produto = new HomePage(usuario); 
-                        produto.StartPosition = FormStartPosition.CenterScreen;
-                        produto.Show();
+                            BoxSenha.Clear();
 
-                        Hide();
+                            HomePage produto = new HomePage(usuario);
+                            produto.StartPosition = FormStartPosition.CenterScreen;
+                            produto.Show();
+
+                            Hide();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Senha incorreta.");
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Dados de login incorretos.");
+                        MessageBox.Show("Usuário não encontrado.");
                     }
 
                     reader.Close();
-
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Por favor, preencha os campos de login e senha.");
+                    MessageBox.Show("Erro: " + ex.Message);
+                }
+                finally
+                {
+                    if (conexao.State == ConnectionState.Open)
+                        conexao.Close();
                 }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                if (conexao.State == System.Data.ConnectionState.Open)
-                {
-                    conexao.Close();
-                }
+                MessageBox.Show("Por favor, preencha os campos de login e senha.");
             }
         }
 

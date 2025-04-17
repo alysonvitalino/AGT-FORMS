@@ -31,15 +31,16 @@ namespace AGT_FORMS
 
             if (!string.IsNullOrWhiteSpace(senha) && !string.IsNullOrWhiteSpace(usuario))
             {
-                // Gerar hash com Bcrypt
-                string hash = BCrypt.Net.BCrypt.HashPassword(senha);
 
-                // Mostrar o hash
-                MessageBox.Show("Hash gerado:\n\n" + hash, "Senha Hash", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                int workfactor = 16;
+
+                string salt = BCrypt.Net.BCrypt.GenerateSalt(workfactor);
+
+                string hash = BCrypt.Net.BCrypt.HashPassword(senha, salt);
+
                 Clipboard.SetText(hash);
                 textBox2.Text = hash;
 
-                // String de conexão
                 string conexaoString = "server=localhost;userid=root;password=;database=agt";
 
                 try
@@ -77,6 +78,14 @@ namespace AGT_FORMS
             {
                 MessageBox.Show("Preencha o login e a senha.", "Campos obrigatórios", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            HomePage produto = new HomePage();
+            produto.StartPosition = FormStartPosition.CenterScreen;
+            produto.Show();
+            Hide();
         }
     }
 }
