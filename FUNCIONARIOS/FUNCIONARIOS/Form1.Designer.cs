@@ -66,10 +66,10 @@
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(200, 340);
+            textBox2.Location = new Point(62, 340);
             textBox2.Name = "textBox2";
             textBox2.ReadOnly = true;
-            textBox2.Size = new Size(372, 31);
+            textBox2.Size = new Size(636, 31);
             textBox2.TabIndex = 3;
             // 
             // textBox3
@@ -99,11 +99,19 @@
             // 
             // button2
             // 
+<<<<<<< HEAD
             button2.Location = new Point(327, 392);
             button2.Name = "button2";
             button2.Size = new Size(112, 34);
             button2.TabIndex = 7;
             button2.Text = "Sair";
+=======
+            button2.Location = new Point(589, 12);
+            button2.Name = "button2";
+            button2.Size = new Size(199, 118);
+            button2.TabIndex = 7;
+            button2.Text = "PÁGINA INICIAL";
+>>>>>>> 808c5cf4c0306b0865b4fc22cf7a07ffe1db86ba
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 

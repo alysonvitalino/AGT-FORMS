@@ -31,17 +31,29 @@ namespace AGT_FORMS
 
             if (!string.IsNullOrWhiteSpace(senha) && !string.IsNullOrWhiteSpace(usuario))
             {
+<<<<<<< HEAD
+                int workfactor = 16;
+
+                string salt = BCrypt.Net.BCrypt.GenerateSalt(workfactor);
+
+                string hash = BCrypt.Net.BCrypt.HashPassword(senha, salt);
+=======
+>>>>>>> 808c5cf4c0306b0865b4fc22cf7a07ffe1db86ba
+
                 int workfactor = 16;
 
                 string salt = BCrypt.Net.BCrypt.GenerateSalt(workfactor);
 
                 string hash = BCrypt.Net.BCrypt.HashPassword(senha, salt);
 
-                // Mostrar o hash
-                MessageBox.Show("Hash gerado:\n\n" + hash, "Senha Hash", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Clipboard.SetText(hash);
                 textBox2.Text = hash;
 
+<<<<<<< HEAD
+=======
+                string conexaoString = "server=localhost;userid=root;password=;database=agt";
+
+>>>>>>> 808c5cf4c0306b0865b4fc22cf7a07ffe1db86ba
                 try
                 {
                     using (MySqlConnection conexao = DBHelper.ObterConexao()) // Usando DBHelper para a conexão
@@ -78,7 +90,11 @@ namespace AGT_FORMS
 
         private void button2_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             LoginPage produto = new LoginPage();
+=======
+            HomePage produto = new HomePage();
+>>>>>>> 808c5cf4c0306b0865b4fc22cf7a07ffe1db86ba
             produto.StartPosition = FormStartPosition.CenterScreen;
             produto.Show();
             Hide();
