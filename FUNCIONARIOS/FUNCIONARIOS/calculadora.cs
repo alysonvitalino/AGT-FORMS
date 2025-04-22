@@ -319,11 +319,8 @@ namespace AGT_FORMS
         {
             try
             {
-                // Usando DBHelper para obter a conexão
                 using (MySqlConnection conexaoTemp = DBHelper.ObterConexao())
                 {
-                    conexaoTemp.Open();
-
                     string sql2 = "SELECT cod_servico, desc_servico, aliquota_iss FROM aliquotas WHERE municipio = @municipio;";
                     using (MySqlCommand comando2 = new MySqlCommand(sql2, conexaoTemp))
                     {
