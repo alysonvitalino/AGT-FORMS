@@ -67,7 +67,6 @@
             button1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             button1.BackColor = Color.FromArgb(18, 87, 123);
             button1.Cursor = Cursors.Hand;
-            button1.FlatAppearance.BorderColor = Color.White;
             button1.FlatAppearance.MouseDownBackColor = Color.Transparent;
             button1.FlatAppearance.MouseOverBackColor = Color.Transparent;
             button1.FlatStyle = FlatStyle.Flat;
@@ -93,7 +92,7 @@
             button2.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             button2.ForeColor = Color.FromArgb(169, 207, 229);
             button2.Image = (Image)resources.GetObject("button2.Image");
-            button2.Location = new Point(1128, 264);
+            button2.Location = new Point(1128, 267);
             button2.Name = "button2";
             button2.Size = new Size(163, 132);
             button2.TabIndex = 2;
@@ -112,7 +111,7 @@
             button3.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             button3.ForeColor = Color.FromArgb(169, 207, 229);
             button3.Image = (Image)resources.GetObject("button3.Image");
-            button3.Location = new Point(1128, 443);
+            button3.Location = new Point(1128, 438);
             button3.Name = "button3";
             button3.Size = new Size(163, 132);
             button3.TabIndex = 3;
