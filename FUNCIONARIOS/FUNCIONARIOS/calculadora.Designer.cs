@@ -409,6 +409,7 @@
             // 
             // calculadora
             // 
+            AcceptButton = button5;
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(169, 207, 229);
