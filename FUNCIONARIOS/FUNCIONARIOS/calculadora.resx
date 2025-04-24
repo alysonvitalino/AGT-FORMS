@@ -124,7 +124,7 @@
   <data name="button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DQAACw0B7QfALAAAAQFJREFUaEPt1lEKwjAMBuAdRJ89uutQvEnL8Ai2byrqBbSZZRJWXAgYQf8P8rT8
+        DAAACwwBP0AiyAAAAQFJREFUaEPt1lEKwjAMBuAdRJ89uutQvEnL8Ai2byrqBbSZZRJWXAgYQf8P8rT8
         eVi3kgYAAD5qvY9LF+Km9fFG5XzcdX1clcdVVplZNLT16eRCurPy6UzPShtjlRGhNzIZ+qqutDFWGZHh
         KOtDc8VraWOsMiLvBrchXUobY5URoR+pNpQqf7OutDFWGRG6BehHmgwN6bjtD4vSxlhlxOgWyMM6+hap
         6I3MDbXKAMA/eN4OWOawzKkMR1kfmgvL3EiTEbFazDQZEavFTJMRo1sgD8MyBwBf8rwdsMxhmVMZjrI+
@@ -199,12 +199,6 @@
         R5n5k2k5+ZPIJar8YcBxHpqu+wXzG+zdnsx6kwAAAABJRU5ErkJggg==
 </value>
   </data>
-  <metadata name="panel1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="label1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="button7.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
@@ -246,4 +240,7 @@
         8/kLnhLsQRv3G5RerEIRO1mV2Xv6MZHLvQ51HKTrbPrO9AAAAABJRU5ErkJggg==
 </value>
   </data>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>25</value>
+  </metadata>
 </root>

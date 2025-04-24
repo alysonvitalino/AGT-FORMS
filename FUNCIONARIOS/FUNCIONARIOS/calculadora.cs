@@ -357,5 +357,10 @@ namespace AGT_FORMS
         {
             dataGridView1.Rows.Clear();
         }
+
+        private void calculadora_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
