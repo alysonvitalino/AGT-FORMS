@@ -23,7 +23,7 @@ namespace AGT_FORMS
             PreencherComboBox();
 
 
-            dataGridView1.ColumnCount = 14;
+            dataGridView1.ColumnCount = 15;
 
 
             dataGridView1.Columns[1].Name = "";
@@ -40,6 +40,7 @@ namespace AGT_FORMS
             dataGridView1.Columns[11].Name = "INSS+ISS";
             dataGridView1.Columns[12].Name = "IR+ISS";
             dataGridView1.Columns[13].Name = "CSRF+ISS";
+            dataGridView1.Columns[14].Name = "Id";
 
             // Ajusta o tamanho automático das colunas
             dataGridView1.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
@@ -118,8 +119,11 @@ namespace AGT_FORMS
 
         private bool corAlternada = false;
 
+        int idCalculo = 0;
+
         private void button5_Click(object sender, EventArgs e)
         {
+            idCalculo = idCalculo + 1;
             try
             {
                 // Verifica se um valor foi inserido na TextBox1
@@ -194,7 +198,7 @@ namespace AGT_FORMS
                 double liqIrIss = liqIr + liqIss;
                 double liqCsrIss = liqCsr + liqIss;
                 double liqInssIss = liqInss + liqIss;
-
+               
                 // Calculando o valor restante após as deduções para cada coluna
                 double liqCsrRestante = valorBase - liqCsr;
                 double liqIssRestante = valorBase - liqIss;
@@ -223,7 +227,8 @@ namespace AGT_FORMS
                     liqCsrIss.ToString("C2"),
                     liqInssIss.ToString("C2"),
                     liqIrIss.ToString("C2"),
-                    liqCsrIss.ToString("C2")
+                    liqCsrIss.ToString("C2"),
+                    idCalculo.ToString("C2")
                 );
 
                 // Segunda linha de "Valor Líquido"
@@ -241,8 +246,11 @@ namespace AGT_FORMS
                     liqCsrIssRestante.ToString("C2"),
                     liqInssIssRestante.ToString("C2"),
                     liqIrIssRestante.ToString("C2"),
-                    liqCsrIssRestante.ToString("C2")
+                    liqCsrIssRestante.ToString("C2"),
+                    idCalculo.ToString("C2")
                 );
+
+                dataGridView1.Sort(dataGridView1.Columns[14], ListSortDirection.Descending);
 
                 // Alternando as cores das linhas
                 if (corAlternada)
@@ -268,7 +276,6 @@ namespace AGT_FORMS
                 MessageBox.Show("Erro ao calcular o valor: " + ex.Message);
             }
         }
-
 
         private void PreencherComboBox()
         {
@@ -356,11 +363,6 @@ namespace AGT_FORMS
         private void button7_Click(object sender, EventArgs e)
         {
             dataGridView1.Rows.Clear();
-        }
-
-        private void calculadora_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

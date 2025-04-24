@@ -38,7 +38,6 @@ namespace AGT_FORMS
                 string hash = BCrypt.Net.BCrypt.HashPassword(senha, salt);
 
                 Clipboard.SetText(hash);
-                textBox2.Text = hash;
                 try
                 {
                     using (MySqlConnection conexao = DBHelper.ObterConexao()) // Usando DBHelper para a conexão
@@ -78,7 +77,6 @@ namespace AGT_FORMS
             LoginPage produto = new LoginPage();
             produto.StartPosition = FormStartPosition.CenterScreen;
             produto.Show();
-            Hide();
         }
     }
 }

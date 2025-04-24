@@ -55,11 +55,12 @@
             dataGridView1.BorderStyle = BorderStyle.Fixed3D;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.GridColor = Color.CornflowerBlue;
-            dataGridView1.Location = new Point(14, 91);
+            dataGridView1.Location = new Point(20, 152);
+            dataGridView1.Margin = new Padding(4, 5, 4, 5);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(1087, 654);
+            dataGridView1.Size = new Size(1330, 723);
             dataGridView1.TabIndex = 0;
             // 
             // button1
@@ -67,15 +68,14 @@
             button1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             button1.BackColor = Color.FromArgb(18, 87, 123);
             button1.Cursor = Cursors.Hand;
-            button1.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            button1.FlatAppearance.MouseOverBackColor = Color.Transparent;
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             button1.ForeColor = Color.FromArgb(169, 207, 229);
             button1.Image = (Image)resources.GetObject("button1.Image");
-            button1.Location = new Point(1128, 91);
+            button1.Location = new Point(1377, 152);
+            button1.Margin = new Padding(4, 5, 4, 5);
             button1.Name = "button1";
-            button1.Size = new Size(163, 132);
+            button1.Size = new Size(147, 153);
             button1.TabIndex = 2;
             button1.Text = "Tela Inicial";
             button1.TextAlign = ContentAlignment.BottomCenter;
@@ -92,9 +92,10 @@
             button2.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             button2.ForeColor = Color.FromArgb(169, 207, 229);
             button2.Image = (Image)resources.GetObject("button2.Image");
-            button2.Location = new Point(1128, 267);
+            button2.Location = new Point(1377, 342);
+            button2.Margin = new Padding(4, 5, 4, 5);
             button2.Name = "button2";
-            button2.Size = new Size(163, 132);
+            button2.Size = new Size(147, 153);
             button2.TabIndex = 2;
             button2.Text = "Calculadora";
             button2.TextAlign = ContentAlignment.BottomCenter;
@@ -111,9 +112,10 @@
             button3.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             button3.ForeColor = Color.FromArgb(169, 207, 229);
             button3.Image = (Image)resources.GetObject("button3.Image");
-            button3.Location = new Point(1128, 438);
+            button3.Location = new Point(1377, 532);
+            button3.Margin = new Padding(4, 5, 4, 5);
             button3.Name = "button3";
-            button3.Size = new Size(163, 132);
+            button3.Size = new Size(147, 153);
             button3.TabIndex = 3;
             button3.Text = "Logins e Senhas";
             button3.TextAlign = ContentAlignment.BottomCenter;
@@ -129,9 +131,10 @@
             button4.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             button4.ForeColor = Color.FromArgb(169, 207, 229);
             button4.Image = (Image)resources.GetObject("button4.Image");
-            button4.Location = new Point(1128, 613);
+            button4.Location = new Point(1377, 722);
+            button4.Margin = new Padding(4, 5, 4, 5);
             button4.Name = "button4";
-            button4.Size = new Size(163, 132);
+            button4.Size = new Size(147, 153);
             button4.TabIndex = 4;
             button4.Text = "Alíquotas";
             button4.TextAlign = ContentAlignment.BottomCenter;
@@ -146,7 +149,8 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { menuToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(1312, 24);
+            menuStrip1.Padding = new Padding(9, 3, 0, 3);
+            menuStrip1.Size = new Size(1549, 35);
             menuStrip1.TabIndex = 5;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -155,41 +159,41 @@
             menuToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { paginaInicialToolStripMenuItem, calculadoraToolStripMenuItem, cadastrosToolStripMenuItem, leisEAlíquotasToolStripMenuItem, loginsESenhasToolStripMenuItem });
             menuToolStripMenuItem.ForeColor = Color.FromArgb(247, 247, 247);
             menuToolStripMenuItem.Name = "menuToolStripMenuItem";
-            menuToolStripMenuItem.Size = new Size(50, 20);
+            menuToolStripMenuItem.Size = new Size(73, 29);
             menuToolStripMenuItem.Text = "Menu";
             // 
             // paginaInicialToolStripMenuItem
             // 
             paginaInicialToolStripMenuItem.Name = "paginaInicialToolStripMenuItem";
-            paginaInicialToolStripMenuItem.Size = new Size(158, 22);
+            paginaInicialToolStripMenuItem.Size = new Size(241, 34);
             paginaInicialToolStripMenuItem.Text = "Pagina Inicial";
             paginaInicialToolStripMenuItem.Click += paginaInicialToolStripMenuItem_Click;
             // 
             // calculadoraToolStripMenuItem
             // 
             calculadoraToolStripMenuItem.Name = "calculadoraToolStripMenuItem";
-            calculadoraToolStripMenuItem.Size = new Size(158, 22);
+            calculadoraToolStripMenuItem.Size = new Size(241, 34);
             calculadoraToolStripMenuItem.Text = "Calculadora";
             calculadoraToolStripMenuItem.Click += calculadoraToolStripMenuItem_Click;
             // 
             // cadastrosToolStripMenuItem
             // 
             cadastrosToolStripMenuItem.Name = "cadastrosToolStripMenuItem";
-            cadastrosToolStripMenuItem.Size = new Size(158, 22);
+            cadastrosToolStripMenuItem.Size = new Size(241, 34);
             cadastrosToolStripMenuItem.Text = "Cadastros";
             cadastrosToolStripMenuItem.Click += cadastrosToolStripMenuItem_Click_1;
             // 
             // leisEAlíquotasToolStripMenuItem
             // 
             leisEAlíquotasToolStripMenuItem.Name = "leisEAlíquotasToolStripMenuItem";
-            leisEAlíquotasToolStripMenuItem.Size = new Size(158, 22);
+            leisEAlíquotasToolStripMenuItem.Size = new Size(241, 34);
             leisEAlíquotasToolStripMenuItem.Text = "Leis e Alíquotas";
             leisEAlíquotasToolStripMenuItem.Click += leisEAlíquotasToolStripMenuItem_Click_1;
             // 
             // loginsESenhasToolStripMenuItem
             // 
             loginsESenhasToolStripMenuItem.Name = "loginsESenhasToolStripMenuItem";
-            loginsESenhasToolStripMenuItem.Size = new Size(158, 22);
+            loginsESenhasToolStripMenuItem.Size = new Size(241, 34);
             loginsESenhasToolStripMenuItem.Text = "Logins e Senhas";
             loginsESenhasToolStripMenuItem.Click += loginsESenhasToolStripMenuItem_Click_1;
             // 
@@ -199,18 +203,20 @@
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Segoe UI", 12F);
             label2.ForeColor = Color.Navy;
-            label2.Location = new Point(14, 55);
+            label2.Location = new Point(20, 92);
+            label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(68, 21);
+            label2.Size = new Size(103, 32);
             label2.TabIndex = 8;
             label2.Text = "Unidade";
             // 
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(88, 53);
+            comboBox1.Location = new Point(126, 88);
+            comboBox1.Margin = new Padding(4, 5, 4, 5);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(371, 23);
+            comboBox1.Size = new Size(528, 33);
             comboBox1.TabIndex = 9;
             // 
             // button5
@@ -221,9 +227,10 @@
             button5.FlatStyle = FlatStyle.Flat;
             button5.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             button5.ForeColor = Color.FromArgb(169, 207, 229);
-            button5.Location = new Point(475, 55);
+            button5.Location = new Point(677, 84);
+            button5.Margin = new Padding(4, 5, 4, 5);
             button5.Name = "button5";
-            button5.Size = new Size(83, 24);
+            button5.Size = new Size(119, 40);
             button5.TabIndex = 10;
             button5.Text = "Limpar";
             button5.UseVisualStyleBackColor = false;
@@ -231,10 +238,10 @@
             // 
             // Cadastros
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(169, 207, 229);
-            ClientSize = new Size(1312, 781);
+            ClientSize = new Size(1549, 935);
             Controls.Add(button5);
             Controls.Add(comboBox1);
             Controls.Add(label2);
@@ -246,6 +253,7 @@
             Controls.Add(menuStrip1);
             Icon = (Icon)resources.GetObject("$this.Icon");
             MainMenuStrip = menuStrip1;
+            Margin = new Padding(4, 5, 4, 5);
             Name = "Cadastros";
             Text = "Cadastros";
             WindowState = FormWindowState.Maximized;

@@ -81,6 +81,14 @@ namespace AGT_FORMS
                 MessageBox.Show("Erro: " + ex.Message);
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            HomePage produto = new HomePage();
+            produto.StartPosition = FormStartPosition.CenterScreen;
+            produto.Show();
+            Hide();
+        }
     }
 }
 
