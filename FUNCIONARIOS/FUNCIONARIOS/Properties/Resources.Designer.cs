@@ -63,6 +63,26 @@ namespace AGT_FORMS.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Aplicati {
+            get {
+                object obj = ResourceManager.GetObject("Aplicati", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Aplicati__3_ {
+            get {
+                object obj = ResourceManager.GetObject("Aplicati (3)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Calculator_30001 {
             get {
                 object obj = ResourceManager.GetObject("Calculator_30001", resourceCulture);
@@ -76,6 +96,16 @@ namespace AGT_FORMS.Properties {
         internal static System.Drawing.Bitmap LOGIN_E_SENHAS__4_ {
             get {
                 object obj = ResourceManager.GetObject("LOGIN E SENHAS (4)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap modelo {
+            get {
+                object obj = ResourceManager.GetObject("modelo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

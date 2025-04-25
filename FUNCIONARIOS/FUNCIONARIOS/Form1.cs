@@ -31,7 +31,7 @@ namespace AGT_FORMS
 
             if (!string.IsNullOrWhiteSpace(senha) && !string.IsNullOrWhiteSpace(usuario))
             {
-                int workfactor = 10;
+                int workfactor = 16;
 
                 string salt = BCrypt.Net.BCrypt.GenerateSalt(workfactor);
 

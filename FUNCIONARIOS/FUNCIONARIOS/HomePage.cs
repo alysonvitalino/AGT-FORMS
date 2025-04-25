@@ -5,7 +5,7 @@ namespace AGT_FORMS
 {
     public partial class HomePage : Form
     {
-        private string nomeUsuario;        
+        private string nomeUsuario;
         public HomePage(string usuario)
         {
             InitializeComponent();

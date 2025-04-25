@@ -41,6 +41,7 @@
             btnLogins = new Button();
             button3 = new Button();
             label3 = new Label();
+            label1 = new Label();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -58,7 +59,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { menuToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(1430, 33);
+            menuStrip1.Size = new Size(1549, 33);
             menuStrip1.TabIndex = 18;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -107,7 +108,7 @@
             button1.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             button1.ForeColor = Color.FromArgb(169, 207, 229);
             button1.Image = (Image)resources.GetObject("button1.Image");
-            button1.Location = new Point(747, 193);
+            button1.Location = new Point(866, 193);
             button1.Margin = new Padding(1, 2, 1, 2);
             button1.Name = "button1";
             button1.Size = new Size(279, 300);
@@ -127,7 +128,7 @@
             button4.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             button4.ForeColor = Color.FromArgb(169, 207, 229);
             button4.Image = (Image)resources.GetObject("button4.Image");
-            button4.Location = new Point(747, 572);
+            button4.Location = new Point(866, 572);
             button4.Margin = new Padding(1, 2, 1, 2);
             button4.Name = "button4";
             button4.Size = new Size(279, 300);
@@ -147,7 +148,7 @@
             btnLogins.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             btnLogins.ForeColor = Color.FromArgb(169, 207, 229);
             btnLogins.Image = (Image)resources.GetObject("btnLogins.Image");
-            btnLogins.Location = new Point(1101, 572);
+            btnLogins.Location = new Point(1220, 572);
             btnLogins.Margin = new Padding(1, 2, 1, 2);
             btnLogins.Name = "btnLogins";
             btnLogins.Size = new Size(279, 300);
@@ -167,7 +168,7 @@
             button3.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             button3.ForeColor = Color.FromArgb(169, 207, 229);
             button3.Image = (Image)resources.GetObject("button3.Image");
-            button3.Location = new Point(1101, 193);
+            button3.Location = new Point(1220, 193);
             button3.Margin = new Padding(1, 2, 1, 2);
             button3.Name = "button3";
             button3.Size = new Size(279, 300);
@@ -181,18 +182,30 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(206, 147);
+            label3.Font = new Font("Segoe UI", 18F);
+            label3.Location = new Point(866, 97);
             label3.Name = "label3";
-            label3.Size = new Size(59, 25);
+            label3.Size = new Size(115, 48);
             label3.TabIndex = 29;
             label3.Text = "label3";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(30, 87);
+            label1.Name = "label1";
+            label1.Size = new Size(1158, 25);
+            label1.TabIndex = 30;
+            label1.Text = "COLOCAR O LOGO DA EMPRESA OU GRÁFICOS ILUSTRADOS, ADICIONAR DESCRIÇÕES INTERATIVAS NOS BOTÕES EXPLICANDO AS FUNÇÕES";
+            label1.Click += label1_Click;
             // 
             // HomePage
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(169, 207, 229);
-            ClientSize = new Size(1430, 980);
+            ClientSize = new Size(1549, 935);
+            Controls.Add(label1);
             Controls.Add(label3);
             Controls.Add(button3);
             Controls.Add(btnLogins);
@@ -225,5 +238,6 @@
         private Button button3;
         private ToolStripMenuItem loginsESenhasToolStripMenuItem;
         private Label label3;
+        private Label label1;
     }
 }
