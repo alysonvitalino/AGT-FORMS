@@ -9,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.ComponentModel.Design.ObjectSelectorEditor;
+using OfficeOpenXml;
+using System.IO;
 
 namespace AGT_FORMS
 {
@@ -198,7 +200,7 @@ namespace AGT_FORMS
                 double liqIrIss = liqIr + liqIss;
                 double liqCsrIss = liqCsr + liqIss;
                 double liqInssIss = liqInss + liqIss;
-               
+
                 // Calculando o valor restante após as deduções para cada coluna
                 double liqCsrRestante = valorBase - liqCsr;
                 double liqIssRestante = valorBase - liqIss;
@@ -363,6 +365,52 @@ namespace AGT_FORMS
         private void button7_Click(object sender, EventArgs e)
         {
             dataGridView1.Rows.Clear();
+        }
+
+        private void btnExcel_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Definir o caminho do arquivo Excel
+                string caminhoArquivo = "resultados_calculos.xlsx";
+
+                // Criar um novo pacote Excel
+                using (var package = new ExcelPackage())
+                {
+                    // Criar uma planilha no arquivo
+                    var worksheet = package.Workbook.Worksheets.Add("Resultados");
+
+                    // Adicionar cabeçalhos na primeira linha (equivalente ao cabeçalho do DataGridView)
+                    for (int col = 0; col < dataGridView1.ColumnCount; col++)
+                    {
+                        worksheet.Cells[1, col + 1].Value = dataGridView1.Columns[col].HeaderText;
+                    }
+
+                    // Adicionar as linhas de dados
+                    for (int row = 0; row < dataGridView1.Rows.Count; row++)
+                    {
+                        for (int col = 0; col < dataGridView1.Columns.Count; col++)
+                        {
+                            // Verifica se a célula não é nula
+                            if (dataGridView1.Rows[row].Cells[col].Value != null)
+                            {
+                                worksheet.Cells[row + 2, col + 1].Value = dataGridView1.Rows[row].Cells[col].Value.ToString();
+                            }
+                        }
+                    }
+
+                    // Salvar o arquivo Excel no caminho especificado
+                    FileInfo fi = new FileInfo(caminhoArquivo);
+                    package.SaveAs(fi);
+
+                    // Mensagem para informar que o Excel foi gerado com sucesso
+                    MessageBox.Show("O arquivo Excel foi gerado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao gerar o Excel: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
