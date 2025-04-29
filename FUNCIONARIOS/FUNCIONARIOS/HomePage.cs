@@ -30,7 +30,7 @@ namespace AGT_FORMS
         {
             label3.Text = $"Olá, {nomeUsuario}! Acesse as funcionalidades no menu ao lado";
             int totalCliques = ObterContadorExcel();
-            labelContador.Text = $"Total de exportações em Excel: {totalCliques}";
+            labelContador1.Text = $"Total de exportações em Excel: {totalCliques}";
         }
         private void button2_Click(object sender, EventArgs e)
         {
