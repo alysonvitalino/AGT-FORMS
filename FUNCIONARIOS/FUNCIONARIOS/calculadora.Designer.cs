@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(calculadora));
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
             menuStrip1 = new MenuStrip();
             menuToolStripMenuItem = new ToolStripMenuItem();
             paginaInicialToolStripMenuItem = new ToolStripMenuItem();
@@ -271,7 +271,7 @@
             button5.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button5.ForeColor = Color.FromArgb(169, 207, 229);
             button5.Image = (Image)resources.GetObject("button5.Image");
-            button5.Location = new Point(16, 350);
+            button5.Location = new Point(16, 358);
             button5.Name = "button5";
             button5.RightToLeft = RightToLeft.Yes;
             button5.Size = new Size(103, 86);
@@ -284,42 +284,42 @@
             // 
             // dataGridView1
             // 
-            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 8.25F);
-            dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle1.Format = "C2";
-            dataGridViewCellStyle1.NullValue = null;
-            dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.Font = new Font("Microsoft Sans Serif", 8.25F);
+            dataGridViewCellStyle9.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle9.Format = "C2";
+            dataGridViewCellStyle9.NullValue = null;
+            dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
             dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridView1.BackgroundColor = Color.FromArgb(247, 247, 247);
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Control;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = SystemColors.Control;
+            dataGridViewCellStyle10.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle10.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle10.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = SystemColors.Window;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle11.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = SystemColors.Window;
+            dataGridViewCellStyle11.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle11.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle11.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = DataGridViewTriState.False;
+            dataGridView1.DefaultCellStyle = dataGridViewCellStyle11;
             dataGridView1.GridColor = Color.MidnightBlue;
             dataGridView1.Location = new Point(151, 150);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = SystemColors.Control;
-            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle12.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = SystemColors.Control;
+            dataGridViewCellStyle12.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle12.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle12.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = DataGridViewTriState.True;
+            dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
             dataGridView1.RowHeadersWidth = 62;
             dataGridView1.Size = new Size(797, 399);
             dataGridView1.TabIndex = 13;
@@ -380,7 +380,7 @@
             button7.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             button7.ForeColor = Color.FromArgb(169, 207, 229);
             button7.Image = (Image)resources.GetObject("button7.Image");
-            button7.Location = new Point(16, 457);
+            button7.Location = new Point(16, 462);
             button7.Name = "button7";
             button7.RightToLeft = RightToLeft.Yes;
             button7.Size = new Size(103, 86);
@@ -394,12 +394,20 @@
             // btnExcel
             // 
             btnExcel.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnExcel.BackColor = Color.FromArgb(18, 87, 123);
+            btnExcel.Cursor = Cursors.Hand;
+            btnExcel.FlatStyle = FlatStyle.Flat;
+            btnExcel.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnExcel.ForeColor = Color.FromArgb(169, 207, 229);
+            btnExcel.Image = (Image)resources.GetObject("btnExcel.Image");
             btnExcel.Location = new Point(969, 44);
             btnExcel.Name = "btnExcel";
             btnExcel.Size = new Size(103, 86);
             btnExcel.TabIndex = 21;
-            btnExcel.Text = "GERAR EXCEL";
-            btnExcel.UseVisualStyleBackColor = true;
+            btnExcel.Text = "Relatório";
+            btnExcel.TextAlign = ContentAlignment.BottomCenter;
+            btnExcel.TextImageRelation = TextImageRelation.ImageAboveText;
+            btnExcel.UseVisualStyleBackColor = false;
             btnExcel.Click += btnExcel_Click;
             // 
             // calculadora
