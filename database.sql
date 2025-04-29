@@ -43,6 +43,14 @@ vencimento_cadastro INT NOT NULL,
 observacao_cadastro VARCHAR (2048)
 );
 
+CREATE TABLE contador_relatorios (
+    id INT PRIMARY KEY,
+    quantidade INT NOT NULL
+);
+
+
+INSERT INTO contador_relatorios (id, quantidade) VALUES (1, 0);
+
 INSERT INTO aliquotas (id_aliquota, municipio, cod_servico, desc_servico, aliquota_iss, lei_vigente) VALUES
 (0,  'Nenhum','0.00','Nenhuma alíquota selecionada.','0', NULL),
 (1,  'Curitiba','3.05', 'Cessão de andaimes, palcos, coberturas e outras estruturas de uso temporário. ', '5', 'Lei Complementar nº 40/2001, art. 8º-A, II'),
