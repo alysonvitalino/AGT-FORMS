@@ -63,6 +63,16 @@ namespace AGT_FORMS.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Add_a_subheading {
+            get {
+                object obj = ResourceManager.GetObject("Add a subheading", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Aplicati {
             get {
                 object obj = ResourceManager.GetObject("Aplicati", resourceCulture);

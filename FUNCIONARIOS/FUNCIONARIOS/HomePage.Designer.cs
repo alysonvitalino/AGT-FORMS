@@ -42,7 +42,9 @@
             button4 = new Button();
             btnLogins = new Button();
             labelContador1 = new Label();
+            pictureBox1 = new PictureBox();
             menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // toolStripTextBox1
@@ -191,12 +193,23 @@
             // 
             // labelContador1
             // 
+            labelContador1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             labelContador1.AutoSize = true;
-            labelContador1.Location = new Point(826, 69);
+            labelContador1.Location = new Point(847, 122);
             labelContador1.Name = "labelContador1";
             labelContador1.Size = new Size(59, 25);
             labelContador1.TabIndex = 30;
             labelContador1.Text = "label1";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.Add_a_subheading;
+            pictureBox1.Location = new Point(32, 197);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(769, 660);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 31;
+            pictureBox1.TabStop = false;
             // 
             // HomePage
             // 
@@ -204,6 +217,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(169, 207, 229);
             ClientSize = new Size(1549, 935);
+            Controls.Add(pictureBox1);
             Controls.Add(labelContador1);
             Controls.Add(button4);
             Controls.Add(button3);
@@ -220,6 +234,7 @@
             Load += HomePage_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -239,5 +254,6 @@
         private Button button3;
         private Label labelContador;
         private Label labelContador1;
+        private PictureBox pictureBox1;
     }
 }
