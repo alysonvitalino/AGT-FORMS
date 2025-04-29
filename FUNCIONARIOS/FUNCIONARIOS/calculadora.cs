@@ -14,7 +14,8 @@ using System.IO;
 
 namespace AGT_FORMS
 {
-    public partial class calculadora : Form
+   
+public partial class calculadora : Form
     {
         MySqlConnection conexao;
 
@@ -42,7 +43,7 @@ namespace AGT_FORMS
             dataGridView1.Columns[11].Name = "INSS+ISS";
             dataGridView1.Columns[12].Name = "IR+ISS";
             dataGridView1.Columns[13].Name = "CSRF+ISS";
-            dataGridView1.Columns[14].Name = "Id";
+            dataGridView1.Columns[14].Name = "DataHora";
 
             // Ajusta o tamanho automático das colunas
             dataGridView1.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
@@ -229,8 +230,8 @@ namespace AGT_FORMS
                     liqCsrIss.ToString("C2"),
                     liqInssIss.ToString("C2"),
                     liqIrIss.ToString("C2"),
-                    liqCsrIss.ToString("C2"),
-                    idCalculo.ToString("C2")
+                    liqCsrIss.ToString("C2"), 
+                    DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")
                 );
 
                 // Segunda linha de "Valor Líquido"
@@ -249,9 +250,11 @@ namespace AGT_FORMS
                     liqInssIssRestante.ToString("C2"),
                     liqIrIssRestante.ToString("C2"),
                     liqCsrIssRestante.ToString("C2"),
-                    idCalculo.ToString("C2")
+                    DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")
                 );
 
+                dataGridView1.Columns["DataHora"].ValueType = typeof(DateTime);
+                dataGridView1.Sort(dataGridView1.Columns["DataHora"], ListSortDirection.Descending);
                 dataGridView1.Sort(dataGridView1.Columns[14], ListSortDirection.Descending);
 
                 // Alternando as cores das linhas
@@ -366,45 +369,55 @@ namespace AGT_FORMS
         {
             dataGridView1.Rows.Clear();
         }
+        
+        public static void IncrementarContadorExcel()
+        {
+            using (MySqlConnection conexao = DBHelper.ObterConexao())
+            {
+                string sql = "UPDATE contador_relatorios SET quantidade = quantidade + 1 WHERE id = 1";
+                MySqlCommand cmd = new MySqlCommand(sql, conexao);
+                cmd.ExecuteNonQuery();
+            }
+        }
 
         private void btnExcel_Click(object sender, EventArgs e)
         {
             try
             {
-                // Definir o caminho do arquivo Excel
-                string caminhoArquivo = "resultados_calculos.xlsx";
+                ExcelPackage.License.SetNonCommercialPersonal("<Your Name>");
+                //or..
+                ExcelPackage.License.SetNonCommercialOrganization("<Your Noncommercial Organization>");
 
-                // Criar um novo pacote Excel
+                using (var package = new ExcelPackage(new FileInfo("MyWorkbook.xlsx")))
+                {
+
+                }
+
+                string caminhoArquivo = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "resultados_calculos.xlsx");
+
                 using (var package = new ExcelPackage())
                 {
-                    // Criar uma planilha no arquivo
                     var worksheet = package.Workbook.Worksheets.Add("Resultados");
 
-                    // Adicionar cabeçalhos na primeira linha (equivalente ao cabeçalho do DataGridView)
                     for (int col = 0; col < dataGridView1.ColumnCount; col++)
-                    {
                         worksheet.Cells[1, col + 1].Value = dataGridView1.Columns[col].HeaderText;
-                    }
 
-                    // Adicionar as linhas de dados
                     for (int row = 0; row < dataGridView1.Rows.Count; row++)
                     {
                         for (int col = 0; col < dataGridView1.Columns.Count; col++)
                         {
-                            // Verifica se a célula não é nula
                             if (dataGridView1.Rows[row].Cells[col].Value != null)
-                            {
                                 worksheet.Cells[row + 2, col + 1].Value = dataGridView1.Rows[row].Cells[col].Value.ToString();
-                            }
                         }
                     }
 
-                    // Salvar o arquivo Excel no caminho especificado
                     FileInfo fi = new FileInfo(caminhoArquivo);
                     package.SaveAs(fi);
 
-                    // Mensagem para informar que o Excel foi gerado com sucesso
-                    MessageBox.Show("O arquivo Excel foi gerado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    // Incrementa o contador no banco
+                    IncrementarContadorExcel();
+
+                    MessageBox.Show("Arquivo Excel gerado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)

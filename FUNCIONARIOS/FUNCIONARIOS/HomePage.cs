@@ -15,10 +15,22 @@ namespace AGT_FORMS
         {
             InitializeComponent();
         }
+        public static int ObterContadorExcel()
+        {
+            using (MySqlConnection conexao = DBHelper.ObterConexao())
+            {
+                string sql = "SELECT quantidade FROM contador_relatorios WHERE id = 1";
+                MySqlCommand cmd = new MySqlCommand(sql, conexao);
+                object resultado = cmd.ExecuteScalar();
+                return resultado != null ? Convert.ToInt32(resultado) : 0;
+            }
+        }
 
         private void HomePage_Load(object sender, EventArgs e)
         {
             label3.Text = $"Olá, {nomeUsuario}! Acesse as funcionalidades no menu ao lado";
+            int totalCliques = ObterContadorExcel();
+            labelContador.Text = $"Total de exportações em Excel: {totalCliques}";
         }
         private void button2_Click(object sender, EventArgs e)
         {

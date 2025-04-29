@@ -201,7 +201,38 @@
             btnLogins.UseVisualStyleBackColor = false;
             btnLogins.Click += btnUsuario_Click_1;
             // 
-            // panel1
+            // button3
+            // 
+            button3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            button3.BackColor = Color.FromArgb(18, 87, 123);
+            button3.Cursor = Cursors.Hand;
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            button3.ForeColor = Color.FromArgb(169, 207, 229);
+            button3.Image = (Image)resources.GetObject("button3.Image");
+            button3.Location = new Point(854, 116);
+            button3.Margin = new Padding(1);
+            button3.Name = "button3";
+            button3.Size = new Size(195, 180);
+            button3.TabIndex = 26;
+            button3.Text = "Calculadora";
+            button3.TextAlign = ContentAlignment.BottomCenter;
+            button3.TextImageRelation = TextImageRelation.ImageAboveText;
+            button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 18F);
+            label3.Location = new Point(606, 58);
+            label3.Margin = new Padding(2, 0, 2, 0);
+            label3.Name = "label3";
+            label3.Size = new Size(78, 32);
+            label3.TabIndex = 29;
+            label3.Text = "label3";
+            // 
+            // label1
             // 
             panel1.AccessibleRole = AccessibleRole.Cursor;
             panel1.BackgroundImage = (Image)resources.GetObject("panel1.BackgroundImage");
@@ -210,6 +241,15 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(465, 380);
             panel1.TabIndex = 31;
+            // 
+            // labelContador
+            // 
+            labelContador.AutoSize = true;
+            labelContador.Location = new Point(606, 537);
+            labelContador.Name = "labelContador";
+            labelContador.Size = new Size(38, 15);
+            labelContador.TabIndex = 31;
+            labelContador.Text = "label2";
             // 
             // HomePage
             // 
@@ -251,6 +291,9 @@
         private Button btnLogins;
         private Button button4;
         private Button button3;
-        private Panel panel1;
+        private ToolStripMenuItem loginsESenhasToolStripMenuItem;
+        private Label label3;
+        private Label label1;
+        private Label labelContador;
     }
 }
