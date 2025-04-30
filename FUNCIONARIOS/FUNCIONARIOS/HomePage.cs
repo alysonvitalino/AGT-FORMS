@@ -26,12 +26,38 @@ namespace AGT_FORMS
             }
         }
 
+        Image imgAliquota, imgLogins, imgCalculadora, imgCadastros;
         private void HomePage_Load(object sender, EventArgs e)
         {
-            label3.Text = $"Olá, {nomeUsuario}! Acesse as funcionalidades no menu ao lado";
+            label3.Text = $"Olá {nomeUsuario}! Acesse as nossas funcionalidades:";
             int totalCliques = ObterContadorExcel();
             labelContador1.Text = $"Total de exportações em Excel: {totalCliques}";
+            imgAliquota = Image.FromFile("C:\\Users\\Aluno\\Desktop\\AGT-FORMS\\FUNCIONARIOS\\FUNCIONARIOS\\Resources\\ImagemAliquota.png");
+            imgLogins = Image.FromFile("C:\\Users\\Aluno\\Desktop\\AGT-FORMS\\FUNCIONARIOS\\FUNCIONARIOS\\Resources\\ImagemLogins.png");
+            imgCalculadora = Image.FromFile("C:\\Users\\Aluno\\Desktop\\AGT-FORMS\\FUNCIONARIOS\\FUNCIONARIOS\\Resources\\ImagemCalculadora.png");
+            imgCadastros = Image.FromFile("C:\\Users\\Aluno\\Desktop\\AGT-FORMS\\FUNCIONARIOS\\FUNCIONARIOS\\Resources\\ImagemCadastro.png");
         }
+
+        private void button1_MouseEnter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_MouseEnter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_MouseEnter(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button4_MouseEnter(object sender, EventArgs e)
+        {
+
+        }
+
         private void button2_Click(object sender, EventArgs e)
         {
             LoginPage produto = new LoginPage();
@@ -100,6 +126,26 @@ namespace AGT_FORMS
             produto.StartPosition = FormStartPosition.CenterScreen;
             produto.Show();
             Hide();
+        }
+
+        private void button1_MouseEnter_1(object sender, EventArgs e)
+        {
+            pictureBox1.Image = imgAliquota;
+        }
+
+        private void btnLogins_MouseEnter(object sender, EventArgs e)
+        {
+            pictureBox1.Image = imgLogins;
+        }
+
+        private void button4_MouseEnter_1(object sender, EventArgs e)
+        {
+            pictureBox1.Image = imgCadastros;
+        }
+
+        private void button3_MouseEnter_1(object sender, EventArgs e)
+        {
+            pictureBox1.Image = imgCalculadora;
         }
     }
 }
