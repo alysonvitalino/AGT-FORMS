@@ -15,23 +15,11 @@ namespace AGT_FORMS
         {
             InitializeComponent();
         }
-        public static int ObterContadorExcel()
-        {
-            using (MySqlConnection conexao = DBHelper.ObterConexao())
-            {
-                string sql = "SELECT quantidade FROM contador_relatorios WHERE id = 1";
-                MySqlCommand cmd = new MySqlCommand(sql, conexao);
-                object resultado = cmd.ExecuteScalar();
-                return resultado != null ? Convert.ToInt32(resultado) : 0;
-            }
-        }
 
         Image imgAliquota, imgLogins, imgCalculadora, imgCadastros;
         private void HomePage_Load(object sender, EventArgs e)
         {
             label3.Text = $"Olá {nomeUsuario}! Acesse as nossas funcionalidades:";
-            int totalCliques = ObterContadorExcel();
-            labelContador1.Text = $"Total de exportações em Excel: {totalCliques}";
             imgAliquota = Image.FromFile("C:\\Users\\Aluno\\Desktop\\AGT-FORMS\\FUNCIONARIOS\\FUNCIONARIOS\\Resources\\ImagemAliquota.png");
             imgLogins = Image.FromFile("C:\\Users\\Aluno\\Desktop\\AGT-FORMS\\FUNCIONARIOS\\FUNCIONARIOS\\Resources\\ImagemLogins.png");
             imgCalculadora = Image.FromFile("C:\\Users\\Aluno\\Desktop\\AGT-FORMS\\FUNCIONARIOS\\FUNCIONARIOS\\Resources\\ImagemCalculadora.png");
