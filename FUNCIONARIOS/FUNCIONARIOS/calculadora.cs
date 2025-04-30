@@ -25,6 +25,9 @@ public partial class calculadora : Form
             InitializeComponent();
             PreencherComboBox();
 
+            int totalCliques = ObterContadorExcel();
+            labelContador.Text = $"Total de exportações em Excel: {totalCliques}";
+
 
             dataGridView1.ColumnCount = 15;
 
@@ -47,6 +50,17 @@ public partial class calculadora : Form
 
             // Ajusta o tamanho automático das colunas
             dataGridView1.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+        }
+
+        public static int ObterContadorExcel()
+        {
+            using (MySqlConnection conexao = DBHelper.ObterConexao())
+            {
+                string sql = "SELECT quantidade FROM contador_relatorios WHERE id = 1";
+                MySqlCommand cmd = new MySqlCommand(sql, conexao);
+                object resultado = cmd.ExecuteScalar();
+                return resultado != null ? Convert.ToInt32(resultado) : 0;
+            }
         }
         private void paginaInicialToolStripMenuItem_Click(object sender, EventArgs e)
         {

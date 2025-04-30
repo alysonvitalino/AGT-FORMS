@@ -41,7 +41,6 @@
             button1 = new Button();
             button4 = new Button();
             btnLogins = new Button();
-            labelContador1 = new Label();
             pictureBox1 = new PictureBox();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -103,10 +102,11 @@
             // 
             // label3
             // 
+            label3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             label3.AutoSize = true;
             label3.Font = new Font("Nirmala UI", 18F, FontStyle.Bold);
             label3.ForeColor = Color.FromArgb(18, 87, 123);
-            label3.Location = new Point(12, 99);
+            label3.Location = new Point(159, 98);
             label3.Name = "label3";
             label3.Size = new Size(121, 48);
             label3.TabIndex = 29;
@@ -121,7 +121,7 @@
             button3.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             button3.ForeColor = Color.FromArgb(169, 207, 229);
             button3.Image = (Image)resources.GetObject("button3.Image");
-            button3.Location = new Point(1189, 557);
+            button3.Location = new Point(868, 557);
             button3.Margin = new Padding(1, 2, 1, 2);
             button3.Name = "button3";
             button3.Size = new Size(279, 300);
@@ -142,7 +142,7 @@
             button1.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             button1.ForeColor = Color.FromArgb(169, 207, 229);
             button1.Image = (Image)resources.GetObject("button1.Image");
-            button1.Location = new Point(847, 197);
+            button1.Location = new Point(868, 197);
             button1.Margin = new Padding(1, 2, 1, 2);
             button1.Name = "button1";
             button1.Size = new Size(279, 300);
@@ -163,7 +163,7 @@
             button4.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             button4.ForeColor = Color.FromArgb(169, 207, 229);
             button4.Image = (Image)resources.GetObject("button4.Image");
-            button4.Location = new Point(847, 557);
+            button4.Location = new Point(1208, 197);
             button4.Margin = new Padding(1, 2, 1, 2);
             button4.Name = "button4";
             button4.Size = new Size(279, 300);
@@ -184,7 +184,7 @@
             btnLogins.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             btnLogins.ForeColor = Color.FromArgb(169, 207, 229);
             btnLogins.Image = (Image)resources.GetObject("btnLogins.Image");
-            btnLogins.Location = new Point(1189, 197);
+            btnLogins.Location = new Point(1208, 557);
             btnLogins.Margin = new Padding(1, 2, 1, 2);
             btnLogins.Name = "btnLogins";
             btnLogins.Size = new Size(279, 300);
@@ -196,20 +196,9 @@
             btnLogins.Click += btnUsuario_Click_1;
             btnLogins.MouseEnter += btnLogins_MouseEnter;
             // 
-            // labelContador1
-            // 
-            labelContador1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            labelContador1.AutoSize = true;
-            labelContador1.Font = new Font("Nirmala UI", 9F, FontStyle.Bold);
-            labelContador1.ForeColor = Color.FromArgb(18, 87, 123);
-            labelContador1.Location = new Point(847, 122);
-            labelContador1.Name = "labelContador1";
-            labelContador1.Size = new Size(63, 25);
-            labelContador1.TabIndex = 30;
-            labelContador1.Text = "label1";
-            // 
             // pictureBox1
             // 
+            pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             pictureBox1.Image = Properties.Resources.Add_a_subheading;
             pictureBox1.Location = new Point(32, 197);
             pictureBox1.Name = "pictureBox1";
@@ -225,7 +214,6 @@
             BackColor = Color.FromArgb(169, 207, 229);
             ClientSize = new Size(1549, 935);
             Controls.Add(pictureBox1);
-            Controls.Add(labelContador1);
             Controls.Add(button4);
             Controls.Add(button3);
             Controls.Add(button1);
@@ -260,7 +248,6 @@
         private Button button4;
         private Button button3;
         private Label labelContador;
-        private Label labelContador1;
         private PictureBox pictureBox1;
     }
 }
