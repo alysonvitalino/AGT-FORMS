@@ -102,10 +102,11 @@
             // 
             // label3
             // 
+            label3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             label3.AutoSize = true;
             label3.Font = new Font("Nirmala UI", 18F, FontStyle.Bold);
             label3.ForeColor = Color.FromArgb(18, 87, 123);
-            label3.Location = new Point(12, 99);
+            label3.Location = new Point(159, 98);
             label3.Name = "label3";
             label3.Size = new Size(121, 48);
             label3.TabIndex = 29;
@@ -197,6 +198,7 @@
             // 
             // pictureBox1
             // 
+            pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             pictureBox1.Image = Properties.Resources.Add_a_subheading;
             pictureBox1.Location = new Point(32, 197);
             pictureBox1.Name = "pictureBox1";

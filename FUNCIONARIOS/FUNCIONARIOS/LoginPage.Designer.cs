@@ -47,7 +47,7 @@
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
             button1.ForeColor = SystemColors.ButtonFace;
-            button1.Location = new Point(749, 332);
+            button1.Location = new Point(830, 407);
             button1.Margin = new Padding(4, 5, 4, 5);
             button1.Name = "button1";
             button1.Size = new Size(109, 38);
@@ -63,7 +63,7 @@
             label1.BackColor = Color.FromArgb(18, 87, 123);
             label1.Font = new Font("Segoe UI", 9F);
             label1.ForeColor = SystemColors.ButtonFace;
-            label1.Location = new Point(749, 134);
+            label1.Location = new Point(753, 201);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
             label1.Size = new Size(56, 25);
@@ -77,7 +77,7 @@
             label2.BackColor = Color.FromArgb(18, 87, 123);
             label2.Font = new Font("Segoe UI", 9F);
             label2.ForeColor = SystemColors.ButtonFace;
-            label2.Location = new Point(749, 231);
+            label2.Location = new Point(753, 298);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
             label2.Size = new Size(60, 25);
@@ -88,7 +88,7 @@
             // 
             BoxLogin.Anchor = AnchorStyles.Top;
             BoxLogin.BackColor = Color.FromArgb(169, 207, 229);
-            BoxLogin.Location = new Point(749, 164);
+            BoxLogin.Location = new Point(753, 231);
             BoxLogin.Margin = new Padding(4, 5, 4, 5);
             BoxLogin.Name = "BoxLogin";
             BoxLogin.Size = new Size(264, 31);
@@ -98,7 +98,7 @@
             // 
             BoxSenha.Anchor = AnchorStyles.Top;
             BoxSenha.BackColor = Color.FromArgb(169, 207, 229);
-            BoxSenha.Location = new Point(749, 261);
+            BoxSenha.Location = new Point(753, 328);
             BoxSenha.Margin = new Padding(4, 5, 4, 5);
             BoxSenha.Name = "BoxSenha";
             BoxSenha.Size = new Size(264, 31);
@@ -107,7 +107,7 @@
             // button2
             // 
             button2.Anchor = AnchorStyles.Top;
-            button2.Location = new Point(749, 416);
+            button2.Location = new Point(917, 606);
             button2.Name = "button2";
             button2.Size = new Size(212, 132);
             button2.TabIndex = 6;
@@ -120,9 +120,9 @@
             pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             pictureBox1.BackColor = Color.Transparent;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(-24, -40);
+            pictureBox1.Location = new Point(-34, -20);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(1185, 792);
+            pictureBox1.Size = new Size(1219, 799);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 7;
             pictureBox1.TabStop = false;
