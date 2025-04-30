@@ -44,6 +44,7 @@
             label2 = new Label();
             comboBox1 = new ComboBox();
             button5 = new Button();
+            button6 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             menuStrip1.SuspendLayout();
             SuspendLayout();
@@ -236,12 +237,23 @@
             button5.UseVisualStyleBackColor = false;
             button5.Click += button5_Click;
             // 
+            // button6
+            // 
+            button6.Location = new Point(1189, 72);
+            button6.Name = "button6";
+            button6.Size = new Size(161, 62);
+            button6.TabIndex = 11;
+            button6.Text = "Editar Unidades";
+            button6.UseVisualStyleBackColor = true;
+            button6.Click += button6_Click;
+            // 
             // Cadastros
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(169, 207, 229);
             ClientSize = new Size(1549, 935);
+            Controls.Add(button6);
             Controls.Add(button5);
             Controls.Add(comboBox1);
             Controls.Add(label2);
@@ -282,5 +294,6 @@
         private Label label2;
         private ComboBox comboBox1;
         private Button button5;
+        private Button button6;
     }
 }

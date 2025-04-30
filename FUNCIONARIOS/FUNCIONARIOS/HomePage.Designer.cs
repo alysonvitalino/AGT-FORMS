@@ -104,10 +104,11 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 18F);
+            label3.Font = new Font("Nirmala UI", 18F, FontStyle.Bold);
+            label3.ForeColor = Color.FromArgb(18, 87, 123);
             label3.Location = new Point(12, 99);
             label3.Name = "label3";
-            label3.Size = new Size(115, 48);
+            label3.Size = new Size(121, 48);
             label3.TabIndex = 29;
             label3.Text = "label3";
             // 
@@ -130,6 +131,7 @@
             button3.TextImageRelation = TextImageRelation.ImageAboveText;
             button3.UseVisualStyleBackColor = false;
             button3.Click += button3_Click;
+            button3.MouseEnter += button3_MouseEnter_1;
             // 
             // button1
             // 
@@ -150,6 +152,7 @@
             button1.TextImageRelation = TextImageRelation.ImageAboveText;
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click_1;
+            button1.MouseEnter += button1_MouseEnter_1;
             // 
             // button4
             // 
@@ -170,6 +173,7 @@
             button4.TextImageRelation = TextImageRelation.ImageAboveText;
             button4.UseVisualStyleBackColor = false;
             button4.Click += button4_Click;
+            button4.MouseEnter += button4_MouseEnter_1;
             // 
             // btnLogins
             // 
@@ -190,14 +194,17 @@
             btnLogins.TextImageRelation = TextImageRelation.ImageAboveText;
             btnLogins.UseVisualStyleBackColor = false;
             btnLogins.Click += btnUsuario_Click_1;
+            btnLogins.MouseEnter += btnLogins_MouseEnter;
             // 
             // labelContador1
             // 
             labelContador1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             labelContador1.AutoSize = true;
+            labelContador1.Font = new Font("Nirmala UI", 9F, FontStyle.Bold);
+            labelContador1.ForeColor = Color.FromArgb(18, 87, 123);
             labelContador1.Location = new Point(847, 122);
             labelContador1.Name = "labelContador1";
-            labelContador1.Size = new Size(59, 25);
+            labelContador1.Size = new Size(63, 25);
             labelContador1.TabIndex = 30;
             labelContador1.Text = "label1";
             // 

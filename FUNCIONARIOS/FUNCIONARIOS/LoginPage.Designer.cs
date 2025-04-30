@@ -35,14 +35,17 @@
             BoxLogin = new TextBox();
             BoxSenha = new TextBox();
             button2 = new Button();
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // button1
             // 
+            button1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             button1.BackColor = Color.Transparent;
             button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
             button1.ForeColor = SystemColors.ButtonFace;
-            button1.Location = new Point(580, 415);
+            button1.Location = new Point(507, 407);
             button1.Margin = new Padding(4, 5, 4, 5);
             button1.Name = "button1";
             button1.Size = new Size(109, 38);
@@ -53,11 +56,12 @@
             // 
             // label1
             // 
+            label1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI", 9F);
             label1.ForeColor = SystemColors.ButtonFace;
-            label1.Location = new Point(580, 240);
+            label1.Location = new Point(507, 209);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
             label1.Size = new Size(56, 25);
@@ -66,11 +70,12 @@
             // 
             // label2
             // 
+            label2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label2.AutoSize = true;
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Segoe UI", 9F);
             label2.ForeColor = SystemColors.ButtonFace;
-            label2.Location = new Point(580, 313);
+            label2.Location = new Point(507, 306);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
             label2.Size = new Size(60, 25);
@@ -79,8 +84,9 @@
             // 
             // BoxLogin
             // 
+            BoxLogin.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             BoxLogin.BackColor = SystemColors.HotTrack;
-            BoxLogin.Location = new Point(580, 270);
+            BoxLogin.Location = new Point(507, 239);
             BoxLogin.Margin = new Padding(4, 5, 4, 5);
             BoxLogin.Name = "BoxLogin";
             BoxLogin.Size = new Size(264, 31);
@@ -88,8 +94,9 @@
             // 
             // BoxSenha
             // 
+            BoxSenha.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             BoxSenha.BackColor = SystemColors.HotTrack;
-            BoxSenha.Location = new Point(580, 343);
+            BoxSenha.Location = new Point(507, 336);
             BoxSenha.Margin = new Padding(4, 5, 4, 5);
             BoxSenha.Name = "BoxSenha";
             BoxSenha.Size = new Size(264, 31);
@@ -97,7 +104,8 @@
             // 
             // button2
             // 
-            button2.Location = new Point(580, 503);
+            button2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            button2.Location = new Point(507, 491);
             button2.Name = "button2";
             button2.Size = new Size(212, 132);
             button2.TabIndex = 6;
@@ -105,12 +113,22 @@
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            pictureBox1.Image = Properties.Resources.LOGIN_E_SENHAS__4_;
+            pictureBox1.Location = new Point(1, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(1139, 752);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 7;
+            pictureBox1.TabStop = false;
+            // 
             // LoginPage
             // 
             AcceptButton = button1;
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            AutoSize = true;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1141, 750);
             Controls.Add(button2);
@@ -119,9 +137,11 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(button1);
+            Controls.Add(pictureBox1);
             Margin = new Padding(4, 5, 4, 5);
             Name = "LoginPage";
             StartPosition = FormStartPosition.CenterScreen;
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -134,5 +154,6 @@
         private TextBox BoxLogin;
         private TextBox BoxSenha;
         private Button button2;
+        private PictureBox pictureBox1;
     }
 }

@@ -191,5 +191,13 @@ namespace AGT_FORMS
             comboBox1.SelectedIndex = -1;
             CarregarDados();
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            CadastrosNova produto = new CadastrosNova();
+            produto.StartPosition = FormStartPosition.CenterScreen;
+            produto.Show();
+            Hide();
+        }
     }
 }
