@@ -136,4 +136,16 @@
   <data name="Add a subheading" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Add a subheading.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ImagemAliquota" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ImagemAliquota.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ImagemCadastro" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ImagemCadastro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ImagemCalculadora" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ImagemCalculadora.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ImagemLogins" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ImagemLogins.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

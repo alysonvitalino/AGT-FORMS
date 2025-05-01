@@ -20,10 +20,10 @@ namespace AGT_FORMS
         private void HomePage_Load(object sender, EventArgs e)
         {
             label3.Text = $"Olá {nomeUsuario}! Acesse as nossas funcionalidades:";
-            imgAliquota = Image.FromFile("C:\\Users\\Aluno\\Desktop\\AGT-FORMS\\FUNCIONARIOS\\FUNCIONARIOS\\Resources\\ImagemAliquota.png");
-            imgLogins = Image.FromFile("C:\\Users\\Aluno\\Desktop\\AGT-FORMS\\FUNCIONARIOS\\FUNCIONARIOS\\Resources\\ImagemLogins.png");
-            imgCalculadora = Image.FromFile("C:\\Users\\Aluno\\Desktop\\AGT-FORMS\\FUNCIONARIOS\\FUNCIONARIOS\\Resources\\ImagemCalculadora.png");
-            imgCadastros = Image.FromFile("C:\\Users\\Aluno\\Desktop\\AGT-FORMS\\FUNCIONARIOS\\FUNCIONARIOS\\Resources\\ImagemCadastro.png");
+            imgAliquota = Properties.Resources.ImagemAliquota;
+            imgLogins = Properties.Resources.ImagemLogins;
+            imgCalculadora = Properties.Resources.ImagemCalculadora;
+            imgCadastros = Properties.Resources.ImagemCadastro;
         }
 
         private void button1_MouseEnter(object sender, EventArgs e)
