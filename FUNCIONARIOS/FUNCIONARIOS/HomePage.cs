@@ -9,21 +9,22 @@ namespace AGT_FORMS
         public HomePage(string usuario)
         {
             InitializeComponent();
-            nomeUsuario = usuario;
+            nomeUsuario = " " + usuario;
         }
         public HomePage()
         {
             InitializeComponent();
         }
 
-        Image imgAliquota, imgLogins, imgCalculadora, imgCadastros;
+        Image imgAliquota, imgLogins, imgCalculadora, imgCadastros, imgHomePage;
         private void HomePage_Load(object sender, EventArgs e)
         {
-            label3.Text = $"Olá {nomeUsuario}! Acesse as nossas funcionalidades:";
+            label3.Text = "Olá" + nomeUsuario +"! Acesse as nossas funcionalidades:";
             imgAliquota = Properties.Resources.ImagemAliquota;
             imgLogins = Properties.Resources.ImagemLogins;
             imgCalculadora = Properties.Resources.ImagemCalculadora;
             imgCadastros = Properties.Resources.ImagemCadastro;
+            imgHomePage = Properties.Resources.HomePageImagem;
         }
 
         private void button1_MouseEnter(object sender, EventArgs e)
@@ -38,7 +39,7 @@ namespace AGT_FORMS
 
         private void button3_MouseEnter(object sender, EventArgs e)
         {
-            
+
         }
 
         private void button4_MouseEnter(object sender, EventArgs e)
@@ -134,6 +135,25 @@ namespace AGT_FORMS
         private void button3_MouseEnter_1(object sender, EventArgs e)
         {
             pictureBox1.Image = imgCalculadora;
+        }
+        private void button1_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBox1.Image = imgHomePage;
+        }
+
+        private void button4_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBox1.Image = imgHomePage;
+        }
+
+        private void button3_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBox1.Image = imgHomePage;
+        }
+
+        private void btnLogins_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBox1.Image = imgHomePage;
         }
     }
 }

@@ -133,6 +133,7 @@
             button3.UseVisualStyleBackColor = false;
             button3.Click += button3_Click;
             button3.MouseEnter += button3_MouseEnter_1;
+            button3.MouseLeave += button3_MouseLeave;
             // 
             // button1
             // 
@@ -154,6 +155,7 @@
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click_1;
             button1.MouseEnter += button1_MouseEnter_1;
+            button1.MouseLeave += button1_MouseLeave;
             // 
             // button4
             // 
@@ -175,6 +177,7 @@
             button4.UseVisualStyleBackColor = false;
             button4.Click += button4_Click;
             button4.MouseEnter += button4_MouseEnter_1;
+            button4.MouseLeave += button4_MouseLeave;
             // 
             // btnLogins
             // 
@@ -196,11 +199,12 @@
             btnLogins.UseVisualStyleBackColor = false;
             btnLogins.Click += btnUsuario_Click_1;
             btnLogins.MouseEnter += btnLogins_MouseEnter;
+            btnLogins.MouseLeave += btnLogins_MouseLeave;
             // 
             // pictureBox1
             // 
             pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            pictureBox1.Image = Properties.Resources.Add_a_subheading;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(22, 118);
             pictureBox1.Margin = new Padding(2);
             pictureBox1.Name = "pictureBox1";
