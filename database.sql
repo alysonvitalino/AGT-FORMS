@@ -1,17 +1,17 @@
-drop database agt;
+#drop database agt;
 create database agt;
 use agt;
 
 
 CREATE TABLE logins
 (
-id_login int auto_increment primary key,
+id_login int auto_increment primary key AUTO_INCREMENT,
 login VARCHAR(255) NOT NULL,
 senha VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE aliquotas (
-id_aliquota INT NOT NULL PRIMARY KEY,
+id_aliquota INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 municipio VARCHAR (255),
 cod_servico DECIMAL (10,2),
 desc_servico TEXT,
@@ -20,7 +20,7 @@ lei_vigente VARCHAR(255)
 );
 
 CREATE TABLE unidades (
-id_unidade INT NOT NULL PRIMARY KEY,
+id_unidade INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 cod_erp INT NOT NULL,
 cod_entidade VARCHAR (255),
 cnpj_unidade VARCHAR (20),
@@ -31,7 +31,7 @@ cep_unidade VARCHAR (15)
 );
 
 CREATE TABLE cadastro (
-id_cadastro INT NOT NULL PRIMARY KEY,
+id_cadastro INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 unidade_cadastro INT NOT NULL,
 municipio_cadastro VARCHAR (255),
 cnpj_cadastro VARCHAR (20),
@@ -44,10 +44,9 @@ observacao_cadastro VARCHAR (2048)
 );
 
 CREATE TABLE contador_relatorios (
-    id INT PRIMARY KEY,
+    id INT PRIMARY KEY AUTO_INCREMENT,
     quantidade INT NOT NULL
 );
-
 
 INSERT INTO contador_relatorios (id, quantidade) VALUES (1, 0);
 
