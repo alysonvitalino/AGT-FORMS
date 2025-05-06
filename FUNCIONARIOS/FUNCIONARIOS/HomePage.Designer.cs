@@ -36,7 +36,6 @@
             cadastrosToolStripMenuItem = new ToolStripMenuItem();
             leisEAlíquotasToolStripMenuItem = new ToolStripMenuItem();
             loginsESenhasToolStripMenuItem = new ToolStripMenuItem();
-            label3 = new Label();
             button3 = new Button();
             button1 = new Button();
             button4 = new Button();
@@ -100,29 +99,16 @@
             loginsESenhasToolStripMenuItem.Text = "Logins e Senhas";
             loginsESenhasToolStripMenuItem.Click += loginsESenhasToolStripMenuItem_Click;
             // 
-            // label3
-            // 
-            label3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            label3.AutoSize = true;
-            label3.Font = new Font("Nirmala UI", 18F, FontStyle.Bold);
-            label3.ForeColor = Color.FromArgb(18, 87, 123);
-            label3.Location = new Point(119, 55);
-            label3.Margin = new Padding(2, 0, 2, 0);
-            label3.Name = "label3";
-            label3.Size = new Size(83, 32);
-            label3.TabIndex = 29;
-            label3.Text = "label3";
-            // 
             // button3
             // 
-            button3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            button3.Anchor = AnchorStyles.Right;
             button3.BackColor = Color.FromArgb(18, 87, 123);
             button3.Cursor = Cursors.Hand;
             button3.FlatStyle = FlatStyle.Flat;
             button3.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             button3.ForeColor = Color.FromArgb(169, 207, 229);
             button3.Image = (Image)resources.GetObject("button3.Image");
-            button3.Location = new Point(608, 334);
+            button3.Location = new Point(608, 309);
             button3.Margin = new Padding(1);
             button3.Name = "button3";
             button3.Size = new Size(195, 180);
@@ -137,14 +123,14 @@
             // 
             // button1
             // 
-            button1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            button1.Anchor = AnchorStyles.Right;
             button1.BackColor = Color.FromArgb(18, 87, 123);
             button1.Cursor = Cursors.Hand;
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             button1.ForeColor = Color.FromArgb(169, 207, 229);
             button1.Image = (Image)resources.GetObject("button1.Image");
-            button1.Location = new Point(608, 118);
+            button1.Location = new Point(608, 93);
             button1.Margin = new Padding(1);
             button1.Name = "button1";
             button1.Size = new Size(195, 180);
@@ -159,14 +145,14 @@
             // 
             // button4
             // 
-            button4.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            button4.Anchor = AnchorStyles.Right;
             button4.BackColor = Color.FromArgb(18, 87, 123);
             button4.Cursor = Cursors.Hand;
             button4.FlatStyle = FlatStyle.Flat;
             button4.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             button4.ForeColor = Color.FromArgb(169, 207, 229);
             button4.Image = (Image)resources.GetObject("button4.Image");
-            button4.Location = new Point(846, 118);
+            button4.Location = new Point(846, 93);
             button4.Margin = new Padding(1);
             button4.Name = "button4";
             button4.Size = new Size(195, 180);
@@ -181,14 +167,14 @@
             // 
             // btnLogins
             // 
-            btnLogins.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnLogins.Anchor = AnchorStyles.Right;
             btnLogins.BackColor = Color.FromArgb(18, 87, 123);
             btnLogins.Cursor = Cursors.Hand;
             btnLogins.FlatStyle = FlatStyle.Flat;
             btnLogins.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             btnLogins.ForeColor = Color.FromArgb(169, 207, 229);
             btnLogins.Image = (Image)resources.GetObject("btnLogins.Image");
-            btnLogins.Location = new Point(846, 334);
+            btnLogins.Location = new Point(846, 309);
             btnLogins.Margin = new Padding(1);
             btnLogins.Name = "btnLogins";
             btnLogins.Size = new Size(195, 180);
@@ -205,7 +191,7 @@
             // 
             pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(22, 118);
+            pictureBox1.Location = new Point(22, 93);
             pictureBox1.Margin = new Padding(2);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(538, 396);
@@ -224,7 +210,6 @@
             Controls.Add(button3);
             Controls.Add(button1);
             Controls.Add(btnLogins);
-            Controls.Add(label3);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
             Name = "HomePage";
@@ -247,7 +232,6 @@
         private ToolStripMenuItem cadastrosToolStripMenuItem;
         private ToolStripMenuItem leisEAlíquotasToolStripMenuItem;
         private ToolStripMenuItem loginsESenhasToolStripMenuItem;
-        private Label label3;
         private Button button1;
         private Button btnLogins;
         private Button button4;

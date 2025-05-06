@@ -19,7 +19,6 @@ namespace AGT_FORMS
         Image imgAliquota, imgLogins, imgCalculadora, imgCadastros, imgHomePage;
         private void HomePage_Load(object sender, EventArgs e)
         {
-            label3.Text = "Olá" + nomeUsuario +"! Acesse as nossas funcionalidades:";
             imgAliquota = Properties.Resources.ImagemAliquota;
             imgLogins = Properties.Resources.ImagemLogins;
             imgCalculadora = Properties.Resources.ImagemCalculadora;
