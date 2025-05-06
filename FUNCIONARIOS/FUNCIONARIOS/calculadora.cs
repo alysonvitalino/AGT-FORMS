@@ -14,8 +14,8 @@ using System.IO;
 
 namespace AGT_FORMS
 {
-   
-public partial class calculadora : Form
+
+    public partial class calculadora : Form
     {
         MySqlConnection conexao;
 
@@ -244,7 +244,7 @@ public partial class calculadora : Form
                     liqCsrIss.ToString("C2"),
                     liqInssIss.ToString("C2"),
                     liqIrIss.ToString("C2"),
-                    liqCsrIss.ToString("C2"), 
+                    liqCsrIss.ToString("C2"),
                     DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")
                 );
 
@@ -271,19 +271,18 @@ public partial class calculadora : Form
                 dataGridView1.Sort(dataGridView1.Columns["DataHora"], ListSortDirection.Descending);
                 dataGridView1.Sort(dataGridView1.Columns[14], ListSortDirection.Descending);
 
-                // Alternando as cores das linhas
-                if (corAlternada)
+                // Redefinindo as cores dos pares de linhas após a ordenação
+                for (int i = 0; i < dataGridView1.Rows.Count; i += 2)
                 {
-                    // Define a cor de fundo das linhas para verde claro
-                    dataGridView1.Rows[rowIndex1].DefaultCellStyle.BackColor = Color.LightBlue;
-                    dataGridView1.Rows[rowIndex2].DefaultCellStyle.BackColor = Color.LightBlue;
+                    Color cor = ((i / 2) % 2 == 0) ? Color.LightBlue : Color.Azure;
+
+                    if (i < dataGridView1.Rows.Count)
+                        dataGridView1.Rows[i].DefaultCellStyle.BackColor = cor;
+
+                    if (i + 1 < dataGridView1.Rows.Count)
+                        dataGridView1.Rows[i + 1].DefaultCellStyle.BackColor = cor;
                 }
-                else
-                {
-                    // Define a cor de fundo das linhas para azul claro
-                    dataGridView1.Rows[rowIndex1].DefaultCellStyle.BackColor = Color.Azure;
-                    dataGridView1.Rows[rowIndex2].DefaultCellStyle.BackColor = Color.Azure;
-                }
+
 
                 corAlternada = !corAlternada;
 
@@ -383,7 +382,7 @@ public partial class calculadora : Form
         {
             dataGridView1.Rows.Clear();
         }
-        
+
         public static void IncrementarContadorExcel()
         {
             using (MySqlConnection conexao = DBHelper.ObterConexao())
@@ -438,6 +437,11 @@ public partial class calculadora : Form
             {
                 MessageBox.Show("Erro ao gerar o Excel: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
