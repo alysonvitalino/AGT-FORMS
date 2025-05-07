@@ -11,7 +11,7 @@ senha VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE aliquotas (
-id_aliquota INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+id_aliquota INT NOT NULL PRIMARY KEY,
 municipio VARCHAR (255),
 cod_servico DECIMAL (10,2),
 desc_servico TEXT,
