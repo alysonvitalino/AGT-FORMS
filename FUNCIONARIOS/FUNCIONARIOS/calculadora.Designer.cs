@@ -133,7 +133,7 @@
             button1.RightToLeft = RightToLeft.No;
             button1.Size = new Size(147, 153);
             button1.TabIndex = 1;
-            button1.Text = "Página Inicial";
+            button1.Text = "Menu";
             button1.TextAlign = ContentAlignment.BottomCenter;
             button1.TextImageRelation = TextImageRelation.ImageAboveText;
             button1.UseVisualStyleBackColor = false;

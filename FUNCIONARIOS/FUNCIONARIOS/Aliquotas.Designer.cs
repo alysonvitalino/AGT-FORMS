@@ -94,7 +94,7 @@
             button2.Name = "button2";
             button2.Size = new Size(147, 153);
             button2.TabIndex = 21;
-            button2.Text = "Página Inicial";
+            button2.Text = "Menu";
             button2.TextAlign = ContentAlignment.BottomCenter;
             button2.TextImageRelation = TextImageRelation.ImageAboveText;
             button2.UseVisualStyleBackColor = false;
