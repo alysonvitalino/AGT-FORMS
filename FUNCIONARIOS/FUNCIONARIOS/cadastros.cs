@@ -58,7 +58,7 @@ namespace AGT_FORMS
         }
         private void CarregarComboBox()
         {
-            string query = "SELECT cod_erp FROM unidades";
+            string query = "SELECT cod_erp FROM unidades ORDER BY cod_erp ASC";
 
             try
             {
@@ -194,7 +194,7 @@ namespace AGT_FORMS
 
         private void button6_Click(object sender, EventArgs e)
         {
-            CadastrosNova produto = new CadastrosNova();
+            CadastrosEditar produto = new CadastrosEditar();
             produto.StartPosition = FormStartPosition.CenterScreen;
             produto.Show();
             Hide();
@@ -202,7 +202,57 @@ namespace AGT_FORMS
 
         private void button7_Click(object sender, EventArgs e)
         {
-
+            CadastrosNova produto = new CadastrosNova();
+            produto.StartPosition = FormStartPosition.CenterScreen;
+            produto.Show();
+            Hide();
         }
+        private void button8_Click(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedItem != null)
+            {
+                string codErp = comboBox1.SelectedItem.ToString();
+
+                var confirmResult = MessageBox.Show("Tem certeza que deseja excluir esta unidade?",
+                                                     "Confirmação", MessageBoxButtons.YesNo);
+
+                if (confirmResult == DialogResult.Yes)
+                {
+                    string query = "DELETE FROM unidades WHERE cod_erp = @codErp";
+
+                    try
+                    {
+                        using (MySqlConnection conexao = DBHelper.ObterConexao())
+                        {
+                            using (MySqlCommand cmd = new MySqlCommand(query, conexao))
+                            {
+                                cmd.Parameters.AddWithValue("@codErp", codErp);
+                                int linhasAfetadas = cmd.ExecuteNonQuery();
+
+                                if (linhasAfetadas > 0)
+                                {
+                                    MessageBox.Show("Unidade excluída com sucesso!");
+                                    CarregarComboBox(); // Atualiza o combo
+                                    CarregarDados();    // Atualiza o DataGrid
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Nenhuma unidade foi excluída.");
+                                }
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Erro ao excluir a unidade: " + ex.Message);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Selecione uma unidade para excluir.");
+            }
+        }
+
     }
 }
