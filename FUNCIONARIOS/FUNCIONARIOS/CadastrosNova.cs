@@ -20,7 +20,7 @@ namespace AGT_FORMS
 
         private void CadastrosNova_Load(object sender, EventArgs e)
         {
-            
+
         }
         private void buttonLimpar_Click(object sender, EventArgs e)
         {
@@ -32,7 +32,7 @@ namespace AGT_FORMS
             textBox5.Clear();
             textBox6.Clear();
             textBox7.Clear();
-           
+
         }
 
         private void buttonVoltar_Click(object sender, EventArgs e)
@@ -111,7 +111,7 @@ namespace AGT_FORMS
                 MessageBox.Show("Erro ao cadastrar a unidade: " + ex.Message);
             }
         }
-       
+
         private class ComboBoxItem
         {
             public string Display { get; set; }
@@ -127,6 +127,11 @@ namespace AGT_FORMS
             {
                 return Display; // o que será mostrado no comboBox
             }
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
