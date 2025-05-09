@@ -70,7 +70,7 @@ namespace AGT_FORMS
             }
             else
             {
-                MessageBox.Show("Preencha o login e a senha.", "Campos obrigatórios", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Preencha o login, senha e email.", "Campos obrigatórios", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
