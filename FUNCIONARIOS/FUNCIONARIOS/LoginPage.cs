@@ -89,6 +89,49 @@ namespace AGT_FORMS
             produto.Show();
             Hide();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!string.IsNullOrWhiteSpace(BoxLogin.Text))
+                {
+                    using (MySqlConnection conexao = DBHelper.ObterConexao())
+                    {
+                        string query = "SELECT email FROM logins WHERE login = @login";
+                        MySqlCommand comando = new MySqlCommand(query, conexao);
+                        comando.Parameters.AddWithValue("@login", BoxLogin.Text);
+
+                        MySqlDataReader reader = comando.ExecuteReader();
+
+                        if (reader.HasRows)
+                        {
+                            reader.Read();
+                            string email = reader["email"].ToString();
+
+                            MessageBox.Show($"A senha para recuperação foi enviada para o email: {email}",
+                                "Recuperação de Senha", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                            // Aqui você pode futuramente adicionar o envio real do email com a senha ou um token
+                        }
+                        else
+                        {
+                            MessageBox.Show("Login não encontrado.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+
+                        reader.Close();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Por favor, preencha o campo de login.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao tentar recuperar a senha: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
 

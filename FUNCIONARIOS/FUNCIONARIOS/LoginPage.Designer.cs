@@ -36,6 +36,7 @@
             BoxSenha = new TextBox();
             button2 = new Button();
             pictureBox1 = new PictureBox();
+            button3 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -47,7 +48,7 @@
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
             button1.ForeColor = SystemColors.ButtonFace;
-            button1.Location = new Point(581, 244);
+            button1.Location = new Point(637, 242);
             button1.Name = "button1";
             button1.Size = new Size(76, 23);
             button1.TabIndex = 0;
@@ -62,7 +63,7 @@
             label1.BackColor = Color.FromArgb(18, 87, 123);
             label1.Font = new Font("Segoe UI", 9F);
             label1.ForeColor = SystemColors.ButtonFace;
-            label1.Location = new Point(527, 121);
+            label1.Location = new Point(496, 121);
             label1.Name = "label1";
             label1.Size = new Size(37, 15);
             label1.TabIndex = 2;
@@ -75,7 +76,7 @@
             label2.BackColor = Color.FromArgb(18, 87, 123);
             label2.Font = new Font("Segoe UI", 9F);
             label2.ForeColor = SystemColors.ButtonFace;
-            label2.Location = new Point(527, 179);
+            label2.Location = new Point(496, 179);
             label2.Name = "label2";
             label2.Size = new Size(39, 15);
             label2.TabIndex = 3;
@@ -85,18 +86,18 @@
             // 
             BoxLogin.Anchor = AnchorStyles.Top;
             BoxLogin.BackColor = Color.FromArgb(169, 207, 229);
-            BoxLogin.Location = new Point(527, 139);
+            BoxLogin.Location = new Point(496, 139);
             BoxLogin.Name = "BoxLogin";
-            BoxLogin.Size = new Size(186, 23);
+            BoxLogin.Size = new Size(217, 23);
             BoxLogin.TabIndex = 4;
             // 
             // BoxSenha
             // 
             BoxSenha.Anchor = AnchorStyles.Top;
             BoxSenha.BackColor = Color.FromArgb(169, 207, 229);
-            BoxSenha.Location = new Point(527, 197);
+            BoxSenha.Location = new Point(496, 197);
             BoxSenha.Name = "BoxSenha";
-            BoxSenha.Size = new Size(186, 23);
+            BoxSenha.Size = new Size(217, 23);
             BoxSenha.TabIndex = 5;
             // 
             // button2
@@ -124,12 +125,29 @@
             pictureBox1.TabIndex = 7;
             pictureBox1.TabStop = false;
             // 
+            // button3
+            // 
+            button3.Anchor = AnchorStyles.Top;
+            button3.BackColor = Color.Transparent;
+            button3.BackgroundImage = (Image)resources.GetObject("button3.BackgroundImage");
+            button3.FlatAppearance.BorderSize = 0;
+            button3.FlatStyle = FlatStyle.Popup;
+            button3.ForeColor = SystemColors.ButtonFace;
+            button3.Location = new Point(496, 242);
+            button3.Name = "button3";
+            button3.Size = new Size(107, 23);
+            button3.TabIndex = 8;
+            button3.Text = "Esqueci a Senha";
+            button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
+            // 
             // LoginPage
             // 
             AcceptButton = button1;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(799, 450);
+            Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(BoxSenha);
             Controls.Add(BoxLogin);
@@ -153,5 +171,6 @@
         private TextBox BoxSenha;
         private Button button2;
         private PictureBox pictureBox1;
+        private Button button3;
     }
 }
