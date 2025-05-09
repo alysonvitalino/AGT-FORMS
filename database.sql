@@ -7,7 +7,8 @@ CREATE TABLE logins
 (
 id_login int auto_increment primary key AUTO_INCREMENT,
 login VARCHAR(255) NOT NULL,
-senha VARCHAR(255) NOT NULL
+senha VARCHAR(255) NOT NULL,
+email VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE aliquotas (
@@ -263,12 +264,6 @@ VALUES
 (9, 1009, 'ENT009', '89.012.345/0001-08', 'Unidade I', 'Avenida Rio Branco, 432', 'Fortaleza', '60000-000'),
 (10, 1010, 'ENT010', '90.123.456/0001-09', 'Unidade J', 'Rua Sergipe, 765', 'Manaus', '69000-000');
 
-SELECT cod_erp, cod_entidade, cnpj_unidade, nome_fantasia, endereco_unidade, cidade_unidade, cep_unidade FROM unidades;
 
-SELECT municipio, cod_servico, desc_servico, aliquota_iss FROM aliquotas;
-
-SELECT * FROM aliquotas;
-
-select * from logins;
 
 
