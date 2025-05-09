@@ -28,6 +28,7 @@ namespace AGT_FORMS
         {
             string senha = textBox3.Text;
             string usuario = textBox1.Text;
+            string email = textBox2.Text;
 
             if (!string.IsNullOrWhiteSpace(senha) && !string.IsNullOrWhiteSpace(usuario))
             {
@@ -42,11 +43,12 @@ namespace AGT_FORMS
                 {
                     using (MySqlConnection conexao = DBHelper.ObterConexao()) // Usando DBHelper para a conexão
                     {
-                        string query = "INSERT INTO logins (login, senha) VALUES (@login, @senha)";
+                        string query = "INSERT INTO logins (login, senha, email) VALUES (@login, @senha, @email)";
                         using (MySqlCommand cmd = new MySqlCommand(query, conexao))
                         {
                             cmd.Parameters.AddWithValue("@login", usuario);
                             cmd.Parameters.AddWithValue("@senha", hash);
+                            cmd.Parameters.AddWithValue("@email", email);
 
                             int resultado = cmd.ExecuteNonQuery();
 
