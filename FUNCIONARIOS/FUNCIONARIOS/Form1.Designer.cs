@@ -37,32 +37,31 @@
             button2 = new Button();
             label4 = new Label();
             textBox2 = new TextBox();
+            label5 = new Label();
+            comboBox1 = new ComboBox();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(222, 80);
-            label1.Margin = new Padding(2, 0, 2, 0);
+            label1.Location = new Point(328, 89);
             label1.Name = "label1";
-            label1.Size = new Size(91, 15);
+            label1.Size = new Size(136, 25);
             label1.TabIndex = 0;
             label1.Text = "Crie um usuário";
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(140, 131);
-            textBox1.Margin = new Padding(2, 2, 2, 2);
+            textBox1.Location = new Point(212, 176);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(106, 23);
+            textBox1.Size = new Size(150, 31);
             textBox1.TabIndex = 1;
             // 
             // button1
             // 
-            button1.Location = new Point(229, 230);
-            button1.Margin = new Padding(2, 2, 2, 2);
+            button1.Location = new Point(341, 395);
             button1.Name = "button1";
-            button1.Size = new Size(78, 20);
+            button1.Size = new Size(111, 33);
             button1.TabIndex = 2;
             button1.Text = "GERAR";
             button1.UseVisualStyleBackColor = true;
@@ -70,38 +69,34 @@
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(295, 131);
-            textBox3.Margin = new Padding(2, 2, 2, 2);
+            textBox3.Location = new Point(433, 176);
             textBox3.Name = "textBox3";
-            textBox3.Size = new Size(106, 23);
+            textBox3.Size = new Size(150, 31);
             textBox3.TabIndex = 4;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(140, 114);
-            label2.Margin = new Padding(2, 0, 2, 0);
+            label2.Location = new Point(212, 148);
             label2.Name = "label2";
-            label2.Size = new Size(37, 15);
+            label2.Size = new Size(56, 25);
             label2.TabIndex = 5;
             label2.Text = "Login";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(298, 114);
-            label3.Margin = new Padding(2, 0, 2, 0);
+            label3.Location = new Point(438, 148);
             label3.Name = "label3";
-            label3.Size = new Size(39, 15);
+            label3.Size = new Size(60, 25);
             label3.TabIndex = 6;
             label3.Text = "Senha";
             // 
             // button2
             // 
-            button2.Location = new Point(412, 7);
-            button2.Margin = new Padding(2, 2, 2, 2);
+            button2.Location = new Point(589, 12);
             button2.Name = "button2";
-            button2.Size = new Size(139, 71);
+            button2.Size = new Size(199, 118);
             button2.TabIndex = 7;
             button2.Text = "PÁGINA INICIAL";
             button2.UseVisualStyleBackColor = true;
@@ -110,27 +105,45 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(250, 169);
-            label4.Margin = new Padding(2, 0, 2, 0);
+            label4.Location = new Point(369, 214);
             label4.Name = "label4";
-            label4.Size = new Size(36, 15);
+            label4.Size = new Size(54, 25);
             label4.TabIndex = 9;
             label4.Text = "Email";
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(140, 186);
-            textBox2.Margin = new Padding(2);
+            textBox2.Location = new Point(212, 242);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(261, 23);
+            textBox2.Size = new Size(371, 31);
             textBox2.TabIndex = 8;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(333, 287);
+            label5.Name = "label5";
+            label5.Size = new Size(137, 25);
+            label5.TabIndex = 10;
+            label5.Text = "Nível de Acesso";
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "Admin", "Usuário" });
+            comboBox1.Location = new Point(310, 315);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(182, 33);
+            comboBox1.TabIndex = 11;
             // 
             // Form1
             // 
             AcceptButton = button2;
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(560, 270);
+            ClientSize = new Size(800, 450);
+            Controls.Add(comboBox1);
+            Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(textBox2);
             Controls.Add(button2);
@@ -140,7 +153,6 @@
             Controls.Add(button1);
             Controls.Add(textBox1);
             Controls.Add(label1);
-            Margin = new Padding(2, 2, 2, 2);
             Name = "Form1";
             Text = "Form1";
             ResumeLayout(false);
@@ -158,5 +170,7 @@
         private Button button2;
         private Label label4;
         private TextBox textBox2;
+        private Label label5;
+        private ComboBox comboBox1;
     }
 }

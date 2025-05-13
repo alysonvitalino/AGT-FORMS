@@ -8,7 +8,8 @@ CREATE TABLE logins
 id_login int auto_increment primary key AUTO_INCREMENT,
 login VARCHAR(255) NOT NULL,
 senha VARCHAR(255) NOT NULL,
-email VARCHAR(255) NOT NULL
+email VARCHAR(255) NOT NULL,
+nivelAcesso VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE aliquotas (
