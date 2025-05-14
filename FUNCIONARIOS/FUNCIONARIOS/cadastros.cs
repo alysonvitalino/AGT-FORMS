@@ -18,7 +18,6 @@ namespace AGT_FORMS
         {
             InitializeComponent();
             CarregarDados();
-            //(id_unidade, cod_erp, cod_entidade, cnpj_unidade, nome_fantasia, endereco_unidade, cidade_unidade, cep_unidade)
             dataGridView1.Columns[0].HeaderText = "Código ERP";
             dataGridView1.Columns[1].HeaderText = "Código da Entidade";
             dataGridView1.Columns[2].HeaderText = "CNPJ da Entidade";
@@ -194,63 +193,86 @@ namespace AGT_FORMS
 
         private void button6_Click(object sender, EventArgs e)
         {
-            CadastrosEditar produto = new CadastrosEditar();
-            produto.StartPosition = FormStartPosition.CenterScreen;
-            produto.Show();
-            Hide();
+            if (Sessao.NivelAcesso == "Admin" || Sessao.NivelAcesso == null)
+            {
+                CadastrosEditar produto = new CadastrosEditar();
+                produto.StartPosition = FormStartPosition.CenterScreen;
+                produto.Show();
+                Hide();
+            }
+            else
+            {
+                MessageBox.Show("Acesso Negado.");
+            }
+
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            CadastrosNova produto = new CadastrosNova();
-            produto.StartPosition = FormStartPosition.CenterScreen;
-            produto.Show();
-            Hide();
+            if (Sessao.NivelAcesso == "Admin" || Sessao.NivelAcesso == null)
+            {
+                CadastrosNova produto = new CadastrosNova();
+                produto.StartPosition = FormStartPosition.CenterScreen;
+                produto.Show();
+                Hide();
+            }
+            else
+            {
+                MessageBox.Show("Acesso Negado.");
+            }
+
         }
         private void button8_Click(object sender, EventArgs e)
         {
-            if (comboBox1.SelectedItem != null)
+            if (Sessao.NivelAcesso == "Admin" || Sessao.NivelAcesso == null)
             {
-                string codErp = comboBox1.SelectedItem.ToString();
-
-                var confirmResult = MessageBox.Show("Tem certeza que deseja excluir esta unidade?",
-                                                     "Confirmação", MessageBoxButtons.YesNo);
-
-                if (confirmResult == DialogResult.Yes)
+                if (comboBox1.SelectedItem != null)
                 {
-                    string query = "DELETE FROM unidades WHERE cod_erp = @codErp";
+                    string codErp = comboBox1.SelectedItem.ToString();
 
-                    try
+                    var confirmResult = MessageBox.Show("Tem certeza que deseja excluir esta unidade?",
+                                                         "Confirmação", MessageBoxButtons.YesNo);
+
+                    if (confirmResult == DialogResult.Yes)
                     {
-                        using (MySqlConnection conexao = DBHelper.ObterConexao())
-                        {
-                            using (MySqlCommand cmd = new MySqlCommand(query, conexao))
-                            {
-                                cmd.Parameters.AddWithValue("@codErp", codErp);
-                                int linhasAfetadas = cmd.ExecuteNonQuery();
+                        string query = "DELETE FROM unidades WHERE cod_erp = @codErp";
 
-                                if (linhasAfetadas > 0)
+                        try
+                        {
+                            using (MySqlConnection conexao = DBHelper.ObterConexao())
+                            {
+                                using (MySqlCommand cmd = new MySqlCommand(query, conexao))
                                 {
-                                    MessageBox.Show("Unidade excluída com sucesso!");
-                                    CarregarComboBox(); // Atualiza o combo
-                                    CarregarDados();    // Atualiza o DataGrid
-                                }
-                                else
-                                {
-                                    MessageBox.Show("Nenhuma unidade foi excluída.");
+                                    cmd.Parameters.AddWithValue("@codErp", codErp);
+                                    int linhasAfetadas = cmd.ExecuteNonQuery();
+
+                                    if (linhasAfetadas > 0)
+                                    {
+                                        MessageBox.Show("Unidade excluída com sucesso!");
+                                        CarregarComboBox(); // Atualiza o combo
+                                        CarregarDados();    // Atualiza o DataGrid
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("Nenhuma unidade foi excluída.");
+                                    }
                                 }
                             }
                         }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Erro ao excluir a unidade: " + ex.Message);
+                        }
                     }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Erro ao excluir a unidade: " + ex.Message);
-                    }
+                }
+                else
+                {
+                    MessageBox.Show("Selecione uma unidade para excluir.");
                 }
             }
             else
             {
-                MessageBox.Show("Selecione uma unidade para excluir.");
+                MessageBox.Show("Acesso Negado.");
             }
         }
 

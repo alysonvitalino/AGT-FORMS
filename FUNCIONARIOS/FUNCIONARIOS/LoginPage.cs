@@ -33,7 +33,7 @@ namespace AGT_FORMS
                     // Usar DBHelper para obter a conexão
                     using (MySqlConnection conexao = DBHelper.ObterConexao())
                     {
-                        string loginQuery = "SELECT login, senha FROM logins WHERE login = @login";
+                        string loginQuery = "SELECT login, senha, nivelAcesso FROM logins WHERE login = @login";
 
                         MySqlCommand comando = new MySqlCommand(loginQuery, conexao);
                         comando.Parameters.AddWithValue("@login", BoxLogin.Text);
@@ -48,17 +48,15 @@ namespace AGT_FORMS
                             // Verificar se a senha informada corresponde ao hash no banco
                             if (BCrypt.Net.BCrypt.Verify(BoxSenha.Text, senhaHash))
                             {
-                                string usuario = BoxLogin.Text;
+                                Sessao.Usuario = BoxLogin.Text;
+                                Sessao.NivelAcesso = reader["nivelAcesso"].ToString();
 
-                                MessageBox.Show($"{usuario}, login realizado com sucesso!");
-
+                                MessageBox.Show($"{Sessao.Usuario}, login realizado com sucesso!");
                                 BoxSenha.Clear();
 
-                                // Passar o nome de usuário para a HomePage
-                                HomePage produto = new HomePage(usuario);
+                                HomePage produto = new HomePage();
                                 produto.StartPosition = FormStartPosition.CenterScreen;
                                 produto.Show();
-
                                 Hide();
                             }
                             else
