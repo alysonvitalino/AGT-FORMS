@@ -45,7 +45,7 @@ namespace AGT_FORMS
             comboBox1.SelectedIndexChanged += new EventHandler(comboBox1_SelectedIndexChanged);
             CarregarComboBox();
         }
-        
+
         private void CarregarDadosFiltrados(string unidade, string municipio, string cnpj)
         {
             string query = "SELECT unidade_cadastro, municipio_cadastro, cnpj_cadastro, sistema_cadastro, site_cadastro, " +
@@ -54,7 +54,7 @@ namespace AGT_FORMS
 
             try
             {
-                using (MySqlConnection conexao =DBHelper.ObterConexao())
+                using (MySqlConnection conexao = DBHelper.ObterConexao())
                 {
                     using (MySqlDataAdapter adapter = new MySqlDataAdapter(query, conexao))
                     {
@@ -127,7 +127,7 @@ namespace AGT_FORMS
 
             try
             {
-                using (MySqlConnection conexao =DBHelper.ObterConexao())
+                using (MySqlConnection conexao = DBHelper.ObterConexao())
                 {
                     using (MySqlDataAdapter adapter = new MySqlDataAdapter(query, conexao))
                     {
@@ -195,7 +195,7 @@ namespace AGT_FORMS
                     }
                 }
             }
-        }   
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             HomePage produto = new HomePage();
@@ -261,8 +261,102 @@ namespace AGT_FORMS
         }
         private void button5_Click(object sender, EventArgs e)
         {
-            comboBox1.SelectedIndex = -1; 
-            CarregarDados();  
+            comboBox1.SelectedIndex = -1;
+            CarregarDados();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            //incluir
+            if (Sessao.NivelAcesso == "Admin" || Sessao.NivelAcesso == null)
+            {
+                LoginsAdicionar produto = new LoginsAdicionar();
+                produto.StartPosition = FormStartPosition.CenterScreen;
+                produto.Show();
+                Hide();
+            }
+            else
+            {
+                MessageBox.Show("Acesso Negado.");
+            }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            //editar
+            if (Sessao.NivelAcesso == "Admin" || Sessao.NivelAcesso == null)
+            {
+                LoginsEditar produto = new LoginsEditar();
+                produto.StartPosition = FormStartPosition.CenterScreen;
+                produto.Show();
+                Hide();
+            }
+            else
+            {
+                MessageBox.Show("Acesso Negado.");
+            }
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            //excluir
+            if (Sessao.NivelAcesso == "Admin" || Sessao.NivelAcesso == null)
+            {
+                if (comboBox1.SelectedIndex != -1)
+                {
+                    var confirm = MessageBox.Show("Deseja realmente excluir este cadastro?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (confirm == DialogResult.Yes)
+                    {
+                        try
+                        {
+                            string selectedItem = comboBox1.SelectedItem.ToString();
+                            string[] partes = selectedItem.Split(new string[] { " - " }, StringSplitOptions.None);
+
+                            string unidade = partes[0];
+                            string municipio = partes[1];
+                            string cnpj = partes[2];
+
+                            string query = "DELETE FROM cadastro WHERE unidade_cadastro = @unidade AND municipio_cadastro = @municipio AND cnpj_cadastro = @cnpj";
+
+                            using (MySqlConnection conexao = DBHelper.ObterConexao())
+                            {
+                                using (MySqlCommand cmd = new MySqlCommand(query, conexao))
+                                {
+                                    cmd.Parameters.AddWithValue("@unidade", unidade);
+                                    cmd.Parameters.AddWithValue("@municipio", municipio);
+                                    cmd.Parameters.AddWithValue("@cnpj", cnpj);
+
+                                    int rowsAffected = cmd.ExecuteNonQuery();
+
+                                    if (rowsAffected > 0)
+                                    {
+                                        MessageBox.Show("Cadastro excluído com sucesso!");
+                                        CarregarComboBox();
+                                        comboBox1.SelectedIndex = -1;
+                                        CarregarDados();
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("Nenhum registro foi encontrado para exclusão.");
+                                    }
+                                }
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Erro ao excluir: " + ex.Message);
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Por favor, selecione um cadastro.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Acesso Negado.");
+            }
         }
     }
 }
