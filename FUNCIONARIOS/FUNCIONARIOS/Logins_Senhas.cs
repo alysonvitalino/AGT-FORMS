@@ -95,7 +95,7 @@ namespace AGT_FORMS
         }
         private void CarregarComboBox()
         {
-            string query = "SELECT unidade_cadastro, municipio_cadastro, cnpj_cadastro FROM cadastro";
+            string query = "SELECT unidade_cadastro, municipio_cadastro, cnpj_cadastro FROM cadastro ORDER BY unidade_cadastro ASC";
 
             try
             {
@@ -331,8 +331,8 @@ namespace AGT_FORMS
                                     if (rowsAffected > 0)
                                     {
                                         MessageBox.Show("Cadastro excluído com sucesso!");
-                                        CarregarComboBox();
                                         comboBox1.SelectedIndex = -1;
+                                        CarregarComboBox();
                                         CarregarDados();
                                     }
                                     else

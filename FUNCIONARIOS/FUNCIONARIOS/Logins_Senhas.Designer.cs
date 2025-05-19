@@ -243,12 +243,12 @@
             button7.Cursor = Cursors.Hand;
             button7.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             button7.ForeColor = Color.FromArgb(169, 207, 229);
-            button7.Location = new Point(709, 35);
+            button7.Location = new Point(599, 35);
             button7.Margin = new Padding(2);
             button7.Name = "button7";
             button7.Size = new Size(85, 30);
             button7.TabIndex = 23;
-            button7.Text = "Incluir Unidades";
+            button7.Text = "Editar Unidades";
             button7.UseVisualStyleBackColor = false;
             button7.Click += button7_Click;
             // 
@@ -259,12 +259,12 @@
             button6.Cursor = Cursors.Hand;
             button6.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             button6.ForeColor = Color.FromArgb(169, 207, 229);
-            button6.Location = new Point(593, 35);
+            button6.Location = new Point(712, 35);
             button6.Margin = new Padding(2);
             button6.Name = "button6";
             button6.Size = new Size(85, 30);
             button6.TabIndex = 22;
-            button6.Text = "Editar Unidades";
+            button6.Text = "Incluir Unidades";
             button6.UseVisualStyleBackColor = false;
             button6.Click += button6_Click;
             // 
