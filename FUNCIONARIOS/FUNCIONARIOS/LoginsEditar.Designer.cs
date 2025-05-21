@@ -214,6 +214,7 @@
             button2.TabIndex = 38;
             button2.Text = "Atualizar";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // comboBox1
             // 
