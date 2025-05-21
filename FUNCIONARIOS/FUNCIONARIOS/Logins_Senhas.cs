@@ -172,9 +172,9 @@ namespace AGT_FORMS
                 {
                     string url = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
 
-                    // Verifica se o URL é válido (começa com http:// ou https://)
+                    /* Verifica se o URL é válido (começa com http:// ou https://)
                     if (Uri.IsWellFormedUriString(url, UriKind.Absolute))
-                    {
+                    { */
                         try
                         {
                             // Usar Process.Start para abrir o link no navegador padrão
@@ -188,11 +188,11 @@ namespace AGT_FORMS
                         {
                             MessageBox.Show("Erro ao tentar abrir o site: " + ex.Message);
                         }
-                    }
+                    /*}
                     else
                     {
                         MessageBox.Show("URL inválido: " + url);
-                    }
+                    }*/
                 }
             }
         }
