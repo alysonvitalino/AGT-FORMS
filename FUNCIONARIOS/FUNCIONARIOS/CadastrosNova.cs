@@ -133,5 +133,33 @@ namespace AGT_FORMS
         {
 
         }
+
+        private async void button1_Click(object sender, EventArgs e)
+        {
+            string cnpj = textBox3.Text;
+            string token = "SEU_TOKEN_AQUI"; // Substitua pelo seu token
+            string plugin = "RF";
+
+            try
+            {
+                var dados = await ConsultaCNPJ.Program.ConsultarCNPJAsync(token, cnpj, plugin);
+
+                if (dados.code == "0")
+                {
+                    textBox4.Text = dados.fantasia;
+                    textBox5.Text = $"{dados.logradouro}, {dados.numero}";
+                    textBox6.Text = dados.municipio;
+                    textBox7.Text = dados.cep;
+                }
+                else
+                {
+                    MessageBox.Show("Erro ao consultar CNPJ: " + dados.message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao conectar com a API: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

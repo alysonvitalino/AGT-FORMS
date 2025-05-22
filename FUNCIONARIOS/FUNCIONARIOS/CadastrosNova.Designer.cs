@@ -47,6 +47,7 @@
             textBox6 = new TextBox();
             textBox7 = new TextBox();
             label8 = new Label();
+            button1 = new Button();
             SuspendLayout();
             // 
             // buttonLimpar
@@ -60,7 +61,7 @@
             buttonLimpar.ForeColor = Color.FromArgb(169, 207, 229);
             buttonLimpar.Image = (Image)resources.GetObject("buttonLimpar.Image");
             buttonLimpar.Location = new Point(885, 350);
-            buttonLimpar.Margin = new Padding(2, 2, 2, 2);
+            buttonLimpar.Margin = new Padding(2);
             buttonLimpar.Name = "buttonLimpar";
             buttonLimpar.RightToLeft = RightToLeft.Yes;
             buttonLimpar.Size = new Size(99, 88);
@@ -79,7 +80,7 @@
             buttonCadastrar.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             buttonCadastrar.ForeColor = Color.FromArgb(169, 207, 229);
             buttonCadastrar.Location = new Point(571, 350);
-            buttonCadastrar.Margin = new Padding(2, 2, 2, 2);
+            buttonCadastrar.Margin = new Padding(2);
             buttonCadastrar.Name = "buttonCadastrar";
             buttonCadastrar.Size = new Size(105, 43);
             buttonCadastrar.TabIndex = 1;
@@ -97,7 +98,7 @@
             buttonVoltar.ForeColor = Color.FromArgb(169, 207, 229);
             buttonVoltar.Image = (Image)resources.GetObject("buttonVoltar.Image");
             buttonVoltar.Location = new Point(885, 455);
-            buttonVoltar.Margin = new Padding(2, 2, 2, 2);
+            buttonVoltar.Margin = new Padding(2);
             buttonVoltar.Name = "buttonVoltar";
             buttonVoltar.Size = new Size(99, 88);
             buttonVoltar.TabIndex = 2;
@@ -111,7 +112,7 @@
             // 
             textBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             textBox1.Location = new Point(260, 300);
-            textBox1.Margin = new Padding(2, 2, 2, 2);
+            textBox1.Margin = new Padding(2);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(193, 23);
             textBox1.TabIndex = 3;
@@ -212,7 +213,7 @@
             // 
             textBox2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             textBox2.Location = new Point(260, 232);
-            textBox2.Margin = new Padding(2, 2, 2, 2);
+            textBox2.Margin = new Padding(2);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(193, 23);
             textBox2.TabIndex = 11;
@@ -221,7 +222,7 @@
             // 
             textBox3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             textBox3.Location = new Point(260, 164);
-            textBox3.Margin = new Padding(2, 2, 2, 2);
+            textBox3.Margin = new Padding(2);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(193, 23);
             textBox3.TabIndex = 12;
@@ -230,7 +231,7 @@
             // 
             textBox4.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             textBox4.Location = new Point(260, 370);
-            textBox4.Margin = new Padding(2, 2, 2, 2);
+            textBox4.Margin = new Padding(2);
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(193, 23);
             textBox4.TabIndex = 13;
@@ -239,7 +240,7 @@
             // 
             textBox5.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             textBox5.Location = new Point(571, 164);
-            textBox5.Margin = new Padding(2, 2, 2, 2);
+            textBox5.Margin = new Padding(2);
             textBox5.Name = "textBox5";
             textBox5.Size = new Size(193, 23);
             textBox5.TabIndex = 14;
@@ -248,7 +249,7 @@
             // 
             textBox6.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             textBox6.Location = new Point(572, 232);
-            textBox6.Margin = new Padding(2, 2, 2, 2);
+            textBox6.Margin = new Padding(2);
             textBox6.Name = "textBox6";
             textBox6.Size = new Size(193, 23);
             textBox6.TabIndex = 15;
@@ -257,7 +258,7 @@
             // 
             textBox7.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             textBox7.Location = new Point(572, 300);
-            textBox7.Margin = new Padding(2, 2, 2, 2);
+            textBox7.Margin = new Padding(2);
             textBox7.Name = "textBox7";
             textBox7.Size = new Size(193, 23);
             textBox7.TabIndex = 16;
@@ -275,6 +276,23 @@
             label8.TabIndex = 17;
             label8.Text = "Adicionar Unidade:";
             // 
+            // button1
+            // 
+            button1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            button1.BackColor = Color.FromArgb(18, 87, 123);
+            button1.Cursor = Cursors.Hand;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            button1.ForeColor = Color.FromArgb(169, 207, 229);
+            button1.Location = new Point(460, 162);
+            button1.Margin = new Padding(2);
+            button1.Name = "button1";
+            button1.Size = new Size(25, 25);
+            button1.TabIndex = 18;
+            button1.Text = "Buscar";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
             // CadastrosNova
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -282,6 +300,7 @@
             BackColor = Color.FromArgb(169, 207, 229);
             BackgroundImageLayout = ImageLayout.Center;
             ClientSize = new Size(1084, 561);
+            Controls.Add(button1);
             Controls.Add(label8);
             Controls.Add(textBox7);
             Controls.Add(textBox6);
@@ -300,7 +319,7 @@
             Controls.Add(buttonVoltar);
             Controls.Add(buttonCadastrar);
             Controls.Add(buttonLimpar);
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "CadastrosNova";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Adicionar Unidade";
@@ -330,5 +349,6 @@
         private TextBox textBox6;
         private TextBox textBox7;
         private Label label8;
+        private Button button1;
     }
 }
