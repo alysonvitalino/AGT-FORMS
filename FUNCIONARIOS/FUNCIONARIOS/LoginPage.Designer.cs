@@ -37,6 +37,7 @@
             button2 = new Button();
             pictureBox1 = new PictureBox();
             button3 = new Button();
+            button4 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -99,6 +100,7 @@
             BoxSenha.Name = "BoxSenha";
             BoxSenha.Size = new Size(217, 23);
             BoxSenha.TabIndex = 5;
+            BoxSenha.UseSystemPasswordChar = true;
             // 
             // button2
             // 
@@ -141,12 +143,29 @@
             button3.UseVisualStyleBackColor = false;
             button3.Click += button3_Click;
             // 
+            // button4
+            // 
+            button4.Anchor = AnchorStyles.Top;
+            button4.BackColor = Color.Transparent;
+            button4.BackgroundImage = (Image)resources.GetObject("button4.BackgroundImage");
+            button4.FlatAppearance.BorderSize = 0;
+            button4.FlatStyle = FlatStyle.Flat;
+            button4.ForeColor = SystemColors.ButtonFace;
+            button4.Location = new Point(719, 197);
+            button4.Name = "button4";
+            button4.Size = new Size(24, 23);
+            button4.TabIndex = 9;
+            button4.Text = "Login";
+            button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
+            // 
             // LoginPage
             // 
             AcceptButton = button1;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(799, 450);
+            Controls.Add(button4);
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(BoxSenha);
@@ -172,5 +191,6 @@
         private Button button2;
         private PictureBox pictureBox1;
         private Button button3;
+        private Button button4;
     }
 }

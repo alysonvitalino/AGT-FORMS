@@ -138,57 +138,63 @@ namespace AGT_FORMS
             return senha.ToString();
         }
         private void button3_Click(object sender, EventArgs e)
+        {
+            try
             {
-                try
+                if (!string.IsNullOrWhiteSpace(BoxLogin.Text))
                 {
-                    if (!string.IsNullOrWhiteSpace(BoxLogin.Text))
+                    using (MySqlConnection conexao = DBHelper.ObterConexao())
                     {
-                        using (MySqlConnection conexao = DBHelper.ObterConexao())
+                        string query = "SELECT email FROM logins WHERE login = @login";
+                        MySqlCommand comando = new MySqlCommand(query, conexao);
+                        comando.Parameters.AddWithValue("@login", BoxLogin.Text);
+                        MySqlDataReader reader = comando.ExecuteReader();
+
+                        if (reader.HasRows)
                         {
-                            string query = "SELECT email FROM logins WHERE login = @login";
-                            MySqlCommand comando = new MySqlCommand(query, conexao);
-                            comando.Parameters.AddWithValue("@login", BoxLogin.Text);
-                            MySqlDataReader reader = comando.ExecuteReader();
+                            reader.Read();
+                            string email = reader["email"].ToString();
+                            reader.Close();
 
-                            if (reader.HasRows)
-                            {
-                                reader.Read();
-                                string email = reader["email"].ToString();
-                                reader.Close();
+                            // Gerar senha temporária e atualizar no banco
+                            string senhaTemp = GerarSenhaTemporaria();
+                            string hash = BCrypt.Net.BCrypt.HashPassword(senhaTemp);
 
-                                // Gerar senha temporária e atualizar no banco
-                                string senhaTemp = GerarSenhaTemporaria();
-                                string hash = BCrypt.Net.BCrypt.HashPassword(senhaTemp);
+                            string update = "UPDATE logins SET senha = @senha WHERE login = @login";
+                            MySqlCommand updateCmd = new MySqlCommand(update, conexao);
+                            updateCmd.Parameters.AddWithValue("@senha", hash);
+                            updateCmd.Parameters.AddWithValue("@login", BoxLogin.Text);
+                            updateCmd.ExecuteNonQuery();
 
-                                string update = "UPDATE logins SET senha = @senha WHERE login = @login";
-                                MySqlCommand updateCmd = new MySqlCommand(update, conexao);
-                                updateCmd.Parameters.AddWithValue("@senha", hash);
-                                updateCmd.Parameters.AddWithValue("@login", BoxLogin.Text);
-                                updateCmd.ExecuteNonQuery();
+                            // Enviar por email
+                            EnviarEmail(email, "Recuperação de Senha",
+                                $"Sua nova senha temporária é: {senhaTemp}.");
 
-                                // Enviar por email
-                                EnviarEmail(email, "Recuperação de Senha",
-                                    $"Sua nova senha temporária é: {senhaTemp}.");
-
-                                MessageBox.Show($"A nova senha foi enviada para o e-mail: {email}");
-                            }
-                            else
-                            {
-                                MessageBox.Show("Login não encontrado.");
-                            }
+                            MessageBox.Show($"A nova senha foi enviada para o e-mail: {email}");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Login não encontrado.");
                         }
                     }
-                    else
-                    {
-                        MessageBox.Show("Informe o login para recuperação.");
-                    }
                 }
-                catch (Exception ex)
+                else
                 {
-                    MessageBox.Show("Erro: " + ex.Message);
+                    MessageBox.Show("Informe o login para recuperação.");
                 }
             }
-
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro: " + ex.Message);
+            }
+        }
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (BoxSenha.UseSystemPasswordChar == true)
+                BoxSenha.UseSystemPasswordChar = false;
+            else
+                BoxSenha.UseSystemPasswordChar = true;
         }
     }
+}
 
