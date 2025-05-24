@@ -23,13 +23,7 @@ namespace AGT_FORMS
             CarregarComboBox();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Cadastros produto = new Cadastros();
-            produto.StartPosition = FormStartPosition.CenterScreen;
-            produto.Show();
-            Hide();
-        }
+       
         private void CarregarComboBox()
         {
             string query = "SELECT cod_erp FROM unidades";
@@ -142,6 +136,12 @@ namespace AGT_FORMS
             }
         }
 
-        
+        private void buttonVoltar_Click(object sender, EventArgs e)
+        {
+            Cadastros produto = new Cadastros();
+            produto.StartPosition = FormStartPosition.CenterScreen;
+            produto.Show();
+            Hide();
+        }
     }
 }
