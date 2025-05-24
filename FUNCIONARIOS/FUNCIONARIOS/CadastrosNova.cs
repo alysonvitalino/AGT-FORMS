@@ -22,18 +22,7 @@ namespace AGT_FORMS
         {
 
         }
-        private void buttonLimpar_Click(object sender, EventArgs e)
-        {
-            //Botão para limpar todos os textBox
-            textBox1.Clear();
-            textBox2.Clear();
-            textBox3.Clear();
-            textBox4.Clear();
-            textBox5.Clear();
-            textBox6.Clear();
-            textBox7.Clear();
-
-        }
+      
 
         private void buttonVoltar_Click(object sender, EventArgs e)
         {
