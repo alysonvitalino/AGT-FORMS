@@ -252,6 +252,7 @@
             Controls.Add(button1);
             Name = "LoginsAdicionar";
             Text = "LoginsAdicionar";
+            WindowState = FormWindowState.Maximized;
             ResumeLayout(false);
             PerformLayout();
         }
