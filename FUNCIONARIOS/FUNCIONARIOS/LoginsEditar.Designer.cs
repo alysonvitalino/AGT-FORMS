@@ -265,6 +265,7 @@
             Controls.Add(button1);
             Name = "LoginsEditar";
             Text = "LoginsEditar";
+            WindowState = FormWindowState.Maximized;
             Load += LoginsEditar_Load;
             ResumeLayout(false);
             PerformLayout();

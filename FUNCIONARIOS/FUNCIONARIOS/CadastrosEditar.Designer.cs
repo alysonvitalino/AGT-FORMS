@@ -277,6 +277,7 @@
             Controls.Add(label10);
             Name = "CadastrosEditar";
             Text = "CadastrosEditar";
+            WindowState = FormWindowState.Maximized;
             Load += CadastrosEditar_Load;
             ResumeLayout(false);
             PerformLayout();
