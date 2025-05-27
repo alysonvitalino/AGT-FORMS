@@ -22,7 +22,6 @@ namespace AGT_FORMS
             }
             catch (Exception ex)
             {
-                // Trate exceções conforme necessário
                 MessageBox.Show($"Erro ao consultar CNPJ: {ex.Message}");
                 return null;
             }

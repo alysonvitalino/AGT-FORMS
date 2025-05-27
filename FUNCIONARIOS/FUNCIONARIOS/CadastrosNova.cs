@@ -35,39 +35,19 @@ namespace AGT_FORMS
 
         private void buttonCadastrar_Click(object sender, EventArgs e)
         {
-            string codErp = textBox1.Text;
-
-            if (string.IsNullOrWhiteSpace(codErp))
-            {
-                MessageBox.Show("O campo 'cod_erp' é obrigatório.");
-                return;
-            }
 
             try
             {
                 using (MySqlConnection conexao = DBHelper.ObterConexao())
                 {
-                    // Verificar se já existe uma unidade com o mesmo cod_erp
-                    string checkQuery = "SELECT COUNT(*) FROM unidades WHERE cod_erp = @codErp";
-                    using (MySqlCommand checkCmd = new MySqlCommand(checkQuery, conexao))
-                    {
-                        checkCmd.Parameters.AddWithValue("@codErp", codErp);
-                        int count = Convert.ToInt32(checkCmd.ExecuteScalar());
-
-                        if (count > 0)
-                        {
-                            MessageBox.Show("Já existe uma unidade com este código ERP.");
-                            return;
-                        }
-                    }
+                    
 
                     // Inserir a nova unidade
-                    string insertQuery = "INSERT INTO unidades (cod_erp, cod_entidade, cnpj_unidade, nome_fantasia, endereco_unidade, cidade_unidade, cep_unidade) " +
-                                         "VALUES (@codErp, @codEntidade, @cnpj, @nomeFantasia, @endereco, @cidade, @cep)";
+                    string insertQuery = "INSERT INTO unidades (cod_entidade, cnpj_unidade, nome_fantasia, endereco_unidade, cidade_unidade, cep_unidade) " +
+                                         "VALUES (@codEntidade, @cnpj, @nomeFantasia, @endereco, @cidade, @cep)";
 
                     using (MySqlCommand insertCmd = new MySqlCommand(insertQuery, conexao))
                     {
-                        insertCmd.Parameters.AddWithValue("@codErp", codErp);
                         insertCmd.Parameters.AddWithValue("@codEntidade", textBox2.Text);
                         insertCmd.Parameters.AddWithValue("@cnpj", textBox3.Text);
                         insertCmd.Parameters.AddWithValue("@nomeFantasia", textBox4.Text);
@@ -80,7 +60,6 @@ namespace AGT_FORMS
                         if (linhasAfetadas > 0)
                         {
                             MessageBox.Show("Unidade cadastrada com sucesso!");
-                            textBox1.Clear();
                             textBox2.Clear();
                             textBox3.Clear();
                             textBox4.Clear();
@@ -125,6 +104,8 @@ namespace AGT_FORMS
 
         private async void button1_Click(object sender, EventArgs e)
         {
+            //BOTÃO PARA REQUISITAR OS DADOS DO CNPJ
+            //https://www.gov.br/conecta/catalogo/apis/consulta-cnpj/swagger.json/swagger_view#tag/cnpj/paths/~1api-cnpj-qsa~1v2~1qsa~1{CNPJqsa}/get
             string cnpj = textBox3.Text.Trim();
 
             if (string.IsNullOrEmpty(cnpj))
@@ -138,11 +119,10 @@ namespace AGT_FORMS
 
             if (dados != null)
             {
-                // Preenchendo os campos com os dados da API
-                textBox4.Text = dados.fantasia ?? ""; // Nome Fantasia
-                textBox5.Text = $"{dados.logradouro}, {dados.numero} {dados.bairro}" ?? ""; // Endereço completo
-                textBox6.Text = dados.municipio ?? ""; // Cidade
-                textBox7.Text = dados.cep ?? ""; // CEP
+                textBox4.Text = dados.fantasia ?? ""; 
+                textBox5.Text = $"{dados.logradouro}, {dados.numero} {dados.bairro}" ?? "";
+                textBox6.Text = dados.municipio ?? ""; 
+                textBox7.Text = dados.cep ?? ""; 
             }
         }
     }

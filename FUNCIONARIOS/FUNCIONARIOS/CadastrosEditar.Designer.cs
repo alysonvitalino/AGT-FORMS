@@ -42,8 +42,6 @@
             label14 = new Label();
             label15 = new Label();
             label16 = new Label();
-            label17 = new Label();
-            textBox14 = new TextBox();
             comboBox2 = new ComboBox();
             label10 = new Label();
             buttonVoltar = new Button();
@@ -193,26 +191,6 @@
             label16.TabIndex = 43;
             label16.Text = "Código Entidade";
             // 
-            // label17
-            // 
-            label17.AutoSize = true;
-            label17.Font = new Font("Segoe UI", 10.2F);
-            label17.ForeColor = Color.Navy;
-            label17.Location = new Point(843, 179);
-            label17.Margin = new Padding(2, 0, 2, 0);
-            label17.Name = "label17";
-            label17.Size = new Size(80, 19);
-            label17.TabIndex = 42;
-            label17.Text = "Código ERP";
-            // 
-            // textBox14
-            // 
-            textBox14.Location = new Point(860, 200);
-            textBox14.Margin = new Padding(2);
-            textBox14.Name = "textBox14";
-            textBox14.Size = new Size(96, 23);
-            textBox14.TabIndex = 41;
-            // 
             // comboBox2
             // 
             comboBox2.FormattingEnabled = true;
@@ -271,8 +249,6 @@
             Controls.Add(label14);
             Controls.Add(label15);
             Controls.Add(label16);
-            Controls.Add(label17);
-            Controls.Add(textBox14);
             Controls.Add(comboBox2);
             Controls.Add(label10);
             Name = "CadastrosEditar";
@@ -298,8 +274,6 @@
         private Label label14;
         private Label label15;
         private Label label16;
-        private Label label17;
-        private TextBox textBox14;
         private ComboBox comboBox2;
         private Label label10;
         private Button buttonVoltar;

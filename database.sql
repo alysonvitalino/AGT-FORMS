@@ -22,8 +22,7 @@ lei_vigente VARCHAR(255)
 );
 
 CREATE TABLE unidades (
-id_unidade INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-cod_erp INT NOT NULL,
+cod_erp  INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 cod_entidade VARCHAR (255),
 cnpj_unidade VARCHAR (20),
 nome_fantasia VARCHAR (255),
@@ -252,18 +251,18 @@ INSERT INTO cadastro (
 (9, 109, 'Manaus', '89.012.345/0001-11', 'Sistema I', 'https://classroom.google.com/', 'usuario9', 'senha606', 27, 'Nono registro'),
 (10, 110, 'Goiânia', '90.123.456/0001-00', 'Sistema J', 'https://www.excalidraw.com', 'usuario10', 'senha707', 30, 'Décimo registro');
 
-INSERT INTO unidades (id_unidade, cod_erp, cod_entidade, cnpj_unidade, nome_fantasia, endereco_unidade, cidade_unidade, cep_unidade) 
+INSERT INTO unidades (cod_erp, cod_entidade, cnpj_unidade, nome_fantasia, endereco_unidade, cidade_unidade, cep_unidade) 
 VALUES 
-(1, 1001, 'SESI', '12.345.678/0001-90', 'Unidade A', 'Rua das Flores, 123', 'São Paulo', '01234-567'),
-(2, 1002, 'SENAI', '98.765.432/0001-01', 'Unidade B', 'Avenida Paulista, 987', 'São Paulo', '01310-000'),
-(3, 1003, 'FIEP', '21.987.654/0001-02', 'Unidade C', 'Rua Rio de Janeiro, 456', 'Rio de Janeiro', '20000-000'),
-(4, 1004, 'IEL', '34.567.890/0001-03', 'Unidade D', 'Rua Bahia, 789', 'Salvador', '40000-000'),
-(5, 1005, 'MATRIZ', '45.678.901/0001-04', 'Unidade E', 'Avenida Brasil, 234', 'Belo Horizonte', '30100-000'),
-(6, 1006, 'ENT006', '56.789.012/0001-05', 'Unidade F', 'Rua dos Andradas, 555', 'Porto Alegre', '90000-000'),
-(7, 1007, 'ENT007', '67.890.123/0001-06', 'Unidade G', 'Rua Paraná, 321', 'Curitiba', '80000-000'),
-(8, 1008, 'ENT008', '78.901.234/0001-07', 'Unidade H', 'Rua Amazonas, 1234', 'Recife', '50000-000'),
-(9, 1009, 'ENT009', '89.012.345/0001-08', 'Unidade I', 'Avenida Rio Branco, 432', 'Fortaleza', '60000-000'),
-(10, 1010, 'ENT010', '90.123.456/0001-09', 'Unidade J', 'Rua Sergipe, 765', 'Manaus', '69000-000');
+(1001, 'SESI', '12.345.678/0001-90', 'Unidade A', 'Rua das Flores, 123', 'São Paulo', '01234-567'),
+(1002, 'SENAI', '98.765.432/0001-01', 'Unidade B', 'Avenida Paulista, 987', 'São Paulo', '01310-000'),
+(1003, 'FIEP', '21.987.654/0001-02', 'Unidade C', 'Rua Rio de Janeiro, 456', 'Rio de Janeiro', '20000-000'),
+(1004, 'IEL', '34.567.890/0001-03', 'Unidade D', 'Rua Bahia, 789', 'Salvador', '40000-000'),
+(1005, 'MATRIZ', '45.678.901/0001-04', 'Unidade E', 'Avenida Brasil, 234', 'Belo Horizonte', '30100-000'),
+(1006, 'ENT006', '56.789.012/0001-05', 'Unidade F', 'Rua dos Andradas, 555', 'Porto Alegre', '90000-000'),
+(1007, 'ENT007', '67.890.123/0001-06', 'Unidade G', 'Rua Paraná, 321', 'Curitiba', '80000-000'),
+(1008, 'ENT008', '78.901.234/0001-07', 'Unidade H', 'Rua Amazonas, 1234', 'Recife', '50000-000'),
+(1009, 'ENT009', '89.012.345/0001-08', 'Unidade I', 'Avenida Rio Branco, 432', 'Fortaleza', '60000-000'),
+(1010, 'ENT010', '90.123.456/0001-09', 'Unidade J', 'Rua Sergipe, 765', 'Manaus', '69000-000');
 
 
 
