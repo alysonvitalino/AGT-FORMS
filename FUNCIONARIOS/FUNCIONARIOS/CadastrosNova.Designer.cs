@@ -31,8 +31,6 @@
             buttonLimpar = new Button();
             buttonCadastrar = new Button();
             buttonVoltar = new Button();
-            textBox1 = new TextBox();
-            label1 = new Label();
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
@@ -87,28 +85,6 @@
             buttonVoltar.Text = "Voltar";
             buttonVoltar.UseVisualStyleBackColor = false;
             buttonVoltar.Click += buttonVoltar_Click;
-            // 
-            // textBox1
-            // 
-            textBox1.Anchor = AnchorStyles.None;
-            textBox1.Location = new Point(851, 241);
-            textBox1.Margin = new Padding(2);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(193, 23);
-            textBox1.TabIndex = 3;
-            // 
-            // label1
-            // 
-            label1.Anchor = AnchorStyles.None;
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.Navy;
-            label1.Location = new Point(915, 300);
-            label1.Margin = new Padding(2, 0, 2, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(80, 19);
-            label1.TabIndex = 4;
-            label1.Text = "Código ERP";
             // 
             // label2
             // 
@@ -294,8 +270,6 @@
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
-            Controls.Add(label1);
-            Controls.Add(textBox1);
             Controls.Add(buttonVoltar);
             Controls.Add(buttonCadastrar);
             Controls.Add(buttonLimpar);
@@ -314,8 +288,6 @@
         private Button buttonLimpar;
         private Button buttonCadastrar;
         private Button buttonVoltar;
-        private TextBox textBox1;
-        private Label label1;
         private Label label2;
         private Label label3;
         private Label label4;

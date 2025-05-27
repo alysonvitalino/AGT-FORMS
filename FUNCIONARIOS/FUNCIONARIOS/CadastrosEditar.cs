@@ -56,7 +56,7 @@ namespace AGT_FORMS
         {
             string codErpSelecionado = comboBox2.SelectedItem.ToString();
 
-            string query = "SELECT id_unidade, cep_unidade, cidade_unidade, endereco_unidade, nome_fantasia, cnpj_unidade, cod_entidade, cod_erp " +
+            string query = "SELECT cep_unidade, cidade_unidade, endereco_unidade, nome_fantasia, cnpj_unidade, cod_entidade, cod_erp " +
                            "FROM unidades WHERE cod_erp = @cod_erp";
 
             try
@@ -77,8 +77,6 @@ namespace AGT_FORMS
                                 textBox11.Text = reader["nome_fantasia"].ToString();
                                 textBox12.Text = reader["cnpj_unidade"].ToString();
                                 textBox13.Text = reader["cod_entidade"].ToString();
-                                textBox14.Text = reader["cod_erp"].ToString(); // opcional, já está no combo
-                                textBox15.Text = reader["id_unidade"].ToString();
                             }
                         }
                     }
@@ -95,7 +93,7 @@ namespace AGT_FORMS
 
             string query = "UPDATE unidades SET cod_erp = @codErp, cep_unidade = @cep, cidade_unidade = @cidade, endereco_unidade = @endereco, " +
                   "nome_fantasia = @nomeFantasia, cnpj_unidade = @cnpj, cod_entidade = @codEntidade " +
-                  "WHERE id_unidade = @idUnidade";
+                  "WHERE cod_erp = @codErp";
 
 
             try
@@ -110,8 +108,7 @@ namespace AGT_FORMS
                         cmd.Parameters.AddWithValue("@nomeFantasia", textBox11.Text);
                         cmd.Parameters.AddWithValue("@cnpj", textBox12.Text);
                         cmd.Parameters.AddWithValue("@codEntidade", textBox13.Text);
-                        cmd.Parameters.AddWithValue("@codErp", Convert.ToInt64(textBox14.Text)); // ou comboBox2.SelectedItem.ToString()
-                        cmd.Parameters.AddWithValue("@idUnidade", Convert.ToInt64(textBox15.Text));
+                        cmd.Parameters.AddWithValue("@codErp", comboBox2.SelectedItem?.ToString());
 
                         int linhasAfetadas = cmd.ExecuteNonQuery();
 
@@ -119,7 +116,6 @@ namespace AGT_FORMS
                         {
                             MessageBox.Show("Dados atualizados com sucesso!");
                             CarregarComboBox();
-                            comboBox2.SelectedItem = textBox14.Text;
 
                         }
                         else
