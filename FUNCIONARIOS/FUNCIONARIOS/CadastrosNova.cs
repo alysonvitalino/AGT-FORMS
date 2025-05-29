@@ -22,7 +22,7 @@ namespace AGT_FORMS
         {
 
         }
-      
+
 
         private void buttonVoltar_Click(object sender, EventArgs e)
         {
@@ -40,7 +40,7 @@ namespace AGT_FORMS
             {
                 using (MySqlConnection conexao = DBHelper.ObterConexao())
                 {
-                    
+
 
                     // Inserir a nova unidade
                     string insertQuery = "INSERT INTO unidades (cod_entidade, cnpj_unidade, nome_fantasia, endereco_unidade, cidade_unidade, cep_unidade) " +
@@ -119,11 +119,16 @@ namespace AGT_FORMS
 
             if (dados != null)
             {
-                textBox4.Text = dados.fantasia ?? ""; 
+                textBox4.Text = dados.fantasia ?? "";
                 textBox5.Text = $"{dados.logradouro}, {dados.numero} {dados.bairro}" ?? "";
-                textBox6.Text = dados.municipio ?? ""; 
-                textBox7.Text = dados.cep ?? ""; 
+                textBox6.Text = dados.municipio ?? "";
+                textBox7.Text = dados.cep ?? "";
             }
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
