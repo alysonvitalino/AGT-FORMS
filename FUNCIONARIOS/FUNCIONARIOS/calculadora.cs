@@ -302,8 +302,8 @@ public partial class calculadora : Form
             {
                 using (MySqlConnection conexao = DBHelper.ObterConexao())
                 {
-                    // Preencher ComboBox1 com a coluna "municipio"
-                    string sql = "SELECT DISTINCT municipio FROM aliquotas;"; // DISTINCT evita duplicatas
+                    // Preencher ComboBox1 com os nomes distintos dos municípios da tabela 'municipios'
+                    string sql = "SELECT DISTINCT nome, id_municipio FROM municipios ORDER BY nome;"; // DISTINCT evita duplicatas
                     using (MySqlCommand comando = new MySqlCommand(sql, conexao))
                     {
                         using (MySqlDataAdapter dataAdapter = new MySqlDataAdapter(comando))
@@ -312,16 +312,20 @@ public partial class calculadora : Form
                             dataAdapter.Fill(dataTable);
 
                             comboBox1.DataSource = dataTable;
-                            comboBox1.DisplayMember = "municipio";
-                            comboBox1.ValueMember = "municipio";
+                            comboBox1.DisplayMember = "nome";       // Exibe o nome do município
+                            comboBox1.ValueMember = "id_municipio"; // O valor interno será o id_municipio
 
+                            // Remover o evento antes de adicionar para evitar múltiplas assinaturas
+                            comboBox1.SelectedIndexChanged -= ComboBox1_SelectedIndexChanged;
                             // Evento para atualizar ComboBox2 quando um município for selecionado
                             comboBox1.SelectedIndexChanged += ComboBox1_SelectedIndexChanged;
 
                             // Carregar a ComboBox2 com base no primeiro município da lista
                             if (comboBox1.Items.Count > 0)
                             {
-                                AtualizarComboBox2(comboBox1.SelectedValue.ToString());
+                                // Garantir que um item esteja selecionado para que SelectedValue não seja null
+                                comboBox1.SelectedIndex = 0;
+                                AtualizarComboBox2(Convert.ToInt32(comboBox1.SelectedValue));
                             }
                         }
                     }
@@ -329,7 +333,7 @@ public partial class calculadora : Form
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro ao carregar os municípios: " + ex.Message);
+                MessageBox.Show("Erro ao carregar os municípios: " + ex.Message, "Erro de Carregamento", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -337,20 +341,28 @@ public partial class calculadora : Form
         {
             if (comboBox1.SelectedValue != null)
             {
-                AtualizarComboBox2(comboBox1.SelectedValue.ToString());
+                // Passa o id_municipio (inteiro) para o método de atualização
+                AtualizarComboBox2(Convert.ToInt32(comboBox1.SelectedValue));
+            }
+            else
+            {
+                // Opcional: Limpar comboBox2 se nada estiver selecionado
+                comboBox2.DataSource = null;
+                comboBox2.Items.Clear();
             }
         }
 
-        private void AtualizarComboBox2(string municipio)
+        private void AtualizarComboBox2(int idMunicipio) // Recebe o id_municipio como int
         {
             try
             {
                 using (MySqlConnection conexaoTemp = DBHelper.ObterConexao())
                 {
-                    string sql2 = "SELECT cod_servico, desc_servico, aliquota_iss FROM aliquotas WHERE municipio = @municipio;";
+                    // A consulta agora filtra por id_municipio na tabela 'aliquotas'
+                    string sql2 = "SELECT cod_servico, desc_servico, aliquota_iss FROM aliquotas WHERE id_municipio = @idMunicipio;";
                     using (MySqlCommand comando2 = new MySqlCommand(sql2, conexaoTemp))
                     {
-                        comando2.Parameters.AddWithValue("@municipio", municipio);
+                        comando2.Parameters.AddWithValue("@idMunicipio", idMunicipio); // Adiciona o id_municipio como parâmetro
                         using (MySqlDataAdapter dataAdapter2 = new MySqlDataAdapter(comando2))
                         {
                             DataTable dataTable2 = new DataTable();
@@ -362,21 +374,21 @@ public partial class calculadora : Form
                             foreach (DataRow row in dataTable2.Rows)
                             {
                                 row["DescricaoCompleta"] = row["cod_servico"].ToString() + " - "
-                                                          + row["desc_servico"].ToString() + " - "
-                                                          + row["aliquota_iss"].ToString() + "%";
+                                                        + row["desc_servico"].ToString() + " - "
+                                                        + row["aliquota_iss"].ToString() + "%";
                             }
 
                             // Preenche a comboBox2 com os dados
                             comboBox2.DataSource = dataTable2;
                             comboBox2.DisplayMember = "DescricaoCompleta"; // Exibe a concatenação
-                            comboBox2.ValueMember = "cod_servico"; // Define o valor interno como o código do serviço
+                            comboBox2.ValueMember = "cod_servico";         // Define o valor interno como o código do serviço
                         }
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro ao carregar os dados: " + ex.Message);
+                MessageBox.Show("Erro ao carregar os serviços para o município: " + ex.Message, "Erro de Carregamento", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void button7_Click(object sender, EventArgs e)

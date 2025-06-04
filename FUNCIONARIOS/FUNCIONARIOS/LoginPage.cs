@@ -17,9 +17,6 @@ namespace AGT_FORMS
 {
     public partial class LoginPage : Form
     {
-        MySqlConnection conexao;
-
-        private string nomeUsuario;
         public LoginPage()
         {
             InitializeComponent();
@@ -33,7 +30,7 @@ namespace AGT_FORMS
                     // Usar DBHelper para obter a conexão
                     using (MySqlConnection conexao = DBHelper.ObterConexao())
                     {
-                        string loginQuery = "SELECT login, senha, nivelAcesso FROM logins WHERE login = @login";
+                        string loginQuery = "SELECT login, senha, nivel_acesso FROM logins WHERE login = @login";
 
                         MySqlCommand comando = new MySqlCommand(loginQuery, conexao);
                         comando.Parameters.AddWithValue("@login", BoxLogin.Text);
@@ -49,7 +46,7 @@ namespace AGT_FORMS
                             if (BCrypt.Net.BCrypt.Verify(BoxSenha.Text, senhaHash))
                             {
                                 Sessao.Usuario = BoxLogin.Text;
-                                Sessao.NivelAcesso = reader["nivelAcesso"].ToString();
+                                Sessao.NivelAcesso = reader["nivel_acesso"].ToString();
 
                                 MessageBox.Show($"{Sessao.Usuario}, login realizado com sucesso!");
                                 BoxSenha.Clear();

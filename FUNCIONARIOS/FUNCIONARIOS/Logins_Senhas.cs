@@ -1,10 +1,12 @@
 ﻿using MySql.Data.MySqlClient;
+using MySqlX.XDevAPI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -15,42 +17,43 @@ namespace AGT_FORMS
     {
         private bool colunasCriadas = false; // Variável de controle para as colunas
 
-        private string nomeUsuario;
+        private string nomeUsuario; // Certifique-se que 'nomeUsuario' é preenchido em algum lugar, se necessário.
+
         public Logins_Senhas()
         {
             InitializeComponent();
             CarregarDados();
-            dataGridView1.Columns[0].HeaderText = "Código_da_Unidade";
-            dataGridView1.Columns[1].HeaderText = "Municipio";
-            dataGridView1.Columns[2].HeaderText = "CNPJ";
-            dataGridView1.Columns[3].HeaderText = "Sistema";
-            dataGridView1.Columns[4].HeaderText = "Login";
-            dataGridView1.Columns[5].HeaderText = "Senha";
-            dataGridView1.Columns[6].HeaderText = "Dia_Do_Vencimento";
-            dataGridView1.Columns[7].HeaderText = "Observação";
-            dataGridView1.Columns[8].HeaderText = "Site";
-            dataGridView1.Columns[0].ReadOnly = true;
-            dataGridView1.Columns[1].ReadOnly = true;
-            dataGridView1.Columns[2].ReadOnly = true;
-            dataGridView1.Columns[3].ReadOnly = true;
-            dataGridView1.Columns[4].ReadOnly = true;
-            dataGridView1.Columns[5].ReadOnly = true;
-            dataGridView1.Columns[6].ReadOnly = true;
-            dataGridView1.Columns[7].ReadOnly = true;
-            dataGridView1.Columns[8].ReadOnly = true;
-
-        }
-        private void cadastros_Load(object sender, EventArgs e)
-        {
-            comboBox1.SelectedIndexChanged += new EventHandler(comboBox1_SelectedIndexChanged);
-            CarregarComboBox();
+            // Os cabeçalhos das colunas são definidos após o carregamento dos dados
+            // para garantir que as colunas existam e que a ordem esteja correta.
+            // As definições de HeaderText e ReadOnly estão agora no método CarregarDados().
         }
 
-        private void CarregarDadosFiltrados(string unidade, string municipio, string cnpj)
+        private void CarregarDadosFiltrados(int idUnidade, int idMunicipio, string cnpj)
         {
-            string query = "SELECT unidade_cadastro, municipio_cadastro, cnpj_cadastro, sistema_cadastro, site_cadastro, " +
-                           "login_cadastro, senha_cadastro, vencimento_cadastro, observacao_cadastro " +
-                           "FROM cadastro WHERE unidade_cadastro = @unidade AND municipio_cadastro = @municipio AND cnpj_cadastro = @cnpj";
+            // A consulta agora faz JOINs com 'unidades' e 'municipios' para obter os nomes
+            // em vez de usar campos 'unidade_cadastro', 'municipio_cadastro' diretamente na tabela 'cadastro'.
+            // O filtro será feito pelos IDs e CNPJ, que são mais precisos.
+            string query = @"
+            SELECT 
+                u.cod_entidade AS Codigo_da_Unidade,
+                m.nome AS Municipio,
+                u.cnpj AS CNPJ,
+                c.sistema AS Sistema,
+                c.login_sistema AS Login,
+                c.senha_sistema AS Senha,
+                c.dia_vencimento AS Dia_Do_Vencimento,
+                c.observacao AS Observacao,
+                c.site AS Site
+            FROM 
+                cadastro c
+            INNER JOIN 
+                unidades u ON c.id_unidade = u.id_unidade
+            INNER JOIN 
+                municipios m ON c.id_municipio = m.id_municipio
+            WHERE 
+                u.id_unidade = @idUnidade 
+                AND m.id_municipio = @idMunicipio 
+                AND u.cnpj = @cnpjCadastro"; // Usamos u.cnpj pois é a coluna de CNPJ na tabela 'unidades'
 
             try
             {
@@ -59,43 +62,63 @@ namespace AGT_FORMS
                     using (MySqlDataAdapter adapter = new MySqlDataAdapter(query, conexao))
                     {
                         // Adiciona os parâmetros para evitar SQL Injection
-                        adapter.SelectCommand.Parameters.AddWithValue("@unidade", unidade);
-                        adapter.SelectCommand.Parameters.AddWithValue("@municipio", municipio);
-                        adapter.SelectCommand.Parameters.AddWithValue("@cnpj", cnpj);
+                        adapter.SelectCommand.Parameters.AddWithValue("@idUnidade", idUnidade);
+                        adapter.SelectCommand.Parameters.AddWithValue("@idMunicipio", idMunicipio);
+                        adapter.SelectCommand.Parameters.AddWithValue("@cnpjCadastro", cnpj); // O CNPJ é da tabela unidades
 
                         using (DataTable dt = new DataTable())
                         {
                             adapter.Fill(dt);
                             dataGridView1.DataSource = dt;
+                            ConfigurarColunasDataGridView(); // Reconfigura as colunas após o filtro
                         }
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro ao carregar dados filtrados: " + ex.Message);
+                MessageBox.Show("Erro ao carregar dados filtrados: " + ex.Message, "Erro de Filtro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Verifica se há um item selecionado
-            if (comboBox1.SelectedIndex != -1)
+            // Verifica se há um item selecionado e se é um ComboBoxItem (nosso tipo personalizado)
+            if (comboBox1.SelectedItem is ComboBoxItemWithIds selectedItemData)
             {
-                string selectedItem = comboBox1.SelectedItem.ToString();
-
-                // Quebra a string selecionada para pegar os valores individuais de Unidade, Municipio e CNPJ
-                string[] partes = selectedItem.Split(new string[] { " - " }, StringSplitOptions.None);
-                string unidadeSelecionada = partes[0];
-                string municipioSelecionado = partes[1];
-                string cnpjSelecionado = partes[2];
+                // Os valores já estão pré-parseados no objeto ComboBoxItemWithIds
+                int idUnidadeSelecionada = selectedItemData.IdUnidade;
+                int idMunicipioSelecionado = selectedItemData.IdMunicipio;
+                string cnpjSelecionado = selectedItemData.Cnpj;
 
                 // Filtra os dados com base na seleção
-                CarregarDadosFiltrados(unidadeSelecionada, municipioSelecionado, cnpjSelecionado);
+                CarregarDadosFiltrados(idUnidadeSelecionada, idMunicipioSelecionado, cnpjSelecionado);
+            }
+            else
+            {
+                // Caso algo inesperado ocorra ou nenhum item seja selecionado
+                CarregarDados(); // Recarrega todos os dados
             }
         }
+
         private void CarregarComboBox()
         {
-            string query = "SELECT unidade_cadastro, municipio_cadastro, cnpj_cadastro FROM cadastro ORDER BY unidade_cadastro ASC";
+            string query = @"
+        SELECT 
+            c.id_cadastro, -- Adicione esta linha para pegar o ID do cadastro
+            u.cod_entidade AS UnidadeNome, 
+            m.nome AS MunicipioNome, 
+            u.cnpj AS CnpjUnidade,
+            u.id_unidade AS IdUnidade,
+            m.id_municipio AS IdMunicipio
+        FROM 
+            cadastro c
+        INNER JOIN 
+            unidades u ON c.id_unidade = u.id_unidade
+        INNER JOIN 
+            municipios m ON c.id_municipio = m.id_municipio
+        ORDER BY 
+            u.cod_entidade ASC";
 
             try
             {
@@ -108,7 +131,14 @@ namespace AGT_FORMS
                             comboBox1.Items.Clear();
                             while (reader.Read())
                             {
-                                string item = reader["unidade_cadastro"].ToString() + " - " + reader["municipio_cadastro"].ToString() + " - " + reader["cnpj_cadastro"].ToString();
+                                ComboBoxItemWithIds item = new ComboBoxItemWithIds(
+                                    reader["UnidadeNome"].ToString(),
+                                    reader["MunicipioNome"].ToString(),
+                                    reader["CnpjUnidade"].ToString(),
+                                    Convert.ToInt32(reader["IdUnidade"]),
+                                    Convert.ToInt32(reader["IdMunicipio"]),
+                                    Convert.ToInt32(reader["id_cadastro"]) // Passa o ID do cadastro
+                                );
                                 comboBox1.Items.Add(item);
                             }
                         }
@@ -117,13 +147,33 @@ namespace AGT_FORMS
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro ao carregar ComboBox: " + ex.Message);
+                MessageBox.Show("Erro ao carregar ComboBox: " + ex.Message, "Erro de Carregamento", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
         private void CarregarDados()
         {
-            string query = "SELECT unidade_cadastro, municipio_cadastro, cnpj_cadastro, sistema_cadastro, site_cadastro, " +
-                           "login_cadastro, senha_cadastro, vencimento_cadastro, observacao_cadastro FROM cadastro";
+            // Consulta principal para carregar todos os dados no DataGridView.
+            // Faz JOINs com 'unidades' e 'municipios' para obter os nomes.
+            string query = @"
+            SELECT 
+                u.cod_entidade AS Codigo_da_Unidade,
+                m.nome AS Municipio,
+                u.cnpj AS CNPJ,
+                c.sistema AS Sistema,
+                c.login_sistema AS Login,
+                c.senha_sistema AS Senha,
+                c.dia_vencimento AS Dia_Do_Vencimento,
+                c.observacao AS Observacao,
+                c.site AS Site -- Campo 'site' diretamente da tabela 'cadastro'
+            FROM 
+                cadastro c
+            INNER JOIN 
+                unidades u ON c.id_unidade = u.id_unidade
+            INNER JOIN 
+                municipios m ON c.id_municipio = m.id_municipio
+            ORDER BY 
+                u.cod_entidade, m.nome, u.cnpj";
 
             try
             {
@@ -136,20 +186,10 @@ namespace AGT_FORMS
                             adapter.Fill(dt);
                             dataGridView1.DataSource = dt;
 
+                            // Configura as colunas uma única vez após o primeiro carregamento
                             if (!colunasCriadas)
                             {
-                                // Remover a coluna 'site_cadastro' original se existir
-                                if (dataGridView1.Columns.Contains("site_cadastro"))
-                                {
-                                    dataGridView1.Columns.Remove("site_cadastro");
-                                }
-
-                                DataGridViewLinkColumn linkColumn = new DataGridViewLinkColumn();
-                                linkColumn.Name = "site_cadastro";  // Nome da coluna de link
-                                linkColumn.HeaderText = "Site";     // Título da coluna
-                                linkColumn.DataPropertyName = "site_cadastro";  // Dados da célula
-                                dataGridView1.Columns.Add(linkColumn);
-
+                                ConfigurarColunasDataGridView();
                                 colunasCriadas = true;
                             }
                             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
@@ -159,41 +199,105 @@ namespace AGT_FORMS
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro ao carregar dados: " + ex.Message);
+                MessageBox.Show("Erro ao carregar dados: " + ex.Message, "Erro de Carregamento", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        // Novo método para configurar as colunas do DataGridView de forma centralizada
+        private void ConfigurarColunasDataGridView()
+        {
+            // Limpa as colunas existentes antes de adicionar novas, se já houver
+            if (dataGridView1.Columns.Count > 0)
+            {
+                dataGridView1.Columns.Clear();
+            }
+
+            // Adiciona e configura as colunas manualmente para garantir a ordem e o tipo
+            // Se você já as definiu no designer, pode comentar/remover essas linhas e ajustar os HeaderText
+            // apenas se o DataPropertyName for diferente.
+            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn() { Name = "Codigo_da_Unidade", HeaderText = "Código da Unidade", DataPropertyName = "Codigo_da_Unidade", ReadOnly = true });
+            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn() { Name = "Municipio", HeaderText = "Município", DataPropertyName = "Municipio", ReadOnly = true });
+            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn() { Name = "CNPJ", HeaderText = "CNPJ", DataPropertyName = "CNPJ", ReadOnly = true });
+            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn() { Name = "Sistema", HeaderText = "Sistema", DataPropertyName = "Sistema", ReadOnly = true });
+            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn() { Name = "Login", HeaderText = "Login", DataPropertyName = "Login", ReadOnly = true });
+            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn() { Name = "Senha", HeaderText = "Senha", DataPropertyName = "Senha", ReadOnly = true });
+            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn() { Name = "Dia_Do_Vencimento", HeaderText = "Dia do Vencimento", DataPropertyName = "Dia_Do_Vencimento", ReadOnly = true });
+            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn() { Name = "Observacao", HeaderText = "Observação", DataPropertyName = "Observacao", ReadOnly = true });
+
+            // Adiciona a coluna de link para o site
+            DataGridViewLinkColumn linkColumn = new DataGridViewLinkColumn();
+            linkColumn.Name = "Site_Link"; // Nome da coluna para o DataGridView
+            linkColumn.HeaderText = "Site"; // Título visível
+            linkColumn.DataPropertyName = "Site"; // Vincula aos dados da coluna 'Site' da sua query
+            linkColumn.ReadOnly = true;
+            dataGridView1.Columns.Add(linkColumn);
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            // Verificar se clicou na coluna 'site_cadastro' (a coluna de links)
+            // Verificar se clicou na coluna 'Site_Link' (o nome que definimos no DataGridView)
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
-                if (dataGridView1.Columns[e.ColumnIndex].Name == "site_cadastro")
+                if (dataGridView1.Columns[e.ColumnIndex].Name == "Site_Link") // Usa o nome da coluna que definimos
                 {
-                    string url = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
+                    object cellValue = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value;
+                    if (cellValue != null && cellValue != DBNull.Value)
+                    {
+                        string url = cellValue.ToString();
 
-                    /* Verifica se o URL é válido (começa com http:// ou https://)
-                    if (Uri.IsWellFormedUriString(url, UriKind.Absolute))
-                    { */
+                        // Adiciona http:// ou https:// se o URL não começar com um deles
+                        if (!url.StartsWith("http://", StringComparison.OrdinalIgnoreCase) &&
+                            !url.StartsWith("https://", StringComparison.OrdinalIgnoreCase))
+                        {
+                            url = "http://" + url; // Assume http se não especificado
+                        }
+
                         try
                         {
-                            // Usar Process.Start para abrir o link no navegador padrão
                             System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
                             {
                                 FileName = url,
-                                UseShellExecute = true // Garante que o navegador padrão seja utilizado
+                                UseShellExecute = true
                             });
                         }
                         catch (Exception ex)
                         {
-                            MessageBox.Show("Erro ao tentar abrir o site: " + ex.Message);
+                            MessageBox.Show($"Erro ao tentar abrir o site: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
-                    /*}
+                    }
                     else
                     {
-                        MessageBox.Show("URL inválido: " + url);
-                    }*/
+                        MessageBox.Show("Nenhum site disponível para este registro.", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
+            }
+        }
+
+        // --- Nova classe para itens do ComboBox ---
+        // Esta classe personalizada permite armazenar múltiplos valores
+        // (nome, CNPJ, e os IDs) em um único item da ComboBox,
+        // enquanto exibe uma string formatada.
+        private class ComboBoxItemWithIds
+        {
+            public string DisplayText { get; set; }
+            public int IdCadastro { get; set; } // Adiciona o ID do cadastro
+            public int IdUnidade { get; set; }
+            public int IdMunicipio { get; set; }
+            public string Cnpj { get; set; }
+
+            // Construtor atualizado
+            public ComboBoxItemWithIds(string unidadeNome, string municipioNome, string cnpj, int idUnidade, int idMunicipio, int idCadastro)
+            {
+                DisplayText = $"{unidadeNome} - {municipioNome} - {cnpj}";
+                IdUnidade = idUnidade;
+                IdMunicipio = idMunicipio;
+                Cnpj = cnpj;
+                IdCadastro = idCadastro; // Atribui o ID do cadastro
+            }
+
+            public override string ToString()
+            {
+                return DisplayText;
             }
         }
         private void button1_Click(object sender, EventArgs e)
@@ -299,64 +403,73 @@ namespace AGT_FORMS
 
         private void button8_Click(object sender, EventArgs e)
         {
-            //excluir
             if (Sessao.NivelAcesso == "Admin" || Sessao.NivelAcesso == null)
             {
-                if (comboBox1.SelectedIndex != -1)
+                if (comboBox1.SelectedIndex != -1 && comboBox1.SelectedItem is ComboBoxItemWithIds selectedCadastro)
                 {
-                    var confirm = MessageBox.Show("Deseja realmente excluir este cadastro?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                    if (confirm == DialogResult.Yes)
+                    // Agora pegamos o ID do cadastro diretamente
+                    int idCadastroParaExcluir = selectedCadastro.IdCadastro;
+
+                    var confirmResult = MessageBox.Show(
+                        $"Deseja realmente excluir o cadastro para a unidade '{selectedCadastro.DisplayText}'?",
+                        "Confirmação de Exclusão",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Warning);
+
+                    if (confirmResult == DialogResult.Yes)
                     {
                         try
                         {
-                            string selectedItem = comboBox1.SelectedItem.ToString();
-                            string[] partes = selectedItem.Split(new string[] { " - " }, StringSplitOptions.None);
-
-                            string unidade = partes[0];
-                            string municipio = partes[1];
-                            string cnpj = partes[2];
-
-                            string query = "DELETE FROM cadastro WHERE unidade_cadastro = @unidade AND municipio_cadastro = @municipio AND cnpj_cadastro = @cnpj";
+                            // Query DELETE agora usa apenas o ID do cadastro (chave primária)
+                            string query = "DELETE FROM cadastro WHERE id_cadastro = @idCadastro";
 
                             using (MySqlConnection conexao = DBHelper.ObterConexao())
                             {
                                 using (MySqlCommand cmd = new MySqlCommand(query, conexao))
                                 {
-                                    cmd.Parameters.AddWithValue("@unidade", unidade);
-                                    cmd.Parameters.AddWithValue("@municipio", municipio);
-                                    cmd.Parameters.AddWithValue("@cnpj", cnpj);
+                                    cmd.Parameters.AddWithValue("@idCadastro", idCadastroParaExcluir); // Usa o ID do cadastro
 
                                     int rowsAffected = cmd.ExecuteNonQuery();
 
                                     if (rowsAffected > 0)
                                     {
-                                        MessageBox.Show("Cadastro excluído com sucesso!");
+                                        MessageBox.Show("Cadastro excluído com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                         comboBox1.SelectedIndex = -1;
                                         CarregarComboBox();
                                         CarregarDados();
                                     }
                                     else
                                     {
-                                        MessageBox.Show("Nenhum registro foi encontrado para exclusão.");
+                                        MessageBox.Show("Nenhum registro foi encontrado para exclusão com o ID fornecido.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                     }
                                 }
                             }
                         }
+                        catch (MySqlException ex)
+                        {
+                            MessageBox.Show($"Erro de banco de dados ao excluir o cadastro: {ex.Message} (Código: {ex.Number})", "Erro de Exclusão", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                         catch (Exception ex)
                         {
-                            MessageBox.Show("Erro ao excluir: " + ex.Message);
+                            MessageBox.Show($"Ocorreu um erro inesperado ao excluir o cadastro: {ex.Message}", "Erro Geral", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Por favor, selecione um cadastro.");
+                    MessageBox.Show("Por favor, selecione um cadastro na lista para excluir.", "Nenhuma Seleção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             else
             {
-                MessageBox.Show("Acesso Negado.");
+                MessageBox.Show("Você não tem permissão para realizar esta operação.", "Acesso Negado", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
+        }
+
+        private void Logins_Senhas_Load_1(object sender, EventArgs e)
+        {
+            comboBox1.SelectedIndexChanged += new EventHandler(comboBox1_SelectedIndexChanged);
+            CarregarComboBox();
         }
     }
 }

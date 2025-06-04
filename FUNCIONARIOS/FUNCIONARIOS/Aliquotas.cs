@@ -14,14 +14,17 @@ namespace AGT_FORMS
 {
     public partial class Aliquotas : Form
     {
-
         private string nomeUsuario;
+
         public Aliquotas()
         {
             InitializeComponent();
             CarregarDados();
-          //  CarregarComboBox();
-            dataGridView1.Columns[0].HeaderText = "Munícipio";
+            // As linhas abaixo foram mantidas, mas o ideal é que as colunas do DataGridView
+            // sejam configuradas após a atribuição do DataSource para garantir que elas existam.
+            // Se as colunas já forem definidas no designer, isso pode ser redundante ou causar erros
+            // se o número ou ordem das colunas da consulta mudar.
+            dataGridView1.Columns[0].HeaderText = "Município";
             dataGridView1.Columns[1].HeaderText = "Código do Serviço";
             dataGridView1.Columns[2].HeaderText = "Descrição do Serviço";
             dataGridView1.Columns[3].HeaderText = "ISS";
@@ -33,9 +36,24 @@ namespace AGT_FORMS
             comboBox1.SelectedIndexChanged += new EventHandler(comboBox1_SelectedIndexChanged);
             CarregarComboBox();
         }
+
         private void CarregarDados()
         {
-            string query = "SELECT municipio, cod_servico, desc_servico, aliquota_iss, lei_vigente FROM aliquotas WHERE id_aliquota <> 0";
+            // A consulta agora faz um JOIN com a tabela 'municipios' para obter o nome do município
+            // em vez do id_municipio da tabela 'aliquotas'.
+            string query = @"
+                SELECT 
+                    m.nome AS municipio, 
+                    a.cod_servico, 
+                    a.desc_servico, 
+                    a.aliquota_iss, 
+                    a.lei_vigente 
+                FROM 
+                    aliquotas a
+                INNER JOIN 
+                    municipios m ON a.id_municipio = m.id_municipio
+                WHERE 
+                    a.id_aliquota <> 0";
 
             try
             {
@@ -47,6 +65,17 @@ namespace AGT_FORMS
                         adapter.Fill(dt);
                         dataGridView1.DataSource = dt;
                         dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+
+                        // Reconfigurar os cabeçalhos das colunas após o DataBinding
+                        // para garantir que as colunas existam.
+                        if (dataGridView1.Columns.Count > 0)
+                        {
+                            dataGridView1.Columns[0].HeaderText = "Município";
+                            dataGridView1.Columns[1].HeaderText = "Código do Serviço";
+                            dataGridView1.Columns[2].HeaderText = "Descrição do Serviço";
+                            dataGridView1.Columns[3].HeaderText = "ISS";
+                            dataGridView1.Columns[4].HeaderText = "Lei Vigente";
+                        }
                     }
                 }
             }
@@ -55,9 +84,11 @@ namespace AGT_FORMS
                 MessageBox.Show("Erro ao carregar dados: " + ex.Message);
             }
         }
+
         private void CarregarComboBox()
         {
-            string query = "SELECT DISTINCT (municipio) FROM aliquotas";
+            // A consulta para a ComboBox agora busca os nomes distintos diretamente da tabela 'municipios'.
+            string query = "SELECT DISTINCT nome FROM municipios ORDER BY nome";
 
             try
             {
@@ -67,12 +98,11 @@ namespace AGT_FORMS
                     {
                         using (MySqlDataReader reader = cmd.ExecuteReader())
                         {
-                            // Limpa a comboBox antes de adicionar os novos itens
                             comboBox1.Items.Clear();
 
                             while (reader.Read())
                             {
-                                string item = reader["municipio"].ToString();
+                                string item = reader["nome"].ToString();
                                 comboBox1.Items.Add(item);
                             }
                         }
@@ -89,13 +119,28 @@ namespace AGT_FORMS
         {
             if (comboBox1.SelectedIndex != -1)
             {
-                string selectedItem = comboBox1.SelectedItem.ToString();
-                CarregarDadosFiltrados(selectedItem);
+                string selectedMunicipioNome = comboBox1.SelectedItem.ToString();
+                CarregarDadosFiltrados(selectedMunicipioNome);
             }
         }
-        private void CarregarDadosFiltrados(string municipio)
+
+        private void CarregarDadosFiltrados(string municipioNome)
         {
-            string query = "SELECT municipio, cod_servico, desc_servico, aliquota_iss, lei_vigente FROM aliquotas WHERE municipio = @municipio";
+            // A consulta filtrada agora usa o nome do município para fazer a junção
+            // e filtrar os dados corretamente.
+            string query = @"
+                SELECT 
+                    m.nome AS municipio, 
+                    a.cod_servico, 
+                    a.desc_servico, 
+                    a.aliquota_iss, 
+                    a.lei_vigente 
+                FROM 
+                    aliquotas a
+                INNER JOIN 
+                    municipios m ON a.id_municipio = m.id_municipio
+                WHERE 
+                    m.nome = @municipioNome";
 
             try
             {
@@ -103,7 +148,7 @@ namespace AGT_FORMS
                 {
                     using (MySqlDataAdapter adapter = new MySqlDataAdapter(query, conexao))
                     {
-                        adapter.SelectCommand.Parameters.AddWithValue("@municipio", municipio);
+                        adapter.SelectCommand.Parameters.AddWithValue("@municipioNome", municipioNome);
 
                         DataTable dt = new DataTable();
                         adapter.Fill(dt);
@@ -119,7 +164,7 @@ namespace AGT_FORMS
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+    private void button2_Click(object sender, EventArgs e)
         {
             HomePage produto = new HomePage();
             produto.StartPosition = FormStartPosition.CenterScreen;
