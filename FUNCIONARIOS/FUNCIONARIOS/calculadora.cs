@@ -28,6 +28,7 @@ public partial class calculadora : Form
             int totalCliques = ObterContadorExcel();
             labelContador.Text = $"Total de exportações em Excel: {totalCliques}";
 
+            comboBox1.SelectedIndex = 12;
 
             dataGridView1.ColumnCount = 15;
 
@@ -197,7 +198,9 @@ public partial class calculadora : Form
                 double aliquotaIr = 0;
                 if (comboBox3.SelectedItem != null)
                 {
-                    if (comboBox3.SelectedItem.ToString() == "1%")
+                    if (comboBox3.SelectedItem.ToString() == "ND")
+                        aliquotaIr = 0;
+                    else if (comboBox3.SelectedItem.ToString() == "1%")
                         aliquotaIr = 0.01;
                     else if (comboBox3.SelectedItem.ToString() == "1.5%")
                         aliquotaIr = 0.015;
