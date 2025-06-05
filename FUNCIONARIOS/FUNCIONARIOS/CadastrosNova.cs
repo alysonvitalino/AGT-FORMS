@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
@@ -181,18 +182,27 @@ namespace AGT_FORMS
         private async void button1_Click(object sender, EventArgs e)
         {
             // BOTÃO PARA REQUISITAR OS DADOS DO CNPJ
-            string cnpj = textBox3.Text.Trim();
+            string cnpjInput = textBox3.Text.Trim();
 
-            if (string.IsNullOrEmpty(cnpj))
+            if (string.IsNullOrEmpty(cnpjInput))
             {
                 MessageBox.Show("Por favor, informe um CNPJ.", "CNPJ Ausente", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
+            // 1. Formatar para SOMENTE NÚMEROS antes de enviar para a API
+            string cnpjApenasNumeros = RemoverFormatacaoCNPJ(cnpjInput);
+
+            // Validação básica se após remover a formatação ainda é um CNPJ válido (14 dígitos)
+            if (cnpjApenasNumeros.Length != 14)
+            {
+                MessageBox.Show("O CNPJ informado não parece ser válido após remover a formatação. Deve conter 14 dígitos.", "CNPJ Inválido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             // Assumimos que 'ReceitaFederalService' e 'ConsultarCNPJAsync' estão implementados corretamente.
             // Certifique-se de ter a referência ao namespace onde 'ReceitaFederalService' está definida.
             var service = new ReceitaFederalService();
-            var dados = await service.ConsultarCNPJAsync(cnpj);
+            var dados = await service.ConsultarCNPJAsync(cnpjApenasNumeros);
 
             if (dados != null)
             {
@@ -200,11 +210,33 @@ namespace AGT_FORMS
                 textBox5.Text = $"{dados.logradouro}, {dados.numero} {dados.bairro}".Trim() ?? ""; // Ajuste para melhor formatação
                 textBox6.Text = dados.municipio ?? ""; // Recebe o nome do município
                 textBox7.Text = dados.cep ?? "";
+                textBox3.Text = FormatarCNPJ(cnpjApenasNumeros);
             }
             else
             {
                 MessageBox.Show("Não foi possível consultar o CNPJ. Verifique o número ou tente novamente mais tarde.", "Erro na Consulta de CNPJ", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+        public static string RemoverFormatacaoCNPJ(string cnpj)
+        {
+            if (string.IsNullOrEmpty(cnpj))
+                return string.Empty;
+
+            // Remove todos os caracteres que não são dígitos
+            return Regex.Replace(cnpj, @"[^\d]", "");
+        }
+        public static string FormatarCNPJ(string cnpj)
+        {
+            if (string.IsNullOrEmpty(cnpj))
+                return string.Empty;
+
+            string cnpjApenasNumeros = RemoverFormatacaoCNPJ(cnpj); // Garante que estamos lidando apenas com números
+
+            if (cnpjApenasNumeros.Length != 14)
+                return cnpj; // Retorna o original se não tiver 14 dígitos
+
+            // Aplica a máscara XX.XXX.XXX/XXXX-XX
+            return Convert.ToUInt64(cnpjApenasNumeros).ToString(@"00\.000\.000\/0000\-00");
         }
 
         private void label8_Click(object sender, EventArgs e)

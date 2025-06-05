@@ -174,6 +174,7 @@ namespace AGT_FORMS
                         if (linhasAfetadas > 0)
                         {
                             MessageBox.Show("Dados atualizados com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            comboBox2.SelectedIndex = -1;
                             LimparCamposUnidade();
                             CarregarComboBox(); // Atualiza o combo para refletir qualquer mudança no cod_entidade
                                                 // Se você tiver um CarregarDados() que preenche um DataGridView, chame-o aqui também:

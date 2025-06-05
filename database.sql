@@ -1,4 +1,4 @@
-drop database agt;
+#drop database agt;
 create database agt;
 use agt;
 
