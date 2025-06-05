@@ -266,6 +266,7 @@
             // 
             comboBox1.Anchor = AnchorStyles.None;
             comboBox1.BackColor = Color.WhiteSmoke;
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox1.ForeColor = Color.MidnightBlue;
             comboBox1.FormattingEnabled = true;
             comboBox1.Location = new Point(277, 71);
