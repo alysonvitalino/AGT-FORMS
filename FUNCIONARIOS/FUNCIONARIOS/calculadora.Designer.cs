@@ -58,7 +58,6 @@
             comboBox3 = new ComboBox();
             button7 = new Button();
             btnExcel = new Button();
-            labelContador = new Label();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -412,19 +411,6 @@
             btnExcel.UseVisualStyleBackColor = false;
             btnExcel.Click += btnExcel_Click;
             // 
-            // labelContador
-            // 
-            labelContador.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            labelContador.AutoSize = true;
-            labelContador.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            labelContador.ForeColor = Color.FromArgb(18, 87, 123);
-            labelContador.Location = new Point(731, 61);
-            labelContador.Margin = new Padding(2, 0, 2, 0);
-            labelContador.Name = "labelContador";
-            labelContador.Size = new Size(40, 15);
-            labelContador.TabIndex = 22;
-            labelContador.Text = "label1";
-            // 
             // calculadora
             // 
             AcceptButton = button5;
@@ -432,7 +418,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(169, 207, 229);
             ClientSize = new Size(1084, 561);
-            Controls.Add(labelContador);
             Controls.Add(btnExcel);
             Controls.Add(button7);
             Controls.Add(button4);
@@ -493,6 +478,5 @@
         private ComboBox comboBox3;
         private Button button7;
         private Button btnExcel;
-        private Label labelContador;
     }
 }

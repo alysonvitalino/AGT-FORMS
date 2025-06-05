@@ -52,13 +52,6 @@ CREATE TABLE cadastro (
     FOREIGN KEY (id_municipio) REFERENCES municipios(id_municipio)
 );
 
-CREATE TABLE contador_relatorios (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    quantidade INT NOT NULL
-);
-
-INSERT INTO contador_relatorios (id, quantidade) VALUES (1, 0);
-
 ALTER TABLE cadastro
 DROP FOREIGN KEY cadastro_ibfk_1; -- Nome padrão, pode variar. Verifique seu DDL.
 
