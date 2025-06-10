@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            buttonLimpar = new Button();
             buttonCadastrar = new Button();
             buttonVoltar = new Button();
             label2 = new Label();
@@ -47,13 +46,6 @@
             button1 = new Button();
             SuspendLayout();
             // 
-            // buttonLimpar
-            // 
-            buttonLimpar.Location = new Point(0, 0);
-            buttonLimpar.Name = "buttonLimpar";
-            buttonLimpar.Size = new Size(75, 23);
-            buttonLimpar.TabIndex = 19;
-            // 
             // buttonCadastrar
             // 
             buttonCadastrar.Anchor = AnchorStyles.None;
@@ -62,7 +54,7 @@
             buttonCadastrar.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             buttonCadastrar.ForeColor = Color.FromArgb(169, 207, 229);
             buttonCadastrar.Location = new Point(556, 386);
-            buttonCadastrar.Margin = new Padding(2, 2, 2, 2);
+            buttonCadastrar.Margin = new Padding(2);
             buttonCadastrar.Name = "buttonCadastrar";
             buttonCadastrar.Size = new Size(105, 43);
             buttonCadastrar.TabIndex = 2;
@@ -78,7 +70,7 @@
             buttonVoltar.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             buttonVoltar.ForeColor = Color.FromArgb(169, 207, 229);
             buttonVoltar.Location = new Point(679, 386);
-            buttonVoltar.Margin = new Padding(2, 2, 2, 2);
+            buttonVoltar.Margin = new Padding(2);
             buttonVoltar.Name = "buttonVoltar";
             buttonVoltar.Size = new Size(105, 43);
             buttonVoltar.TabIndex = 2;
@@ -169,7 +161,7 @@
             // 
             textBox2.Anchor = AnchorStyles.None;
             textBox2.Location = new Point(262, 326);
-            textBox2.Margin = new Padding(2, 2, 2, 2);
+            textBox2.Margin = new Padding(2);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(121, 23);
             textBox2.TabIndex = 11;
@@ -178,7 +170,7 @@
             // 
             textBox3.Anchor = AnchorStyles.None;
             textBox3.Location = new Point(262, 148);
-            textBox3.Margin = new Padding(2, 2, 2, 2);
+            textBox3.Margin = new Padding(2);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(432, 23);
             textBox3.TabIndex = 12;
@@ -187,7 +179,7 @@
             // 
             textBox4.Anchor = AnchorStyles.None;
             textBox4.Location = new Point(262, 202);
-            textBox4.Margin = new Padding(2, 2, 2, 2);
+            textBox4.Margin = new Padding(2);
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(522, 23);
             textBox4.TabIndex = 13;
@@ -196,7 +188,7 @@
             // 
             textBox5.Anchor = AnchorStyles.None;
             textBox5.Location = new Point(262, 260);
-            textBox5.Margin = new Padding(2, 2, 2, 2);
+            textBox5.Margin = new Padding(2);
             textBox5.Name = "textBox5";
             textBox5.Size = new Size(522, 23);
             textBox5.TabIndex = 14;
@@ -205,7 +197,7 @@
             // 
             textBox6.Anchor = AnchorStyles.None;
             textBox6.Location = new Point(565, 326);
-            textBox6.Margin = new Padding(2, 2, 2, 2);
+            textBox6.Margin = new Padding(2);
             textBox6.Name = "textBox6";
             textBox6.Size = new Size(219, 23);
             textBox6.TabIndex = 15;
@@ -214,7 +206,7 @@
             // 
             textBox7.Anchor = AnchorStyles.None;
             textBox7.Location = new Point(410, 326);
-            textBox7.Margin = new Padding(2, 2, 2, 2);
+            textBox7.Margin = new Padding(2);
             textBox7.Name = "textBox7";
             textBox7.Size = new Size(127, 23);
             textBox7.TabIndex = 16;
@@ -242,7 +234,7 @@
             button1.Font = new Font("Segoe UI", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.ForeColor = Color.FromArgb(169, 207, 229);
             button1.Location = new Point(704, 145);
-            button1.Margin = new Padding(2, 2, 2, 2);
+            button1.Margin = new Padding(2);
             button1.Name = "button1";
             button1.Size = new Size(80, 28);
             button1.TabIndex = 2;
@@ -273,8 +265,7 @@
             Controls.Add(label2);
             Controls.Add(buttonVoltar);
             Controls.Add(buttonCadastrar);
-            Controls.Add(buttonLimpar);
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "CadastrosNova";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Adicionar Unidade";
@@ -285,8 +276,6 @@
         }
 
         #endregion
-
-        private Button buttonLimpar;
         private Button buttonCadastrar;
         private Button buttonVoltar;
         private Label label2;

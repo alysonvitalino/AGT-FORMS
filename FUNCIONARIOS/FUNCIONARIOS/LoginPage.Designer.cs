@@ -49,7 +49,7 @@
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
             button1.ForeColor = SystemColors.ButtonFace;
-            button1.Location = new Point(637, 242);
+            button1.Location = new Point(658, 263);
             button1.Name = "button1";
             button1.Size = new Size(76, 23);
             button1.TabIndex = 0;
@@ -64,7 +64,7 @@
             label1.BackColor = Color.FromArgb(18, 87, 123);
             label1.Font = new Font("Segoe UI", 9F);
             label1.ForeColor = SystemColors.ButtonFace;
-            label1.Location = new Point(496, 121);
+            label1.Location = new Point(517, 142);
             label1.Name = "label1";
             label1.Size = new Size(37, 15);
             label1.TabIndex = 2;
@@ -77,7 +77,7 @@
             label2.BackColor = Color.FromArgb(18, 87, 123);
             label2.Font = new Font("Segoe UI", 9F);
             label2.ForeColor = SystemColors.ButtonFace;
-            label2.Location = new Point(496, 179);
+            label2.Location = new Point(517, 200);
             label2.Name = "label2";
             label2.Size = new Size(39, 15);
             label2.TabIndex = 3;
@@ -87,7 +87,7 @@
             // 
             BoxLogin.Anchor = AnchorStyles.Top;
             BoxLogin.BackColor = Color.FromArgb(169, 207, 229);
-            BoxLogin.Location = new Point(496, 139);
+            BoxLogin.Location = new Point(517, 160);
             BoxLogin.Name = "BoxLogin";
             BoxLogin.Size = new Size(217, 23);
             BoxLogin.TabIndex = 4;
@@ -96,7 +96,7 @@
             // 
             BoxSenha.Anchor = AnchorStyles.Top;
             BoxSenha.BackColor = Color.FromArgb(169, 207, 229);
-            BoxSenha.Location = new Point(496, 197);
+            BoxSenha.Location = new Point(517, 218);
             BoxSenha.Name = "BoxSenha";
             BoxSenha.Size = new Size(217, 23);
             BoxSenha.TabIndex = 5;
@@ -112,6 +112,7 @@
             button2.TabIndex = 6;
             button2.Text = "POUPA TEMPO";
             button2.UseVisualStyleBackColor = true;
+            button2.Visible = false;
             button2.Click += button2_Click;
             // 
             // pictureBox1
@@ -135,7 +136,7 @@
             button3.FlatAppearance.BorderSize = 0;
             button3.FlatStyle = FlatStyle.Popup;
             button3.ForeColor = SystemColors.ButtonFace;
-            button3.Location = new Point(496, 242);
+            button3.Location = new Point(517, 263);
             button3.Name = "button3";
             button3.Size = new Size(107, 23);
             button3.TabIndex = 8;
@@ -146,16 +147,16 @@
             // button4
             // 
             button4.Anchor = AnchorStyles.Top;
-            button4.BackColor = Color.Transparent;
-            button4.BackgroundImage = (Image)resources.GetObject("button4.BackgroundImage");
+            button4.BackColor = Color.FromArgb(18, 87, 123);
+            button4.BackgroundImage = Properties.Resources.hide;
+            button4.BackgroundImageLayout = ImageLayout.Zoom;
             button4.FlatAppearance.BorderSize = 0;
             button4.FlatStyle = FlatStyle.Flat;
-            button4.ForeColor = SystemColors.ButtonFace;
-            button4.Location = new Point(719, 197);
+            button4.ForeColor = SystemColors.ActiveBorder;
+            button4.Location = new Point(740, 218);
             button4.Name = "button4";
             button4.Size = new Size(24, 23);
             button4.TabIndex = 9;
-            button4.Text = "Login";
             button4.UseVisualStyleBackColor = false;
             button4.Click += button4_Click;
             // 

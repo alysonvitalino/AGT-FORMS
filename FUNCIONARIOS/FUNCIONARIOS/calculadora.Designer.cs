@@ -442,7 +442,7 @@
             Name = "calculadora";
             RightToLeft = RightToLeft.No;
             StartPosition = FormStartPosition.CenterScreen;
-            Text = ",0";
+            Text = "Calculadora";
             WindowState = FormWindowState.Maximized;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();

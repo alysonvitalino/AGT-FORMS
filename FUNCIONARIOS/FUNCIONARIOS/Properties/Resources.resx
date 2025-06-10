@@ -118,37 +118,40 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Aplicati (3)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Aplicati (3).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="LOGIN E SENHAS (4)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\LOGIN E SENHAS (4).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="modelo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\modelo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Calculator_30001" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Calculator_30001.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Aplicati" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Aplicati.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="modelo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\modelo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Add a subheading" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Add a subheading.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ImagemAliquota" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ImagemAliquota.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="LOGIN E SENHAS (4)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LOGIN E SENHAS (4).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ImagemCadastro" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ImagemCadastro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Aplicati" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Aplicati.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ImagemAliquota" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ImagemAliquota.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="ImagemCalculadora" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ImagemCalculadora.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HomePageImagem" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HomePageImagem.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Aplicati (3)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Aplicati (3).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ImagemLogins" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ImagemLogins.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="HomePageImagem" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\HomePageImagem.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Add a subheading" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Add a subheading.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="hide" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\hide.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
