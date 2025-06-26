@@ -385,15 +385,6 @@ public partial class calculadora : Form
             dataGridView1.Rows.Clear();
         }
         
-        public static void IncrementarContadorExcel()
-        {
-            using (MySqlConnection conexao = DBHelper.ObterConexao())
-            {
-                string sql = "UPDATE contador_relatorios SET quantidade = quantidade + 1 WHERE id = 1";
-                MySqlCommand cmd = new MySqlCommand(sql, conexao);
-                cmd.ExecuteNonQuery();
-            }
-        }
 
         private void btnExcel_Click(object sender, EventArgs e)
         {
@@ -428,9 +419,6 @@ public partial class calculadora : Form
 
                     FileInfo fi = new FileInfo(caminhoArquivo);
                     package.SaveAs(fi);
-
-                    // Incrementa o contador no banco
-                    IncrementarContadorExcel();
 
                     MessageBox.Show("Arquivo Excel gerado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
