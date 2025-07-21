@@ -213,7 +213,7 @@
             button5.FlatStyle = FlatStyle.Flat;
             button5.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             button5.ForeColor = Color.FromArgb(169, 207, 229);
-            button5.Location = new Point(482, 35);
+            button5.Location = new Point(466, 38);
             button5.Name = "button5";
             button5.Size = new Size(83, 26);
             button5.TabIndex = 8;
@@ -228,10 +228,10 @@
             button8.Cursor = Cursors.Hand;
             button8.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             button8.ForeColor = Color.FromArgb(169, 207, 229);
-            button8.Location = new Point(816, 35);
+            button8.Location = new Point(817, 38);
             button8.Margin = new Padding(1, 2, 1, 2);
             button8.Name = "button8";
-            button8.Size = new Size(95, 30);
+            button8.Size = new Size(95, 26);
             button8.TabIndex = 24;
             button8.Text = "Excluir";
             button8.UseVisualStyleBackColor = false;
@@ -244,10 +244,10 @@
             button7.Cursor = Cursors.Hand;
             button7.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             button7.ForeColor = Color.FromArgb(169, 207, 229);
-            button7.Location = new Point(599, 35);
+            button7.Location = new Point(593, 38);
             button7.Margin = new Padding(1, 2, 1, 2);
             button7.Name = "button7";
-            button7.Size = new Size(95, 30);
+            button7.Size = new Size(95, 26);
             button7.TabIndex = 23;
             button7.Text = "Editar";
             button7.UseVisualStyleBackColor = false;
@@ -260,10 +260,10 @@
             button6.Cursor = Cursors.Hand;
             button6.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             button6.ForeColor = Color.FromArgb(169, 207, 229);
-            button6.Location = new Point(708, 35);
+            button6.Location = new Point(705, 38);
             button6.Margin = new Padding(1, 2, 1, 2);
             button6.Name = "button6";
-            button6.Size = new Size(95, 30);
+            button6.Size = new Size(95, 26);
             button6.TabIndex = 22;
             button6.Text = "Incluir";
             button6.UseVisualStyleBackColor = false;

@@ -243,6 +243,7 @@
             // comboBox1
             // 
             comboBox1.BackColor = Color.WhiteSmoke;
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox1.ForeColor = Color.MidnightBlue;
             comboBox1.FormattingEnabled = true;
             comboBox1.Location = new Point(16, 56);
@@ -363,6 +364,7 @@
             // comboBox3
             // 
             comboBox3.BackColor = Color.WhiteSmoke;
+            comboBox3.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox3.ForeColor = Color.MidnightBlue;
             comboBox3.FormattingEnabled = true;
             comboBox3.Items.AddRange(new object[] { "ND", "1%", "1.5%" });

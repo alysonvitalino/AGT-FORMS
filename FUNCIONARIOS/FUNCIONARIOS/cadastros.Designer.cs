@@ -239,7 +239,7 @@
             button6.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             button6.ForeColor = Color.FromArgb(169, 207, 229);
             button6.Location = new Point(570, 50);
-            button6.Margin = new Padding(2, 2, 2, 2);
+            button6.Margin = new Padding(2);
             button6.Name = "button6";
             button6.Size = new Size(122, 30);
             button6.TabIndex = 11;
@@ -255,7 +255,7 @@
             button7.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             button7.ForeColor = Color.FromArgb(169, 207, 229);
             button7.Location = new Point(696, 50);
-            button7.Margin = new Padding(2, 2, 2, 2);
+            button7.Margin = new Padding(2);
             button7.Name = "button7";
             button7.Size = new Size(122, 30);
             button7.TabIndex = 12;
@@ -271,7 +271,7 @@
             button8.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             button8.ForeColor = Color.FromArgb(169, 207, 229);
             button8.Location = new Point(823, 50);
-            button8.Margin = new Padding(2, 2, 2, 2);
+            button8.Margin = new Padding(2);
             button8.Name = "button8";
             button8.Size = new Size(122, 30);
             button8.TabIndex = 13;
