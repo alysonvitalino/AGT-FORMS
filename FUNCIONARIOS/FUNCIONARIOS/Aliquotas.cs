@@ -20,10 +20,6 @@ namespace AGT_FORMS
         {
             InitializeComponent();
             CarregarDados();
-            // As linhas abaixo foram mantidas, mas o ideal é que as colunas do DataGridView
-            // sejam configuradas após a atribuição do DataSource para garantir que elas existam.
-            // Se as colunas já forem definidas no designer, isso pode ser redundante ou causar erros
-            // se o número ou ordem das colunas da consulta mudar.
             dataGridView1.Columns[0].HeaderText = "Município";
             dataGridView1.Columns[1].HeaderText = "Código do Serviço";
             dataGridView1.Columns[2].HeaderText = "Descrição do Serviço";
