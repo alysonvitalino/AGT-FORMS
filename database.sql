@@ -290,7 +290,11 @@ INSERT INTO cadastro (id_cadastro, id_unidade, id_municipio, cnpj_cadastro, sist
 (9, (SELECT id_unidade FROM unidades WHERE cnpj = '89.012.345/0001-08'), (SELECT id_municipio FROM municipios WHERE nome = 'Manaus'), '89.012.345/0001-11', 'Sistema I', 'classroom.google.com', 'usuario9', 'senha606', 27, 'Nono registro'),
 (10, (SELECT id_unidade FROM unidades WHERE cnpj = '90.123.456/0001-09'), (SELECT id_municipio FROM municipios WHERE nome = 'Goiânia'), '90.123.456/0001-00', 'Sistema J', 'www.excalidraw.com', 'usuario10', 'senha707', 30, 'Décimo registro');
 
+INSERT INTO logins (id_login, login, senha, email, nivel_acesso) VALUES (1, "admin", "$2a$16$cnyrkt0XCJkwxRviLI9P4OUHfRqxvljiBcAlQVaNb2vP6nDVOH1s2", "aplicativogestaotributaria@gmail.com", "Admin");
+INSERT INTO logins (id_login, login, senha, email, nivel_acesso) VALUES (2, "user", "$2a$16$cnyrkt0XCJkwxRviLI9P4OUHfRqxvljiBcAlQVaNb2vP6nDVOH1s2", "alyson.vitalino@gmail.com", "User");
+
 SELECT cod_entidade, id_unidade FROM unidades;
 SELECT * FROM aliquotas;
 SELECT * FROM cadastro;
 SELECT * FROM municipios;
+SELECT * FROM logins;

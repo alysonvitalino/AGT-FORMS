@@ -2419,11 +2419,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\aluno\\Documents\\GitHub\\AGT-FORMS\\FUNCIONARIOS\\FUNCIONARIOS\\AGT_FORMS.csproj",
+      "projectUniqueName": "C:\\Users\\aluno\\Desktop\\AGT-FORMS\\FUNCIONARIOS\\FUNCIONARIOS\\AGT_FORMS.csproj",
       "projectName": "AGT_FORMS",
-      "projectPath": "C:\\Users\\aluno\\Documents\\GitHub\\AGT-FORMS\\FUNCIONARIOS\\FUNCIONARIOS\\AGT_FORMS.csproj",
+      "projectPath": "C:\\Users\\aluno\\Desktop\\AGT-FORMS\\FUNCIONARIOS\\FUNCIONARIOS\\AGT_FORMS.csproj",
       "packagesPath": "C:\\Users\\aluno\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\aluno\\Documents\\GitHub\\AGT-FORMS\\FUNCIONARIOS\\FUNCIONARIOS\\obj\\",
+      "outputPath": "C:\\Users\\aluno\\Desktop\\AGT-FORMS\\FUNCIONARIOS\\FUNCIONARIOS\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
