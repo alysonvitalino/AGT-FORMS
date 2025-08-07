@@ -1,4 +1,4 @@
-#drop database agt;
+drop database agt;
 create database agt;
 use agt;
 
@@ -279,16 +279,16 @@ VALUES
 
 
 INSERT INTO cadastro (id_cadastro, id_unidade, id_municipio, cnpj_cadastro, sistema, site, login_sistema, senha_sistema, dia_vencimento, observacao) VALUES
-(1, (SELECT id_unidade FROM unidades WHERE cnpj = '12.345.678/0001-90'), (SELECT id_municipio FROM municipios WHERE nome = 'São Paulo'), '12.345.678/0001-99', 'Sistema A', 'www.google.com', 'usuario1', 'senha123', 3, 'Primeiro registro'),
-(2, (SELECT id_unidade FROM unidades WHERE cnpj = '98.765.432/0001-01'), (SELECT id_municipio FROM municipios WHERE nome = 'Rio de Janeiro'), '98.765.432/0001-88', 'Sistema B', 'www.github.com', 'usuario2', 'senha456', 6, 'Segundo registro'),
-(3, (SELECT id_unidade FROM unidades WHERE cnpj = '21.987.654/0001-02'), (SELECT id_municipio FROM municipios WHERE nome = 'Belo Horizonte'), '56.789.123/0001-77', 'Sistema C', 'www.github.com/alysonvitalino', 'usuario3', 'senha789', 9, 'Terceiro registro'),
-(4, (SELECT id_unidade FROM unidades WHERE cnpj = '34.567.890/0001-03'), (SELECT id_municipio FROM municipios WHERE nome = 'Porto Alegre'), '34.567.890/0001-66', 'Sistema D', 'www.youtube.com', 'usuario4', 'senha101', 12, 'Quarto registro'),
-(5, (SELECT id_unidade FROM unidades WHERE cnpj = '45.678.901/0001-04'), (SELECT id_municipio FROM municipios WHERE nome = 'Curitiba'), '78.901.234/0001-55', 'Sistema E', 'www.instagram.com', 'usuario5', 'senha202', 15, 'Quinto registro'),
-(6, (SELECT id_unidade FROM unidades WHERE cnpj = '56.789.012/0001-05'), (SELECT id_municipio FROM municipios WHERE nome = 'Salvador'), '45.678.901/0001-44', 'Sistema F', 'www.facebook.com', 'usuario6', 'senha303', 18, 'Sexto registro'),
-(7, (SELECT id_unidade FROM unidades WHERE cnpj = '67.890.123/0001-06'), (SELECT id_municipio FROM municipios WHERE nome = 'Fortaleza'), '23.456.789/0001-33', 'Sistema G', 'www.chatgpt.com', 'usuario7', 'senha404', 21, 'Sétimo registro'),
-(8, (SELECT id_unidade FROM unidades WHERE cnpj = '78.901.234/0001-07'), (SELECT id_municipio FROM municipios WHERE nome = 'Recife'), '67.890.123/0001-22', 'Sistema H', 'www.gmail.com', 'usuario8', 'senha505', 24, 'Oitavo registro'),
-(9, (SELECT id_unidade FROM unidades WHERE cnpj = '89.012.345/0001-08'), (SELECT id_municipio FROM municipios WHERE nome = 'Manaus'), '89.012.345/0001-11', 'Sistema I', 'classroom.google.com', 'usuario9', 'senha606', 27, 'Nono registro'),
-(10, (SELECT id_unidade FROM unidades WHERE cnpj = '90.123.456/0001-09'), (SELECT id_municipio FROM municipios WHERE nome = 'Goiânia'), '90.123.456/0001-00', 'Sistema J', 'www.excalidraw.com', 'usuario10', 'senha707', 30, 'Décimo registro');
+(1, (SELECT id_unidade FROM unidades WHERE cnpj = '12.345.678/0001-90'), (SELECT id_municipio FROM municipios WHERE nome = 'São Paulo'), '12.345.678/0001-99', 'Sistema A', 'https://prefeitura.sp.gov.br/', 'usuario1', 'senha123', 3, 'Primeiro registro'),
+(2, (SELECT id_unidade FROM unidades WHERE cnpj = '98.765.432/0001-01'), (SELECT id_municipio FROM municipios WHERE nome = 'Rio de Janeiro'), '98.765.432/0001-88', 'Sistema B', 'https://prefeitura.rio/', 'usuario2', 'senha456', 6, 'Segundo registro'),
+(3, (SELECT id_unidade FROM unidades WHERE cnpj = '21.987.654/0001-02'), (SELECT id_municipio FROM municipios WHERE nome = 'Belo Horizonte'), '56.789.123/0001-77', 'Sistema C', 'https://prefeitura.pbh.gov.br/', 'usuario3', 'senha789', 9, 'Terceiro registro'),
+(4, (SELECT id_unidade FROM unidades WHERE cnpj = '34.567.890/0001-03'), (SELECT id_municipio FROM municipios WHERE nome = 'Porto Alegre'), '34.567.890/0001-66', 'Sistema D', 'https://prefeitura.poa.br/', 'usuario4', 'senha101', 12, 'Quarto registro'),
+(5, (SELECT id_unidade FROM unidades WHERE cnpj = '45.678.901/0001-04'), (SELECT id_municipio FROM municipios WHERE nome = 'Curitiba'), '78.901.234/0001-55', 'Sistema E', 'https://www.curitiba.pr.gov.br/', 'usuario5', 'senha202', 15, 'Quinto registro'),
+(6, (SELECT id_unidade FROM unidades WHERE cnpj = '56.789.012/0001-05'), (SELECT id_municipio FROM municipios WHERE nome = 'Salvador'), '45.678.901/0001-44', 'Sistema F', 'https://salvador.ba.gov.br/', 'usuario6', 'senha303', 18, 'Sexto registro'),
+(7, (SELECT id_unidade FROM unidades WHERE cnpj = '67.890.123/0001-06'), (SELECT id_municipio FROM municipios WHERE nome = 'Fortaleza'), '23.456.789/0001-33', 'Sistema G', 'https://www.fortaleza.ce.gov.br/', 'usuario7', 'senha404', 21, 'Sétimo registro'),
+(8, (SELECT id_unidade FROM unidades WHERE cnpj = '78.901.234/0001-07'), (SELECT id_municipio FROM municipios WHERE nome = 'Recife'), '67.890.123/0001-22', 'Sistema H', 'https://www2.recife.pe.gov.br/', 'usuario8', 'senha505', 24, 'Oitavo registro'),
+(9, (SELECT id_unidade FROM unidades WHERE cnpj = '89.012.345/0001-08'), (SELECT id_municipio FROM municipios WHERE nome = 'Manaus'), '89.012.345/0001-11', 'Sistema I', 'https://www.manaus.am.gov.br/', 'usuario9', 'senha606', 27, 'Nono registro'),
+(10, (SELECT id_unidade FROM unidades WHERE cnpj = '90.123.456/0001-09'), (SELECT id_municipio FROM municipios WHERE nome = 'Goiânia'), '90.123.456/0001-00', 'Sistema J', 'https://www.goiania.go.gov.br/', 'usuario10', 'senha707', 30, 'Décimo registro');
 
 INSERT INTO logins (id_login, login, senha, email, nivel_acesso) VALUES (1, "admin", "$2a$16$cnyrkt0XCJkwxRviLI9P4OUHfRqxvljiBcAlQVaNb2vP6nDVOH1s2", "aplicativogestaotributaria@gmail.com", "Admin");
 INSERT INTO logins (id_login, login, senha, email, nivel_acesso) VALUES (2, "user", "$2a$16$cnyrkt0XCJkwxRviLI9P4OUHfRqxvljiBcAlQVaNb2vP6nDVOH1s2", "alyson.vitalino@gmail.com", "User");
@@ -298,3 +298,4 @@ SELECT * FROM aliquotas;
 SELECT * FROM cadastro;
 SELECT * FROM municipios;
 SELECT * FROM logins;
+
